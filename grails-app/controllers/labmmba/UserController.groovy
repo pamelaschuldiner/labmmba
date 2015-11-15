@@ -24,12 +24,13 @@ class UserController {
         respond user
     }
 	
-	@Secured('ROLE_ANONYMOUS')
+	@Secured ("ROLE_ADMIN,ROLE_ANONYMOUS")
     def create() {
         respond new User(params)
     }
 	
     @Transactional
+	@Secured ("ROLE_ADMIN,ROLE_ANONYMOUS")
     def save(User user) {
         if (user == null) {
             transactionStatus.setRollbackOnly()
