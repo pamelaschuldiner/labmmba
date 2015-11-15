@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="labmmba.LabrolControllerSpec" tests="7" skipped="0" failures="5" errors="0" timestamp="2015-11-14T17:08:11" hostname="Fethrblaka" time="0.279">
+  <properties/>
+  <testcase name="Test the index action returns the correct model" classname="labmmba.LabrolControllerSpec" time="0.226"/>
+  <testcase name="Test the create action returns the correct model" classname="labmmba.LabrolControllerSpec" time="0.007"/>
+  <testcase name="Test the save action correctly persists an instance" classname="labmmba.LabrolControllerSpec" time="0.009">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.LabrolControllerSpec.populateValidParams(LabrolControllerSpec.groovy:15)
+	at labmmba.LabrolControllerSpec.Test the save action correctly persists an instance(LabrolControllerSpec.groovy:51)
+</failure>
+  </testcase>
+  <testcase name="Test that the show action returns the correct model" classname="labmmba.LabrolControllerSpec" time="0.007">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.LabrolControllerSpec.populateValidParams(LabrolControllerSpec.groovy:15)
+	at labmmba.LabrolControllerSpec.Test that the show action returns the correct model(LabrolControllerSpec.groovy:70)
+</failure>
+  </testcase>
+  <testcase name="Test that the edit action returns the correct model" classname="labmmba.LabrolControllerSpec" time="0.006">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.LabrolControllerSpec.populateValidParams(LabrolControllerSpec.groovy:15)
+	at labmmba.LabrolControllerSpec.Test that the edit action returns the correct model(LabrolControllerSpec.groovy:86)
+</failure>
+  </testcase>
+  <testcase name="Test the update action performs an update on a valid domain instance" classname="labmmba.LabrolControllerSpec" time="0.015">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.LabrolControllerSpec.populateValidParams(LabrolControllerSpec.groovy:15)
+	at labmmba.LabrolControllerSpec.Test the update action performs an update on a valid domain instance(LabrolControllerSpec.groovy:116)
+</failure>
+  </testcase>
+  <testcase name="Test that the delete action deletes an instance if it exists" classname="labmmba.LabrolControllerSpec" time="0.009">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.LabrolControllerSpec.populateValidParams(LabrolControllerSpec.groovy:15)
+	at labmmba.LabrolControllerSpec.Test that the delete action deletes an instance if it exists(LabrolControllerSpec.groovy:138)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

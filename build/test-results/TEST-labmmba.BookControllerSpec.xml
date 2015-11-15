@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="labmmba.BookControllerSpec" tests="7" skipped="0" failures="5" errors="0" timestamp="2015-11-14T17:08:09" hostname="Fethrblaka" time="0.317">
+  <properties/>
+  <testcase name="Test the index action returns the correct model" classname="labmmba.BookControllerSpec" time="0.253"/>
+  <testcase name="Test the create action returns the correct model" classname="labmmba.BookControllerSpec" time="0.008"/>
+  <testcase name="Test the save action correctly persists an instance" classname="labmmba.BookControllerSpec" time="0.011">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.BookControllerSpec.populateValidParams(BookControllerSpec.groovy:15)
+	at labmmba.BookControllerSpec.Test the save action correctly persists an instance(BookControllerSpec.groovy:51)
+</failure>
+  </testcase>
+  <testcase name="Test that the show action returns the correct model" classname="labmmba.BookControllerSpec" time="0.008">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.BookControllerSpec.populateValidParams(BookControllerSpec.groovy:15)
+	at labmmba.BookControllerSpec.Test that the show action returns the correct model(BookControllerSpec.groovy:70)
+</failure>
+  </testcase>
+  <testcase name="Test that the edit action returns the correct model" classname="labmmba.BookControllerSpec" time="0.008">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.BookControllerSpec.populateValidParams(BookControllerSpec.groovy:15)
+	at labmmba.BookControllerSpec.Test that the edit action returns the correct model(BookControllerSpec.groovy:86)
+</failure>
+  </testcase>
+  <testcase name="Test the update action performs an update on a valid domain instance" classname="labmmba.BookControllerSpec" time="0.018">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.BookControllerSpec.populateValidParams(BookControllerSpec.groovy:15)
+	at labmmba.BookControllerSpec.Test the update action performs an update on a valid domain instance(BookControllerSpec.groovy:116)
+</failure>
+  </testcase>
+  <testcase name="Test that the delete action deletes an instance if it exists" classname="labmmba.BookControllerSpec" time="0.01">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.BookControllerSpec.populateValidParams(BookControllerSpec.groovy:15)
+	at labmmba.BookControllerSpec.Test that the delete action deletes an instance if it exists(BookControllerSpec.groovy:138)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

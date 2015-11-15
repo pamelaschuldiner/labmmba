@@ -62,7 +62,7 @@ dependencies {
     compile "org.grails.plugins:cache"
     compile "org.hibernate:hibernate-ehcache"
     compile "org.grails.plugins:scaffolding"
-    compile 'org.springframework.security:spring-security-core:4.0.3.RELEASE'
+    compile 'org.grails.plugins:spring-security-core:3.0.0.M1'
 
 
     runtime "mysql:mysql-connector-java:5.1.37"

@@ -2,68 +2,33 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured('ROLE_ADMIN')
 @Transactional(readOnly = true)
 class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-        def register = {
-        // new user posts his registration details
-        if (request.method == 'POST') {
-            // create domain object and assign parameters using data binding
-            def u = new User(params)
-            u.passwordHashed = u.password.encodeAsPassword()
-            if (! u.save()) {
-                // validation failed, render registration page again
-                return [user:u]
-            } else {
-                // validate/save ok, store user in session, redirect to homepage
-                session.user = u
-                redirect(controller:'main')
-            }
-        } else if (session.user) {
-            // don't allow registration while user is logged in
-            redirect(controller:'main')
-        }
-    }
- 
-    def login = {
-        if (request.method == 'POST') {
-            def passwordHashed = params.password.encodeAsPassword()
-            def u = User.findByUsernameAndPasswordHashed(params.username, passwordHashed)
-            if (u) {
-                // username and password match -> log in
-                session.user = u
-                redirect(controller:'user')
-            } else {
-                flash.message = "User not found"
-                redirect(controller:'user')
-            }
-        } else if (session.user) {
-            // don't allow login while user is logged in
-            redirect(controller:'user')
-        }
-    }
- 
-    def logout = {
-        session.invalidate()
-        redirect(controller:'user')
-    }
-
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userCount: User.count()]
     }
-
+	
+	def pending(Integer max) {
+        def pendingUsers = UserRole.findAllByRole(Role.findByAuthority('ROLE_PENDING_USER'))*.user
+		respond pendingUsers, model:[userCount: pendingUsers.size()]
+    }
+	
     def show(User user) {
         respond user
     }
-
+	
+	@Secured('ROLE_ANONYMOUS')
     def create() {
         respond new User(params)
     }
-
+	
     @Transactional
     def save(User user) {
         if (user == null) {
@@ -79,7 +44,8 @@ class UserController {
         }
 
         user.save flush:true
-
+		UserRole.create user, Role.findByAuthority('ROLE_PENDING_USER'), true
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
@@ -88,7 +54,17 @@ class UserController {
             '*' { respond user, [status: CREATED] }
         }
     }
-
+	@Transactional
+	def approve(User user){
+		UserRole.findByUser(user).delete()
+		UserRole.create user, Role.findByAuthority('ROLE_USER'), true 
+		request.withFormat {
+            form multipartForm {
+                flash.message = message(code: '{0} {1} aprobado', args: [message(code: 'user.label', default: 'User'), user.username])
+                redirect user
+            }
+		}
+	}
     def edit(User user) {
         respond user
     }

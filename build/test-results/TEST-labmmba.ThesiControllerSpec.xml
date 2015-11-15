@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="labmmba.ThesiControllerSpec" tests="7" skipped="0" failures="5" errors="0" timestamp="2015-11-14T17:08:13" hostname="Fethrblaka" time="0.229">
+  <properties/>
+  <testcase name="Test the index action returns the correct model" classname="labmmba.ThesiControllerSpec" time="0.179"/>
+  <testcase name="Test the create action returns the correct model" classname="labmmba.ThesiControllerSpec" time="0.006"/>
+  <testcase name="Test the save action correctly persists an instance" classname="labmmba.ThesiControllerSpec" time="0.008">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.ThesiControllerSpec.populateValidParams(ThesiControllerSpec.groovy:15)
+	at labmmba.ThesiControllerSpec.Test the save action correctly persists an instance(ThesiControllerSpec.groovy:51)
+</failure>
+  </testcase>
+  <testcase name="Test that the show action returns the correct model" classname="labmmba.ThesiControllerSpec" time="0.007">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.ThesiControllerSpec.populateValidParams(ThesiControllerSpec.groovy:15)
+	at labmmba.ThesiControllerSpec.Test that the show action returns the correct model(ThesiControllerSpec.groovy:70)
+</failure>
+  </testcase>
+  <testcase name="Test that the edit action returns the correct model" classname="labmmba.ThesiControllerSpec" time="0.007">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.ThesiControllerSpec.populateValidParams(ThesiControllerSpec.groovy:15)
+	at labmmba.ThesiControllerSpec.Test that the edit action returns the correct model(ThesiControllerSpec.groovy:86)
+</failure>
+  </testcase>
+  <testcase name="Test the update action performs an update on a valid domain instance" classname="labmmba.ThesiControllerSpec" time="0.015">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.ThesiControllerSpec.populateValidParams(ThesiControllerSpec.groovy:15)
+	at labmmba.ThesiControllerSpec.Test the update action performs an update on a valid domain instance(ThesiControllerSpec.groovy:116)
+</failure>
+  </testcase>
+  <testcase name="Test that the delete action deletes an instance if it exists" classname="labmmba.ThesiControllerSpec" time="0.007">
+    <failure message="Condition not satisfied:&#10;&#10;false&#10;&#10;TODO: Provide a populateValidParams() implementation for this generated test suite&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
+
+false
+
+TODO: Provide a populateValidParams() implementation for this generated test suite
+
+	at labmmba.ThesiControllerSpec.populateValidParams(ThesiControllerSpec.groovy:15)
+	at labmmba.ThesiControllerSpec.Test that the delete action deletes an instance if it exists(ThesiControllerSpec.groovy:138)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -11,6 +11,7 @@
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="pending"><g:message message="User Pendiente Lista" /></g:link></li>
             </ul>
         </div>
         <div id="create-user" class="content scaffold-create" role="main">
@@ -27,7 +28,12 @@
             </g:hasErrors>
             <g:form action="save">
                 <fieldset class="form">
-                    <f:all bean="user"/>
+                    <f:field bean="user" property="username"/>
+					<f:field bean="user" property="firstname"/>
+					<f:field bean="user" property="lastname"/>
+					<f:field bean="user" property="email"/>
+					<f:field bean="user" property="password"/>
+					<f:field bean="user" property="pic"/>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
