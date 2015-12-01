@@ -23,14 +23,14 @@ class UserController {
     def show(User user) {
         respond user
     }
-	
-	@Secured ("ROLE_ADMIN,ROLE_ANONYMOUS")
+
+    @Secured("ROLE_ANONONYMOUS")
     def create() {
         respond new User(params)
     }
-	
+
     @Transactional
-	@Secured ("ROLE_ADMIN,ROLE_ANONYMOUS")
+    @Secured("ROLE_ANONYMOUS")
     def save(User user) {
         if (user == null) {
             transactionStatus.setRollbackOnly()
@@ -50,7 +50,7 @@ class UserController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect user
+                redirect (controller: "user" , action:"create")
             }
             '*' { respond user, [status: CREATED] }
         }
