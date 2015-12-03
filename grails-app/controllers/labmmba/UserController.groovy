@@ -55,6 +55,17 @@ class UserController {
             '*' { respond user, [status: CREATED] }
         }
     }
+    @Transactional
+    def promote(User user){
+        UserRole.create user, Role.findByAuthority('ROLE_ADMIN'), true
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: '{0} {1} Promovido a Administrador', args: [message(code: 'user.label', default: 'User'), user.username])
+                redirect user
+            }
+        }
+    }
+
 	@Transactional
 	def approve(User user){
         user.enabled = true

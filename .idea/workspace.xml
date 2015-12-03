@@ -2,61 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473336fe-2bef-4b99-8712-e827a643bd42" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__delete_closure17$_closure24.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__save_closure15$_closure20.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__update_closure16$_closure22.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_notFound_closure6$_closure18.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__approve_closure16$_closure23.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__approve_closure16.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__delete_closure18$_closure26.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__delete_closure18$_closure27.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__delete_closure18.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__save_closure15$_closure21.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__save_closure15$_closure22.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__save_closure15.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__update_closure17$_closure24.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__update_closure17$_closure25.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$__tt__update_closure17.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_approve_closure11.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_approve_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_delete_closure14.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_delete_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_edit_closure12.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_index_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_notFound_closure6$_closure19.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_notFound_closure6$_closure20.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_notFound_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_pending_closure8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_save_closure10.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_show_closure9.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_update_closure13.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\git-labmmba-master\build\classes\main\labmmba\UserController$_update_closure4.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.asscache" afterPath="$PROJECT_DIR$/.asscache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Administrator.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Administrator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/AdministratorRole.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/AdministratorRole.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Book.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Book.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/BootStrap$_closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/BootStrap$_closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Event.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Event.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/EventController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/EventController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Experiment.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Experiment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ExperimentController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ExperimentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Field.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Field.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/FieldController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/FieldController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Labrol.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Labrol.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/LabrolController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/LabrolController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Magazine.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Magazine.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/MagazineController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/MagazineController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Proyect.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Proyect.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Role.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Role.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Study.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Study.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/StudyController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/StudyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Thesi.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Thesi.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/University.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/University.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UniversityController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UniversityController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/User.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure16$_closure23.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure16$_closure23.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure16.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure18$_closure26.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure18$_closure26.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure18$_closure27.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure18$_closure27.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure18.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure15$_closure21.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure15$_closure21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure15$_closure22.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure15$_closure22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure15.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure17$_closure24.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure17$_closure24.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure17$_closure25.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure17$_closure25.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure17.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_approve_closure11.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_approve_closure11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_approve_closure3.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_approve_closure3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_create_closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_create_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_delete_closure14.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_delete_closure14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_delete_closure5.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_delete_closure5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_edit_closure12.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_edit_closure12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_index_closure7.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_index_closure7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure6$_closure19.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure6$_closure19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure6$_closure20.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure6$_closure20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure6.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_pending_closure8.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_pending_closure8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_save_closure10.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_save_closure10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_save_closure2.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_save_closure2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_show_closure9.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_show_closure9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_update_closure13.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_update_closure13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_update_closure4.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_update_closure4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserRole.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserRole.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/init/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/init/BootStrap.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/application.yml" afterPath="$PROJECT_DIR$/grails-app/conf/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/show.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/show.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/stacktrace.log" afterPath="$PROJECT_DIR$/build/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="git-labmmba-master.iws" />
@@ -81,11 +82,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.groovy" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5448718">
+              <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
               <folding>
                 <element signature="e#17#68#0" expanded="true" />
               </folding>
@@ -125,10 +126,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyUserDetailsService.groovy" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyUserDetailsService.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/MyUserDetailsService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5672576">
+            <state vertical-scroll-proportion="0.0">
               <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
               <folding />
             </state>
@@ -171,8 +172,8 @@
       <file leaf-file-name="show.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/user/show.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="116" selection-start-line="26" selection-start-column="116" selection-end-line="26" selection-end-column="116" />
+            <state vertical-scroll-proportion="-9.020409">
+              <caret line="26" column="111" selection-start-line="26" selection-start-column="111" selection-end-line="26" selection-end-column="111" />
               <folding />
             </state>
           </provider>
@@ -183,7 +184,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-              <folding />
+              <folding>
+                <marker date="1447556088538" expanded="true" signature="1052:1146" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -203,9 +206,9 @@
       <list>
         <option value="$PROJECT_DIR$/git-labmmba-master.iml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/grails-app/views/user/show.gsp" />
         <option value="$PROJECT_DIR$/grails-app/init/BootStrap.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/user/show.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy" />
       </list>
     </option>
@@ -726,16 +729,16 @@
       <workItem from="1448982195256" duration="6086000" />
       <workItem from="1448990217772" duration="237000" />
       <workItem from="1449160475415" duration="5759000" />
-      <workItem from="1449166245290" duration="265000" />
+      <workItem from="1449166245290" duration="945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12347000" />
+    <option name="totallyTimeSpent" value="13027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -867,7 +870,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1447556088538" expanded="true" signature="1052:1146" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -994,19 +999,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/user/show.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="116" selection-start-line="26" selection-start-column="116" selection-end-line="26" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/user/pending.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1447556088538" expanded="true" signature="1052:1146" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,16 +1032,6 @@
         <state vertical-scroll-proportion="0.33263817">
           <caret line="1010" column="30" selection-start-line="1010" selection-start-column="30" selection-end-line="1010" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#17#68#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,9 +1079,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/MyUserDetailsService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5672576">
+        <state vertical-scroll-proportion="0.0">
           <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/user/show.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.020409">
+          <caret line="26" column="111" selection-start-line="26" selection-start-column="111" selection-end-line="26" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5448718">
+          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+          <folding>
+            <element signature="e#17#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
