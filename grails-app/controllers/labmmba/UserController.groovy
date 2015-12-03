@@ -12,25 +12,25 @@ class UserController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond User.list(params), model:[userCount: User.count()]
+        respond User.findAllByEnabled(true,params), model:[userCount: User.findAllByEnabled(true).size()]
     }
-	
+
 	def pending(Integer max) {
-        def pendingUsers = UserRole.findAllByRole(Role.findByAuthority('ROLE_PENDING_USER'))*.user
-		respond pendingUsers, model:[userCount: pendingUsers.size()]
+        params.max = Math.min(max ?: 10, 100)
+        respond User.findAllByEnabled(false,params), model:[userCount: User.findAllByEnabled(false).size()]
     }
-	
+
     def show(User user) {
         respond user
     }
 
-    @Secured("ROLE_ANONONYMOUS")
+    @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN'])
     def create() {
         respond new User(params)
     }
 
     @Transactional
-    @Secured("ROLE_ANONYMOUS")
+    @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN'])
     def save(User user) {
         if (user == null) {
             transactionStatus.setRollbackOnly()
@@ -57,8 +57,8 @@ class UserController {
     }
 	@Transactional
 	def approve(User user){
-		UserRole.findByUser(user).delete()
-		UserRole.create user, Role.findByAuthority('ROLE_USER'), true 
+        user.enabled = true
+        user.save()
 		request.withFormat {
             form multipartForm {
                 flash.message = message(code: '{0} {1} aprobado', args: [message(code: 'user.label', default: 'User'), user.username])

@@ -11,7 +11,7 @@ class BootStrap {
 		new Role('ROLE_USER').save()
 		new Role('ROLE_PENDING_USER').save()
 		
-		def admin = new Administrator(username:'admin',password:'admin',email:'admin@admin.admin').save()
+		def admin = new Administrator(username:'admin',password:'admin',email:'admin@admin.admin',enabled: true).save()
 		AdministratorRole.create admin, adminRole, true
 		
     }

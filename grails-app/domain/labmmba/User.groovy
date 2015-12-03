@@ -12,7 +12,7 @@ class User implements Serializable {
 	String password
     String pic
     String email
-	boolean enabled = true
+	boolean enabled = false
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired

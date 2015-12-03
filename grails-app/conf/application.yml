@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: test2
+        defaultPackage: labmmba
 info:
     app:
         name: '@info.app.name@'
