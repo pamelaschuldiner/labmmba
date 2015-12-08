@@ -33,7 +33,6 @@
 					<f:field bean="user" property="lastname"/>
 					<f:field bean="user" property="email"/>
 					<f:field bean="user" property="password"/>
-					<f:field bean="user" property="pic"/>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

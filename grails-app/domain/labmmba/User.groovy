@@ -1,5 +1,7 @@
 package labmmba
 
+import java.sql.Blob
+
 class User implements Serializable {
 
 	private static final long serialVersionUID = 1
@@ -10,8 +12,9 @@ class User implements Serializable {
 	String firstname
 	String lastname
 	String password
-    String pic
     String email
+	Byte[] avatar
+	String avatarType
 	boolean enabled = false
 	boolean accountExpired
 	boolean accountLocked
@@ -61,9 +64,12 @@ class User implements Serializable {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+		avatar(nullable:true, maxSize: 16384 /* 16K */)
+		avatarType(nullable:true)
 	}
 
 	static mapping = {
+		avatar column: "avatar", sqlType: "blob"
 		password column: '`password`'
 	}
 }
