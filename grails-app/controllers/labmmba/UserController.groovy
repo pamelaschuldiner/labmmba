@@ -21,9 +21,15 @@ class UserController {
         respond User.findAllByEnabled(false,params), model:[userCount: User.findAllByEnabled(false).size()]
     }
 
-    @Secured(['ROLE_USER','ROLE_ADMIN']) //Borrar despues
+    @Secured(['ROLE_USER','ROLE_ADMIN'])
     def show(User user) {
-        respond user
+        if(user == null){
+            respond User.findById(springSecurityService.principal.id)
+        }
+        else{
+            respond user
+        }
+
     }
 
     @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN'])
@@ -52,7 +58,7 @@ class UserController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect (controller: "user" , action:"create")
+                redirect(controller: "user", action: "create")
             }
             '*' { respond user, [status: CREATED] }
         }
@@ -103,59 +109,50 @@ class UserController {
             return
         }
 
-        // Save the image and mime type
-        user.avatar = f.bytes
-        user.avatarType = "test"
+        def size = f.bytes.size()
+
+        if (size> 2097152) {
+            flash.message = "Avatar must be less than 2097152 bytes"
+            render(view: 'select_avatar', model: [user: user])
+            return
+        }
+
+        user.avatarType = f.contentType
+
         log.info("File uploaded: $user.avatarType")
 
-        // Validation works, will check if the image is too big
-        if (!user.save()) {
-            flash.message = "Avatar must be less than 16384 bytes"
-            render(view:'select_avatar', model:[user:user])
+        def webrootDir = servletContext.getRealPath("/")
+        def avatarDir =  new File (webrootDir + "avatars")
+
+        if( !avatarDir.exists() ) {
+            avatarDir.mkdirs()
         }
-        else{
-            flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
-            redirect(action:'show', id: user.id)
-        }
+
+        File fileDest = new File(webrootDir,"avatars/" + springSecurityService.currentUser.id.toString())
+        f.transferTo(fileDest)
+
+        user.avatarURL = fileDest
+
+        flash.message = "Avatar (${user.avatarType}, $size} bytes) uploaded."
+        redirect(action:'show')
     }
 
     @Secured(['permitAll'])
     def avatar_image() {
         def avatarUser = User.get(params.id)
-        if (!avatarUser || !avatarUser.avatar || !avatarUser.avatarType) {
-            response.sendError(404)
-            return
-        }
-        response.contentType = avatarUser.avatarType
-        response.contentLength = avatarUser.avatar.size()
-        OutputStream out = response.outputStream
-        out.write(avatarUser.avatar)
-        out.close()
-    }
 
-    @Transactional
-    def update(User user) {
-        if (user == null) {
-            transactionStatus.setRollbackOnly()
-            notFound()
-            return
+
+
+        if(!avatarUser.avatarURL.exists()) {
+            response.status = 404
+        } else {
+            response.setContentType(avatarUser.avatarType)
+            OutputStream out = response.getOutputStream();
+            out.write(avatarUser.avatarURL.bytes);
+            out.close();
         }
 
-        if (user.hasErrors()) {
-            transactionStatus.setRollbackOnly()
-            respond user.errors, view:'edit'
-            return
-        }
 
-        user.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect user
-            }
-            '*'{ respond user, [status: OK] }
-        }
     }
 
     @Transactional

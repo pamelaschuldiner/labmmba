@@ -15,8 +15,8 @@ class BootStrap {
 		AdministratorRole.create admin, adminRole, true
 		def testUser = new User(username:'test', password:'test',email:'test@test.test',enabled:true,firstname:'test',lastname:'test').save()
 		UserRole.create testUser, userRole, true
-		
-    }
+
+	}
     def destroy = {
     }
 }

@@ -13,7 +13,7 @@ class User implements Serializable {
 	String lastname
 	String password
     String email
-	Byte[] avatar
+	File avatarURL
 	String avatarType
 	boolean enabled = false
 	boolean accountExpired
@@ -64,12 +64,11 @@ class User implements Serializable {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
-		avatar(nullable:true, maxSize: 16384 /* 16K */)
+		avatarURL(nullable:true)
 		avatarType(nullable:true)
 	}
 
 	static mapping = {
-		avatar column: "avatar", sqlType: "blob"
 		password column: '`password`'
 	}
 }

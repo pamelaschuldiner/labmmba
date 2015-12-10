@@ -12,7 +12,9 @@
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="update" action="select_avatar"><g:message message= "Seleccionar Avatar" /></g:link></li>
+                <g:if test="${sec.username() == user.username}">
+                    <li><g:link class="update" action="select_avatar"><g:message message= "Seleccionar Avatar" /></g:link></li>
+                </g:if>
             </ul>
         </div>
         <div id="show-user" class="content scaffold-show" role="main">
@@ -21,7 +23,7 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
 
-            <g:if test="${user.avatar}">
+            <g:if test="${user.avatarURL}">
                 <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}" />
             </g:if>
 
