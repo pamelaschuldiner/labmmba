@@ -2,9 +2,13 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured('ROLE_ADMIN')
 @Transactional(readOnly = true)
 class ThesiController {
+
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -17,10 +21,12 @@ class ThesiController {
         respond thesi
     }
 
+    @Secured(['ROLE_USER'])
     def create() {
         respond new Thesi(params)
     }
 
+    @Secured(['ROLE_USER'])
     @Transactional
     def save(Thesi thesi) {
         if (thesi == null) {
@@ -35,12 +41,13 @@ class ThesiController {
             return
         }
 
+        thesi.addToStudys(Study.findById(params.studyId))
         thesi.save flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'thesi.label', default: 'Thesi'), thesi.id])
-                redirect thesi
+                redirect springSecurityService.currentUser
             }
             '*' { respond thesi, [status: CREATED] }
         }

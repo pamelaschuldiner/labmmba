@@ -23,28 +23,57 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
 
-            <g:if test="${user.avatarURL}">
-                <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}" />
-            </g:if>
-
             <ol class="property-list user">
                 <li class="fieldcontain">
-                    <span id="username-label" class="property-label">Username</span>
+                    <g:if test="${user.avatarURL}">
+                        <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}" />
+                    </g:if>
+                </li>
+                <li class="fieldcontain">
+                    <span id="username-label" class="property-label">Username:</span>
                     <div class="property-value" aria-labelledby="username-label"><f:display bean="user" property="username"/></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="email-label" class="property-label">Email</span>
+                    <span id="email-label" class="property-label">Email:</span>
                     <div class="property-value" aria-labelledby="email-label"><f:display bean="user" property="email"/></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="firstname-label" class="property-label">Firstname</span>
+                    <span id="firstname-label" class="property-label">Firstname:</span>
                     <div class="property-value" aria-labelledby="firstname-label"><f:display bean="user" property="firstname"/></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="lastname-label" class="property-label">Lastname</span>
+                    <span id="lastname-label" class="property-label">Lastname:</span>
                     <div class="property-value" aria-labelledby="lastname-label"><f:display bean="user" property="lastname"/></div>
                 </li>
+                <li class="fieldcontain">
+                    <span id="estudios-label" class="property-label">Estudios:</span>
                 </li>
+
+                <g:if test="${user.studys}">
+                    <g:each in="${user.studys}">
+                        <li class="fieldcontain">
+                            <span id="tipo_estudio-label" class="property-label">${it.study_type}:</span>
+                            <div class="property-value" aria-labelledby="lastname-label">${it.study_name}</div>
+                                <g:if test="${it.thesis}">
+                                    <li class="fieldcontain">
+                                        <span id="thesis_name-label" class="property-label">Thesis:</span>
+                                        <g:each in="${it.thesis}">
+                                            <div class="property-value" aria-labelledby="lastname-label">${it.thesis_name}</div>
+                                        </g:each>
+                                    </li>
+                                </g:if>
+                                <g:else>
+                                    <g:if test="${sec.username() == user.username}">
+                                        <g:link controller="thesi" action="create"  params="[studyId: it.id]">Agregar Thesis</g:link>
+                                    </g:if>
+                                </g:else>
+                        </li>
+                    </g:each>
+                </g:if>
+                <g:if test="${sec.username() == user.username}">
+                    <g:link controller="study" action="create">Agregar Estudios</g:link>
+                </g:if>
+
             </ol>
 
             <g:form resource="${this.user}" method="DELETE">

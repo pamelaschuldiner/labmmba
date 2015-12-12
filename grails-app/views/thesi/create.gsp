@@ -27,7 +27,9 @@
             </g:hasErrors>
             <g:form action="save">
                 <fieldset class="form">
-                    <f:all bean="thesi"/>
+                    <f:field bean="thesi" property="thesis_name"/>
+                    <f:field bean="thesi" property="thesis_type"/>
+                    <g:hiddenField name="studyId" value="${params.studyId}" />
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

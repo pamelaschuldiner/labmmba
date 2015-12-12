@@ -141,8 +141,6 @@ class UserController {
     def avatar_image() {
         def avatarUser = User.get(params.id)
 
-
-
         if(!avatarUser.avatarURL.exists()) {
             response.status = 404
         } else {
@@ -151,8 +149,6 @@ class UserController {
             out.write(avatarUser.avatarURL.bytes);
             out.close();
         }
-
-
     }
 
     @Transactional

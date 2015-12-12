@@ -8,6 +8,8 @@ import grails.plugin.springsecurity.annotation.Secured
 @Transactional(readOnly = true)
 class StudyController {
 
+    def springSecurityService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -19,10 +21,12 @@ class StudyController {
         respond study
     }
 
+    @Secured(['ROLE_USER'])
     def create() {
         respond new Study(params)
     }
 
+    @Secured(['ROLE_USER'])
     @Transactional
     def save(Study study) {
         if (study == null) {
@@ -38,11 +42,13 @@ class StudyController {
         }
 
         study.save flush:true
+        def user = springSecurityService.currentUser
+        study.addToUsers(user).save()
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'study.label', default: 'Study'), study.id])
-                redirect study
+                redirect user
             }
             '*' { respond study, [status: CREATED] }
         }
