@@ -19,10 +19,12 @@ class UniversityController {
         respond university
     }
 
+    @Secured(['ROLE_USER'])
     def create() {
         respond new University(params)
     }
 
+    @Secured(['ROLE_USER'])
     @Transactional
     def save(University university) {
         if (university == null) {
@@ -42,7 +44,7 @@ class UniversityController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'university.label', default: 'University'), university.id])
-                redirect university
+                redirect(controller: "study", action: "create")
             }
             '*' { respond university, [status: CREATED] }
         }

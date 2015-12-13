@@ -8,6 +8,14 @@ class University {
 
     static hasMany = [studys: Study]
 
+    static namedQueries = {
+        findByStudy {
+            studyId ->
+                studys {
+                    eq 'id', studyId
+                }
+        }
+    }
 
     static constraints = {
     }

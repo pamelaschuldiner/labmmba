@@ -1,3 +1,4 @@
+<%@ page import="labmmba.University" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,28 +51,44 @@
                 </li>
 
                 <g:if test="${user.studys}">
-                    <g:each in="${user.studys}">
+                    <g:each in="${user.studys.sort({it.id})}">
                         <li class="fieldcontain">
                             <span id="tipo_estudio-label" class="property-label">${it.study_type}:</span>
                             <div class="property-value" aria-labelledby="lastname-label">${it.study_name}</div>
-                                <g:if test="${it.thesis}">
-                                    <li class="fieldcontain">
-                                        <span id="thesis_name-label" class="property-label">Thesis:</span>
-                                        <g:each in="${it.thesis}">
-                                            <div class="property-value" aria-labelledby="lastname-label">${it.thesis_name}</div>
-                                        </g:each>
-                                    </li>
-                                </g:if>
-                                <g:else>
-                                    <g:if test="${sec.username() == user.username}">
+                            <div class="property-value" aria-labelledby="study-university-label">${labmmba.University.findByStudy(it.id).list().first().uni_name}</div>
+                            <div class="property-value" aria-labelledby="study-university-label">${labmmba.University.findByStudy(it.id).list().first().uni_count}</div>
+                            <g:if test="${it.thesis}">
+                                <li class="fieldcontain">
+                                <span id="thesis_name-label" class="property-label">Thesis:</span>
+                                <g:each in="${it.thesis.sort({it.id})}">
+                                    <div class="property-value" aria-labelledby="thesis-name-label">
+                                        <g:link controller="thesi" action="show"  resource="${it}">${it.thesis_name}</g:link>
+                                        <g:if test="${sec.username() == user.username}">
+                                            <g:uploadForm action="upload_thesis" controller="thesi" id="${it.id}">
+                                                <input type="file" name="thesi" id="thesi" />
+                                                <input type="submit" class="buttons" value="Upload" />
+                                            </g:uploadForm>
+                                        </g:if>
+                                    </div>
+                                </g:each>
+                                </li>
+                            </g:if>
+                            <g:elseif test="${sec.username() == user.username}">
+                                <li class="fieldcontain">
+                                    <span id="create-tesis-label" class="property-label"></span>
+                                    <div class="property-value" aria-labelledby="crear-tesis-label">
                                         <g:link controller="thesi" action="create"  params="[studyId: it.id]">Agregar Thesis</g:link>
-                                    </g:if>
-                                </g:else>
-                        </li>
+                                    </div>
+                                </li>
+
+                            </g:elseif>
                     </g:each>
                 </g:if>
                 <g:if test="${sec.username() == user.username}">
-                    <g:link controller="study" action="create">Agregar Estudios</g:link>
+                    <li class="fieldcontain">
+                        <span id="crear-estudio-label" class="property-label"></span>
+                        <div class="property-value" aria-labelledby="crear-estudio-label"><g:link controller="study" action="create">Agregar Estudios</g:link></div>
+                    </li>
                 </g:if>
 
             </ol>

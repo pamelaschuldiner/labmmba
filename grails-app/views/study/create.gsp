@@ -27,12 +27,21 @@
             </g:hasErrors>
             <g:form action="save">
                 <fieldset class="form">
-                    <f:field bean="study" property="study_name"/>
-                    <f:field bean="study" property="study_type">
+                    <f:field bean="study" property="study_name" label="Nombre Estudio"/>
+                    <f:field bean="study" property="study_type" label="Tipo de Estudio">
                         <g:select name="study_type"
                                   from="['Pregrado','Postgrado']" />
                     </f:field>
+                    <f:field property="university" required="true" label="Universidad">
+                            </label><g:select name="university" from="${labmmba.University.list().uni_name}"/>
+                    </f:field>
                 </fieldset>
+
+                <div class="fieldcontain required">
+                    <label for="create-university">
+                    </label><g:link controller="university" action="create">Agregar Universidad</g:link>
+                </div>
+
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

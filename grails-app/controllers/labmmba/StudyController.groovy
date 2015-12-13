@@ -44,6 +44,7 @@ class StudyController {
         study.save flush:true
         def user = springSecurityService.currentUser
         study.addToUsers(user).save()
+        University.findByUni_name(params.university).addToStudys(study).save()
 
         request.withFormat {
             form multipartForm {
@@ -73,6 +74,7 @@ class StudyController {
         }
 
         study.save flush:true
+
 
         request.withFormat {
             form multipartForm {

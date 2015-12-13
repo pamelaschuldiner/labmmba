@@ -94,6 +94,7 @@ class UserController {
     }
 
     private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
+
     @Secured(['ROLE_USER'])
     @Transactional
     def upload_avatar() {

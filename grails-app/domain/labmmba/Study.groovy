@@ -6,7 +6,7 @@ class Study {
     String study_type
 
     static hasMany = [users: User, thesis: Thesi]
-    static belongsTo = [User, University]
+    static belongsTo =[User, University]
 
 
     static constraints = {
