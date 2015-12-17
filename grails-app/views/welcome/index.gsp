@@ -74,13 +74,26 @@
                           <div class="arrow-up"></div>
                           <div class="formholder">
                             <div class="randompad">
-                               <fieldset>
-                                 <p>Usuario</p>
-                                 <input type="email" value="example@example.com" />
-                                 <p>Contraseña</p>
-                                 <input type="password" />
-                                 <input type="submit" value="Ingresar" />
-                               </fieldset>
+                                <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                    <p>
+                                        <label for="username">Nombre de usuario:</label>
+                                        <input type="text" class="text_" name="j_username" id="username">
+                                    </p>
+
+                                    <p>
+                                        <label for="password">Contraseña:</label>
+                                        <input type="password" class="text_" name="j_password" id="password">
+                                    </p>
+
+                                    <p id="remember_me_holder">
+                                        <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                        <label for="remember_me">Recuérdame</label>
+                                    </p>
+
+                                    <p>
+                                        <input type="submit" id="submit" value="Identifícate">
+                                    </p>
+                                </form>
                             </div>
                           </div>
                         </div>

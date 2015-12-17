@@ -84,18 +84,14 @@
 
                 <h3 class="lead"> Experimentos </h3><hr>
                 <ul class="input-list style-2 clearfix">
-
-
-                <form enctype="multipart/form-data" method="post">
-                    <p>Nombre experimento: <g:textField id="exp_name" name="exp_name" class="others" size="40"/><p>
-                    <p>Imagen Experimento:  <input id="file" type="file" name="pic" size="40"></p> 
-                    <p><input id="file" type="file" name="pic" size="40" onclick="addName()"></p> 
-                    <p><input id="file" type="file" name="pic" size="40" onclick="addName()"></p>
-                    <p><input id="file" type="file" name="pic" size="40" onclick="addName()"></p>
-                    <p><input id="file" type="file" name="pic" size="40" onclick="addName()"></p>
-                </form>
-                <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
-
+                    <g:if test="${flash.message}">
+                        <div class="message" role="status">${flash.message}</div>
+                    </g:if>
+                    <g:form controller="experiment" action="save_with_images" enctype="multipart/form-data">
+                        <p>Nombre experimento: <g:textField id="exp_name" name="exp_name" class="others" size="40"/><p>
+                        <p>Imagen Experimento:  <input id="images" type="file" name="images" size="40" required="true" multiple></p>
+                        <g:actionSubmitImage value="save_with_images" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
+                    </g:form>
                 </ul>
             </div>
 

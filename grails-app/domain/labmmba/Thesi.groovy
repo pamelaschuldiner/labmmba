@@ -14,5 +14,7 @@ class Thesi {
     }
 
     static constraints = {
+        thesis_cotutor nullable: true
     }
+
 }

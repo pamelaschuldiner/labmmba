@@ -2,11 +2,14 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(['ROLE_ADMIN'])
 @Transactional(readOnly = true)
 class ExperimentController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def springSecurityService
+    static allowedMethods = [save_with_images: "POST", save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -48,6 +51,44 @@ class ExperimentController {
 
     def edit(Experiment experiment) {
         respond experiment
+    }
+
+    private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
+
+    @Transactional
+    @Secured(['ROLE_PENDING_USER'])
+    def save_with_images(){
+
+        def files = request.getMultiFileMap()["images"]
+
+        def hasErrors
+        files.each { file ->
+            if (!okcontents.contains(file.getContentType())) {
+                flash.message = "Document must be one of: ${okcontents}"
+                hasErrors = true
+            }
+        }
+        if(hasErrors){
+            redirect controller: "welcome", action: "experimentos"
+            return
+        }
+
+        def experiment = new Experiment(params).save()
+        springSecurityService.currentUser.addToExperiments(experiment).save()
+        def webrootDir = servletContext.getRealPath("/")
+        def experimentDir = new File(webrootDir + "experiments/" + experiment.id.toString() + "/")
+
+        if (!experimentDir.exists()) {
+            experimentDir.mkdirs()
+        }
+
+        File fileDest
+        files.eachWithIndex{ file,i->
+            fileDest = new File(webrootDir, "experiments/" + experiment.id.toString() + "/"+ i.toString())
+            file.transferTo(fileDest)
+        }
+        flash.message = "Experimento creado con exito"
+		redirect controller: "welcome", action: "experimentos"
     }
 
     @Transactional

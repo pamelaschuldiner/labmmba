@@ -5,8 +5,13 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class WelcomeController {
 
+    def springSecurityService
 
-    def index() { }
+    def index() {
+        if( springSecurityService.isLoggedIn()){
+            render(view: 'resumenperfil')
+        }
+    }
 
  
     def about() {
@@ -28,7 +33,9 @@ class WelcomeController {
 
     	render(view: 'blog.gsp')
 
-    	 } 
+    	 }
+
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def estudios() {
 
         render(view: 'estudios.gsp')
