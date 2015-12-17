@@ -1,8 +1,11 @@
 package labmmba
 
+<<<<<<< HEAD
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['permitAll'])
+=======
+>>>>>>> origin/master
 class WelcomeController {
 
 

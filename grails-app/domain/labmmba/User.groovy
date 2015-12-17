@@ -10,14 +10,21 @@ class User implements Serializable {
 	String firstname
 	String lastname
 	String password
+<<<<<<< HEAD
+=======
+    String pic
+>>>>>>> origin/master
     String email
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
 
+<<<<<<< HEAD
 	static hasMany = [books: Book, events: Event, experiments: Experiment, fields: Field, proyects: Proyect, magazines: Magazine, studys: Study]
 
+=======
+>>>>>>> origin/master
 	User(String username, String password) {
 		this()
 		this.username = username

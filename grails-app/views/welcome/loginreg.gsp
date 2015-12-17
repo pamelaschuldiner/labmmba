@@ -55,7 +55,11 @@
                         <g:link controller="welcome" action="index">Home</g:link>
                     </li>
                     <li>
+<<<<<<< HEAD
                         <g:link controller="welcome" action="about">Sobre Nosotros</g:link>
+=======
+                        <g:link controller="welcome" action="about">About</g:link>
+>>>>>>> origin/master
                     </li>
                     <li>
                         <g:link controller="welcome" action="blog">Blog</g:link>
@@ -107,13 +111,18 @@
         <div class="row">
             <div class="side-left col-sm-4 col-md-4">
 
+<<<<<<< HEAD
                 <h3 class="lead"> Registro en Labmmba</h3><hr>
+=======
+                <h3 class="lead"> Estudios </h3><hr>
+>>>>>>> origin/master
                 <ul class="input-list style-2 clearfix">
                 <g:form controller="study" action="save2">
                     <p><div id="dynamicInput">
                             <form>
                                   <table>
                                     <tr><p>
+<<<<<<< HEAD
                                       <td align="left">Nombres:     </td>
                                       <td align="left"><g:textField name="study_name" class="others" size="40"/></td>
                                     </tr></p>
@@ -128,13 +137,52 @@
                                     <tr><p>
                                       <td align="left">Confirmar Contraseña:     </td>
                                       <td align="left"><g:passwordField name="myPasswordField" value="${myPassword}" class="others" size="40"/></td>
+=======
+                                      <td align="left">Tipo de Estudio:     </td>
+                                      <td align="left">                            <select>
+                                      <option value="Pregrado" name="study_type">Pregrado</option>
+                                      <option value="Postgrado" name="study_type">Postgrado</option>
+                                    </select></td>
+                                    </tr> </p>
+                                    <tr><p>
+                                      <td align="left">Nombre Estudio:     </td>
+                                      <td align="left"><g:textField name="study_name" class="others" size="40"/></td>
+                                    </tr></p>
+                                    <tr><p>
+                                      <td align="left">Universidad:     </td>
+                                      <td align="left"><g:textField name="uni_name" class="others" size="40"/></td>
+                                    </p></tr>
+                                    <tr><p>
+                                      <td align="left">País:     </td>
+                                      <td align="left"><g:textField name="uni_count" class="others" size="40"/></td>
+                                    </p></tr>
+                                    <tr><p>
+                                      <td align="left">Tesis:     </td>
+                                      <td align="left"><g:textField name="thesis_name" class="others" size="40"/></td>
+                                    </p></tr>
+                                    <tr><p>
+                                      <td align="left">Profesor Tutor:     </td>
+                                      <td align="left"><g:textField name="thesis_tutor" class="others" size="40"/></td>
+                                    </p></tr>
+                                    <tr><p>
+                                      <td align="left">Profesor Cotutor:     </td>
+                                      <td align="left"><g:textField name="thesis_cotutor" class="others" size="40"/></td>
+                                    </p></tr>
+                                    <tr><p>
+                                      <td align="left">PDF Tesis:     </td>
+                                      <td align="left"><g:textField name="thesis_url" class="others" size="40"/></td>
+>>>>>>> origin/master
                                     </p></tr>
                                   </table>
                                 </form>
                         </div>
+<<<<<<< HEAD
                             <br>
                                 <br>
                         <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'enviar.png')}"/>
+=======
+                        <g:actionSubmit value="Save"/>
+>>>>>>> origin/master
                     </p>
                 </g:form>
                 </ul>
@@ -142,7 +190,11 @@
 
             <div class="col-sm-8 col-md-8">
 
+<<<<<<< HEAD
                 <g:img dir="assets" file="sidebar.jpg" alt="" height="600"/>
+=======
+
+>>>>>>> origin/master
             </div>  
         </div>    
     </div>  

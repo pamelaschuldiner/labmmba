@@ -64,9 +64,12 @@
                     <li>
                         <g:link controller="welcome" action="contact">Contact</g:link>
                     </li>
+<<<<<<< HEAD
                     <li>
                     <a href='<c:url value='j_spring_security_logout'/>'> Logout</a>
                     </li>
+=======
+>>>>>>> origin/master
                 </ul>         
             </div>
         </div>
@@ -94,8 +97,15 @@
                             <td align="left"><input type="file" name="thesis_ad" size="40"></td>
                         </p></tr>
                     </table>
+<<<<<<< HEAD
                     <p>URL Archivo compartido en Google Docs:    <input type="text" id="myText" class="others"> </p>
                     <p><input type="image" src="/assets/ingresar.png" alt="Submit" onclick="myFunction()"></p>
+=======
+                    <p><input type="image" src="/assets/subir.png" alt="Submit" onclick="myFunction2()"></p>
+                    <p>URL Archivo compartido en Google Docs:    <input type="text" id="myText" class="others"> </p>
+                    <p><input type="image" src="/assets/ingresar.png" alt="Submit" onclick="myFunction()"></p>
+
+>>>>>>> origin/master
                     <p id="demo"></p>
 
                 </ul>
@@ -198,10 +208,14 @@
         document.getElementById("demo").innerHTML = "<p><iframe src='"+ x +"' width='750' height='600' frameborder='4'></iframe></p>";
 
     }
+<<<<<<< HEAD
 
 </script>
   <script>
 function myFunction2()(){
+=======
+    function myFunction2()(){
+>>>>>>> origin/master
         document.getElementById("file").download = {$springSecurityService.currentUser.id} + ".docx";
 }
 </script>

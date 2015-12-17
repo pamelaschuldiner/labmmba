@@ -2,12 +2,18 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+<<<<<<< HEAD
 import grails.plugin.springsecurity.annotation.Secured
+=======
+>>>>>>> origin/master
 
 @Transactional(readOnly = true)
 class ProyectController {
 
+<<<<<<< HEAD
     def springSecurityService
+=======
+>>>>>>> origin/master
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -23,7 +29,10 @@ class ProyectController {
         respond new Proyect(params)
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     @Transactional
     def save(Proyect proyect) {
         if (proyect == null) {
@@ -49,6 +58,7 @@ class ProyectController {
         }
     }
 
+<<<<<<< HEAD
     @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     @Transactional
     def user_save(){
@@ -64,6 +74,8 @@ class ProyectController {
         }
 
     }
+=======
+>>>>>>> origin/master
     def edit(Proyect proyect) {
         respond proyect
     }

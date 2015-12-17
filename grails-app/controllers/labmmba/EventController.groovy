@@ -2,6 +2,7 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+<<<<<<< HEAD
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ADMIN_ROLE'])
@@ -9,6 +10,12 @@ import grails.plugin.springsecurity.annotation.Secured
 class EventController {
 
     def springSecurityService
+=======
+
+@Transactional(readOnly = true)
+class EventController {
+
+>>>>>>> origin/master
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -49,6 +56,7 @@ class EventController {
         }
     }
 
+<<<<<<< HEAD
     private static final okcontents = ['application/pdf']
 
     @Secured(['ROLE_USER','ROLE_PENDING_USER'])
@@ -79,6 +87,8 @@ class EventController {
 
     }
 
+=======
+>>>>>>> origin/master
     def edit(Event event) {
         respond event
     }

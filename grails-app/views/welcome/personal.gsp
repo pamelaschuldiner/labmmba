@@ -84,10 +84,14 @@
 
                 <h3 class="lead"> Área Personal </h3><hr>
                 <ul class="input-list style-2 clearfix">
+<<<<<<< HEAD
                     <g:if test="${flash.message}">
                         <div class="message" role="status">${flash.message}</div>
                     </g:if>
                     <g:form controller="user" action="update_personal_data" enctype="multipart/form-data">
+=======
+                <form action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi" enctype="multipart/form-data" method="post">
+>>>>>>> origin/master
                     <table>
                         <p>Datos Personales</p>
                         <tr><p>
@@ -101,7 +105,11 @@
                                             <p>          </p>
                         <tr><p>
                           <td align="left">Foto de perfil:     </td>
+<<<<<<< HEAD
                           <td align="left"><input type="file" name="avatar" size="40"></td>
+=======
+                          <td align="left"><input type="file" name="pic" size="40"></td>
+>>>>>>> origin/master
                         </tr></p>
                     </table>
                     <p>          </p>
@@ -109,8 +117,13 @@
                 <tr><p>
                     <td align="left">Cargo en Laboratorio: </td>
                         <td align="left">
+<<<<<<< HEAD
                             <select class="others" size="8" name="labrol">
                             <option selected="selected" required="true">Seleccione cargo en laboratorio...</option>
+=======
+                            <select class="others">
+                            <option selected="selected">Seleccione cargo en laboratorio...</option>
+>>>>>>> origin/master
                             <option name="choice" id="choice1" type="radio" value="Estudiante Pregrado" onclick="hideTextBox()" class="others"/><label for="choice1">Estudiante Pregrado</label>
                             <option name="choice" id="choice2" type="radio" value="Estudiante Postgrado" onclick="hideTextBox()" class="others"/><label for="choice2">Estudiante Postgrado</label>
                             <option name="choice" id="choice3" type="radio" value="Trabajador" onclick="hideTextBox()" class="others"/><label for="choice3">Trabajador</label>
@@ -121,13 +134,18 @@
                         </select></p>
                                 <p>
                                     <div id="otherTextBox" style="display:none;visibility:hidden;">
+<<<<<<< HEAD
                                         <input type="text" placeholder=":focus" class="others" name="labrol" id="othertext">
+=======
+                                        <input type="text" placeholder=":focus" class="focus" name="lastname" id="othertext">
+>>>>>>> origin/master
                                     </div>
                                 </p></td>
                     </tr></p>
                                         <p>          </p>
                     <tr><p>
                     <td align="left">Área de Investigación</td>
+<<<<<<< HEAD
                         <td align="left">
                             <select class="others" size="6" name="campo">
                             <option selected="selected">Seleccione área de investigación...</option>
@@ -140,12 +158,30 @@
                             <p>
                                 <div id="otherTextBox2" style="display:none;visibility:hidden;">
                                     <input type="text" placeholder=":focus" class="others" name="campo" id="othertext2">
+=======
+                        <td align="left"><select class="others">
+                              <option selected="selected">Seleccione área de investigación...</option>
+                              <option name="choice" id="choice1" type="radio" value="Biotecnología Vegetal" onclick="hideTextBox2()" class="others"/><label for="choice1">Biotecnología Vegetal</label>
+                              <option name="choice" id="choice1" type="radio" value="Compuestos Bioactivos" onclick="hideTextBox2()" class="others"/><label for="choice2">Compuestos Bioactivos</label>
+                              <option name="choice" id="choice1" type="radio" value="Microbiología" onclick="hideTextBox2()" class="others"/><label for="choice3">Microbiología</option>
+                              <option name="choice" id="choice1" type="radio" value="Biotecnología" onclick="hideTextBox2()" class="others"/><label for="choice4">Biotecnología Ambiental</label>
+                              <option name="choice" id="choice5" type="radio" value="Otro" onclick="displayTextBox2()" class="others"/><label for="choice5">Otro</label>
+                        </select>
+                            <p> 
+                                <div id="otherTextBox2" style="display:none;visibility:hidden;">
+                                    <input type="text" placeholder=":focus" class="focus" name="lastname" id="othertext2">
+>>>>>>> origin/master
                                 </div>
                             </p></td>
                     </tr></p>
                     </table>
+<<<<<<< HEAD
                     <g:actionSubmitImage value="update_personal_data" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
+=======
+                    <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
+                </form> 
+>>>>>>> origin/master
                 </ul>
             </div>
 

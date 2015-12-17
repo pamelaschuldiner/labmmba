@@ -3,6 +3,10 @@ package labmmba
 class Thesi {
 
 	String thesis_name
+<<<<<<< HEAD
+=======
+	String thesis_url
+>>>>>>> origin/master
 	String thesis_tutor
 	String thesis_cotutor
 
