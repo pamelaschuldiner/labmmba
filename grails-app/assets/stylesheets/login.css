@@ -1,0 +1,89 @@
+
+
+#wrap {
+  margin: 0 auto 30px;
+}
+
+#regbar {
+  height: 20px;
+  background-color: transparent;
+  text-align: center;
+  color: #777777;
+  padding: 10px 15px;
+  margin: 3px;
+  border-radius: 4px;
+}
+
+#navthing {
+  margin-left: 0px;
+}
+
+.login {
+  position: absolute;
+  width: 350px;
+  display: none;
+}
+
+fieldset {
+  border: none;
+  text-align: left;  
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #ecf0f1;
+  left: 2%;
+  position: relative;
+  top: 0px;
+}
+
+.formholder {
+  background: #ecf0f1; /*ecf0f1*/
+  width: 200px;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.formholder input[type="email"], .formholder input[type="password"] {
+  padding: 7px 3px;
+  margin: 10px 0;
+  width: 96%;
+  display: block;
+  font-size: 10px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.formholder input[type="email"]:focus, .formholder input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px #1F634F;
+}
+.formholder input[type="submit"] {
+  background: #1F634F;
+  padding: 5px;
+  font-size: 10px;
+  display: block;
+  width: 50%;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+.formholder input[type="submit"]:hover {
+  background: #1F634F;
+
+}
+
+.randompad {
+  padding: 10px;
+}
+
+.green {
+  color: #777777;
+}
+
+
