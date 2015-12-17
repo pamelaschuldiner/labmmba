@@ -2,13 +2,9 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-import grails.plugin.springsecurity.annotation.Secured
 
-@Secured('ROLE_ADMIN')
 @Transactional(readOnly = true)
 class ThesiController {
-
-    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -17,26 +13,14 @@ class ThesiController {
         respond Thesi.list(params), model:[thesiCount: Thesi.count()]
     }
 
-    @Secured(['permitAll'])
     def show(Thesi thesi) {
-        def webrootDir = servletContext.getRealPath("/")
-        def path = webrootDir + "thesis/" + thesi.id.toString() + ".pdf"
-        def thesis = new File(path)
-        if(thesis.exists()){
-            render(contentType: "multipart/form-data", file: new File(path), fileName: thesi.thesis_name + ".pdf" )
-        }
-        else{
-            flash.message = "El usuario no a subido el pdf"
-            redirect(controller: "user",action: "show")
-        }
+        respond thesi
     }
 
-    @Secured(['ROLE_USER'])
     def create() {
         respond new Thesi(params)
     }
 
-    @Secured(['ROLE_USER'])
     @Transactional
     def save(Thesi thesi) {
         if (thesi == null) {
@@ -51,13 +35,12 @@ class ThesiController {
             return
         }
 
-        thesi.addToStudys(Study.findById(params.studyId))
         thesi.save flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'thesi.label', default: 'Thesi'), thesi.id])
-                redirect springSecurityService.currentUser
+                redirect thesi
             }
             '*' { respond thesi, [status: CREATED] }
         }
@@ -65,35 +48,6 @@ class ThesiController {
 
     def edit(Thesi thesi) {
         respond thesi
-    }
-    private static final okcontents = ['application/pdf']
-
-    @Secured(['ROLE_USER'])
-    @Transactional
-    def upload_thesis() {
-
-        def user = User.findById(springSecurityService.principal.id)
-
-        // Get the avatar file from the multi-part request
-        def f = request.getFile('thesi')
-        // List of OK mime-types
-        if (!okcontents.contains(f.getContentType())) {
-            flash.message = "Document must be one of: ${okcontents}"
-            redirect(controller: "user", action: "show")
-            return
-        }
-
-        def webrootDir = servletContext.getRealPath("/")
-        def thesiDIr = new File(webrootDir + "thesis")
-
-        if (!thesiDIr.exists()) {
-            thesiDIr.mkdirs()
-        }
-        File fileDest = new File(webrootDir, "thesis/" + params.id.toString() + ".pdf")
-        f.transferTo(fileDest)
-
-        flash.message = "Thesis uploaded."
-        redirect(controller: "user", action: "show")
     }
 
     @Transactional
@@ -139,6 +93,10 @@ class ThesiController {
             }
             '*'{ render status: NO_CONTENT }
         }
+    }
+
+        def list() {
+        [thesis: Thesi.list(params)]
     }
 
     protected void notFound() {

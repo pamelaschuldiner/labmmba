@@ -1,7 +1,5 @@
 package labmmba
 
-import java.sql.Blob
-
 class User implements Serializable {
 
 	private static final long serialVersionUID = 1
@@ -12,15 +10,12 @@ class User implements Serializable {
 	String firstname
 	String lastname
 	String password
+    String pic
     String email
-	File avatarURL
-	String avatarType
-	boolean enabled = false
+	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-
-	static hasMany = [books: Book, events: Event, experiments: Experiment, fields: Field, proyects: Proyect, magazines: Magazine, studys: Study]
 
 	User(String username, String password) {
 		this()
@@ -66,11 +61,11 @@ class User implements Serializable {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
-		avatarURL(nullable:true)
-		avatarType(nullable:true)
 	}
 
 	static mapping = {
 		password column: '`password`'
+		proyects joinTable: [name: "proyect_user", key: 'm_user_id' ]
+
 	}
 }

@@ -94,6 +94,9 @@ class EventController {
             '*'{ render status: NO_CONTENT }
         }
     }
+        def list() {
+        [studys: Study.list(params)]
+    }
 
     protected void notFound() {
         request.withFormat {

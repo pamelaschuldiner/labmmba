@@ -2,13 +2,9 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-import grails.plugin.springsecurity.annotation.Secured
 
-@Secured('ROLE_ADMIN')
 @Transactional(readOnly = true)
 class StudyController {
-
-    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -21,12 +17,10 @@ class StudyController {
         respond study
     }
 
-    @Secured(['ROLE_USER'])
     def create() {
         respond new Study(params)
     }
 
-    @Secured(['ROLE_USER'])
     @Transactional
     def save(Study study) {
         if (study == null) {
@@ -42,14 +36,11 @@ class StudyController {
         }
 
         study.save flush:true
-        def user = springSecurityService.currentUser
-        study.addToUsers(user).save()
-        University.findByUni_name(params.university).addToStudys(study).save()
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'study.label', default: 'Study'), study.id])
-                redirect user
+                redirect study
             }
             '*' { respond study, [status: CREATED] }
         }
@@ -57,6 +48,10 @@ class StudyController {
 
     def edit(Study study) {
         respond study
+    }
+
+    def list() {
+        [studys: Study.list(params)]
     }
 
     @Transactional
@@ -74,7 +69,6 @@ class StudyController {
         }
 
         study.save flush:true
-
 
         request.withFormat {
             form multipartForm {
@@ -114,4 +108,19 @@ class StudyController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    def save2() {
+        def study = new Study(params)
+        def university = new University(params)
+        def thesis = new Thesi(params)
+        study.save()
+        university.save()
+        thesis.save()
+        render "Success!"
+    }
+
+    def show2() {
+        def study = Study.get(params.study_name)
+
+    }
+
 }

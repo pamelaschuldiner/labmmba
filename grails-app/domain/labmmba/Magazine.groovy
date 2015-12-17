@@ -1,7 +1,8 @@
 package labmmba
 
 class Magazine {
-    String mag_name
+    String mag_url
+    
 
     static hasMany = [users: User]
     static belongsTo = User

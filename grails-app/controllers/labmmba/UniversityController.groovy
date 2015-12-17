@@ -2,10 +2,8 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
-@Secured('ROLE_ADMIN')
 class UniversityController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -19,12 +17,10 @@ class UniversityController {
         respond university
     }
 
-    @Secured(['ROLE_USER'])
     def create() {
         respond new University(params)
     }
 
-    @Secured(['ROLE_USER'])
     @Transactional
     def save(University university) {
         if (university == null) {
@@ -44,7 +40,7 @@ class UniversityController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'university.label', default: 'University'), university.id])
-                redirect(controller: "study", action: "create")
+                redirect university
             }
             '*' { respond university, [status: CREATED] }
         }
@@ -77,6 +73,9 @@ class UniversityController {
             }
             '*'{ respond university, [status: OK] }
         }
+    }
+        def list() {
+        [universitys: University.list(params)]
     }
 
     @Transactional
