@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 <%@ page import="labmmba.University" %>
-=======
->>>>>>> origin/master
 <!doctype html>
 <html lang="en">
     <head>
@@ -112,7 +109,6 @@
 
                 <h3 class="lead"> Estudios </h3><hr>
                 <ul class="input-list style-2 clearfix">
-<<<<<<< HEAD
                       <g:if test="${flash.message}">
                         <div class="message" role="status">${flash.message}</div>
                       </g:if>
@@ -133,30 +129,10 @@
                                     </p></tr>
                                     <tr><p>
                                       <td align="left">*Universidad:     </td>
-=======
-                    <p><div id="dynamicInput">
-                            <g:form controller="study" action="save2">
-                                  <table>
-                                    <tr><p>
-                                      <td align="left"> Tipo de Estudio:</td>
-                                      <td align="left"><select class="others">
-                                        <option selected="selected">Selecione tipo de estudio...</option>
-                                        <option value="Pregrado" name="study_type" class="others">Pregrado</option>
-                                        <option value="Postgrado" name="study_type" class="others">Postgrado</option>
-                                    </select></td>
-                                    </tr> </p>
-                                    <tr><p>
-                                      <td align="left">*Nombre Estudio:     </td>
-                                      <td align="left"><g:textField name="study_name" class="others" size="40"/></td>
-                                    </tr></p>
-                                    <tr><p>
-                                      <td align="left">*Universidad:     </td>
->>>>>>> origin/master
                                       <td align="left"><g:textField name="uni_name" class="others" size="40"/></td>
                                     </p></tr>
                                     <tr><p>
                                       <td align="left">*País:     </td>
-<<<<<<< HEAD
                                       <td align="left"><g:countrySelect name="uni_count" class="others"/></td>
                                     </p></tr>
                                     <tr><p>
@@ -170,17 +146,6 @@
                                     <tr><p>
                                       <td align="left">*Profesor Tutor:     </td>
                                       <td align="left"><g:textField name="thesis_tutor" class="others" size="40" required="true"/></td>
-=======
-                                      <td align="left"><g:textField name="uni_count" class="others" size="40"/></td>
-                                    </p></tr>
-                                    <tr><p>
-                                      <td align="left">*Tesis:     </td>
-                                      <td align="left"><g:textField name="thesis_name" class="others" size="40"/></td>
-                                    </p></tr>
-                                    <tr><p>
-                                      <td align="left">*Profesor Tutor:     </td>
-                                      <td align="left"><g:textField name="thesis_tutor" class="others" size="40"/></td>
->>>>>>> origin/master
                                     </p></tr>
                                     <tr><p>
                                       <td align="left">Profesor Cotutor:     </td>
@@ -188,22 +153,12 @@
                                     </p></tr>
                                     <tr><p>
                                       <td align="left">PDF Tesis:     </td>
-<<<<<<< HEAD
                                       <td align="left"><input type="file" name="thesis" size="40" required="true"/></p>
                                     </tr></p>
                                   </table>
 
                         </div>
                         <g:actionSubmitImage value="multi_save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
-=======
-                                      <td align="left"><input type="file" name="thesis_url" size="40"></td>
-                                    </tr></p>
-                                  </table>
-                                </form>
-
-                        </div>
-                        <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
->>>>>>> origin/master
                          <p>(*) Campos obligatorios</p>
                     </p>
                 </g:form>

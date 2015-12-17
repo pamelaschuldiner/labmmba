@@ -2,7 +2,6 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-<<<<<<< HEAD
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['permitAll'])
@@ -10,12 +9,6 @@ import grails.plugin.springsecurity.annotation.Secured
 class StudyController {
 
     def springSecurityService
-=======
-
-@Transactional(readOnly = true)
-class StudyController {
-
->>>>>>> origin/master
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -118,7 +111,6 @@ class StudyController {
             '*'{ render status: NOT_FOUND }
         }
     }
-<<<<<<< HEAD
 
     private static final okcontents = ['application/pdf']
 
@@ -170,16 +162,6 @@ class StudyController {
 
         redirect action:"estudios", controller:"welcome"
 
-=======
-    def save2() {
-        def study = new Study(params)
-        def university = new University(params)
-        def thesis = new Thesi(params)
-        study.save()
-        university.save()
-        thesis.save()
-        render "Success!"
->>>>>>> origin/master
     }
 
     def show2() {

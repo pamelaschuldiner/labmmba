@@ -6,7 +6,6 @@ import labmmba.UserRole
 
 class BootStrap {
 
-<<<<<<< HEAD
     def init = {
 		def adminRole = new Role('ROLE_ADMIN').save()
 		new Role('ROLE_USER').save()
@@ -17,15 +16,6 @@ class BootStrap {
 
 		def testUser = new User(username:'test',password:'test',email:'test@test.test',firstname:"test",lastname:"test",enabled:true).save()
 		UserRole.create testUser, pendingRole, true
-=======
-    def init = { 
-		def adminRole = new Role('ROLE_ADMIN').save()
-		new Role('ROLE_USER').save()
-		new Role('ROLE_PENDING_USER').save()
-		
-		def admin = new Administrator(username:'admin',password:'admin',email:'admin@admin.admin').save()
-		AdministratorRole.create admin, adminRole, true
->>>>>>> origin/master
 		
     }
     def destroy = {

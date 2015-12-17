@@ -8,12 +8,8 @@ import grails.plugin.springsecurity.annotation.Secured
 @Transactional(readOnly = true)
 class UserController {
 
-<<<<<<< HEAD
     def springSecurityService
     static allowedMethods = [update_personal_data: "POST", save: "POST", update: "PUT", delete: "DELETE"]
-=======
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
->>>>>>> origin/master
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -35,11 +31,7 @@ class UserController {
     }
 
     @Transactional
-<<<<<<< HEAD
     @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN'])
-=======
-    @Secured("ROLE_ANONYMOUS")
->>>>>>> origin/master
     def save(User user) {
         if (user == null) {
             transactionStatus.setRollbackOnly()
@@ -54,26 +46,16 @@ class UserController {
         }
 
         user.save flush:true
-<<<<<<< HEAD
         UserRole.create user, Role.findByAuthority('ROLE_PENDING_USER'), true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
                 redirect(controller: "user", action: "create")
-=======
-		UserRole.create user, Role.findByAuthority('ROLE_PENDING_USER'), true
-		
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect (controller: "user" , action:"create")
->>>>>>> origin/master
             }
             '*' { respond user, [status: CREATED] }
         }
     }
-<<<<<<< HEAD
 
     @Transactional
     def promote(User user){
@@ -91,25 +73,13 @@ class UserController {
         user.enabled = true
         user.save()
         request.withFormat {
-=======
-	@Transactional
-	def approve(User user){
-		UserRole.findByUser(user).delete()
-		UserRole.create user, Role.findByAuthority('ROLE_USER'), true 
-		request.withFormat {
->>>>>>> origin/master
             form multipartForm {
                 flash.message = message(code: '{0} {1} aprobado', args: [message(code: 'user.label', default: 'User'), user.username])
                 redirect user
             }
-<<<<<<< HEAD
         }
     }
 
-=======
-		}
-	}
->>>>>>> origin/master
     def edit(User user) {
         respond user
     }
@@ -139,7 +109,6 @@ class UserController {
         }
     }
 
-<<<<<<< HEAD
     private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
 
     @Secured(['ROLE_PENDING_USER','ROLE_USER'])
@@ -225,8 +194,6 @@ class UserController {
         redirect action:"personal", controller:"welcome"
     }
 
-=======
->>>>>>> origin/master
     @Transactional
     def delete(User user) {
 

@@ -8,10 +8,6 @@ class Event {
     String event_count
     Date event_datei
     Date event_datef
-<<<<<<< HEAD
-=======
-    String event_purl
->>>>>>> origin/master
     String event_pname
 
     static hasMany = [users: User]

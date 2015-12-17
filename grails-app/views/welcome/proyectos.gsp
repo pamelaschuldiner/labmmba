@@ -85,14 +85,10 @@
 
                 <h3 class="lead"> Proyectos </h3><hr>
                 <ul class="input-list style-2 clearfix">
-<<<<<<< HEAD
                     <g:if test="${flash.message}">
                         <div class="message" role="status">${flash.message}</div>
                     </g:if>
                 <g:form action="user_save" controller="proyect" enctype="multipart/form-data" method="post">
-=======
-                <form action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi" enctype="multipart/form-data" method="post">
->>>>>>> origin/master
                     <table>
                         <tr><p>
                           <td align="left">*Nombre proyecto:     </td>
@@ -100,12 +96,8 @@
                         </tr></p>
                         <tr><p>
                           <td align="left">*Años de ejecución:     </td>
-<<<<<<< HEAD
                           <td align="left">Desde  <div class="others"> <g:datePicker name="proy_start" precision="year" noSelection="['':'-Choose-']" relativeYears="[-50..0]"/> </div>
                                            Hasta  <div class="others"> <g:datePicker name="proy_end" precision="year" noSelection="['':'-Choose-']" relativeYears="[-50..0]"/> </div>   </td>
-=======
-                          <td align="left">Desde  <g:textField name="proy_start" type="date" class="others" size="10"/> Hasta   <g:textField name="event_end" class="others" size="10"/>    Ej: 2001</td>
->>>>>>> origin/master
                         </tr></p>
                         <tr><p>
                           <td align="left">*Cargo en proyecto:     </td>
@@ -117,13 +109,8 @@
                         </tr></p>
                     </table>
                     <p></p>
-<<<<<<< HEAD
                     <g:actionSubmitImage value="user_save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
-=======
-                    <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
-                </form> 
->>>>>>> origin/master
                 </ul>
             </div>
 
