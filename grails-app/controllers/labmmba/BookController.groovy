@@ -2,10 +2,12 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
 class BookController {
 
+    def springSecurityService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -73,6 +75,39 @@ class BookController {
             }
             '*'{ respond book, [status: OK] }
         }
+    }
+
+    private static final okcontents = ['application/pdf']
+
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    @Transactional
+    def upload() {
+
+        def f = request.getFile("pdf")
+
+        if (!okcontents.contains(f.getContentType())) {
+            flash.message = "Document must be one of: ${okcontents}"
+            redirect action:"publicaciones", controller:"welcome"
+            return
+        }
+
+        def book = new Book(params).save(flush: true)
+        springSecurityService.currentUser.addToBooks(book).save()
+
+        def webrootDir = servletContext.getRealPath("/")
+        def bookDir = new File(webrootDir + "books")
+
+        if (!bookDir.exists()) {
+            bookDir.mkdirs()
+        }
+
+        File fileDest = new File(webrootDir, "books/" + book.id.toString() + ".pdf")
+        f.transferTo(fileDest)
+
+        flash.message = "Exito al crear items"
+
+        redirect action:"publicaciones", controller:"welcome"
+
     }
 
     @Transactional

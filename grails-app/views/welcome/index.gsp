@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand wow fadeInDownBig" href="welcome/index"><img src="assets/slider/office.jpg" width="341" alt="Labmmba"></a>  
+                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a> 
             </div>
         
             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
@@ -55,7 +55,7 @@
                         <g:link controller="welcome" action="index">Home</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="about">About</g:link>
+                        <g:link controller="welcome" action="about">Sobre Nosotros</g:link>
                     </li>
                     <li>
                         <g:link controller="welcome" action="blog">Blog</g:link>
@@ -66,6 +66,10 @@
                     <li>
                         <g:link controller="welcome" action="contact">Contact</g:link>
                     </li>
+                    <sec:ifLoggedIn>
+                    <li><a href='<c:url value='j_spring_security_logout'/>'> Logout</a></li>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
                     <li><div id="wrap">
                       <div id="regbar">
                         <div id="navthing">
@@ -74,7 +78,7 @@
                           <div class="arrow-up"></div>
                           <div class="formholder">
                             <div class="randompad">
-                                <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                               <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
                                     <p>
                                         <label for="username">Nombre de usuario:</label>
                                         <input type="text" class="text_" name="j_username" id="username">
@@ -101,6 +105,8 @@
                         </div>
                       </div>
                     </div></li>
+                    </sec:ifNotLoggedIn>
+
                 </ul>         
             </div>
         </div>
@@ -126,17 +132,16 @@
                     <div class="carousel-inner">
                         <!-- Begin Slide 1 -->
                         <div class="item active">
-                            <img src="assets/slider/slide21.jpg" height="400" alt="">
+                            <g:img dir="assets/slider" file="slide21.jpg" alt="" height="400" widgth="100%"/>
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">Office BOOTSTRAP TEMPLATE</h3>
                                 <p class="carousel-body">RESPONSIVE \ MULTI PAGE</p>
                             </div>
                         </div>
                         <!-- End Slide 1 -->
-
                         <!-- Begin Slide 2 -->
                         <div class="item">
-                            <img src="assets/slider/slide4.jpg" height="400" alt="">
+                            <g:img dir="assets/slider" file="slide4.jpg" alt="" height="400"/>
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">EASY TO CUSTOMIZE</h3>
                                 <p class="carousel-body">BEAUTIFUL \ CLEAN \ MINIMAL</p>
@@ -146,7 +151,7 @@
 
                         <!-- Begin Slide 3 -->
                         <div class="item">
-                            <img src="assets/slider/slide2.jpg" height="400" alt="">
+                        <g:img dir="assets/slider" file="slide2.jpg" alt="" height="400"/>
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
                                 <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>
@@ -260,11 +265,10 @@
                 </div>
                 <div class="col-md-0">
                     <h3><i class="fa fa-external-link"></i> Links</h3>
-                    <p> <a href="#"> About ( Who we are )</a></p>
-                    <p> <a href="#"> Services ( What we do )</a></p>
-                    <p> <a href="#"> Contact ( Feel free to contact )</a></p>
-                    <p> <a href="#"> Blog ( Write to us )</a></p>
-                    <p> <a href="#"> Team ( Meet the Team )</a></p> 
+                    <p> <g:link controller="welcome" action="about"> Sobre Nosotros ( Quiénes somos )</g:link></p>
+                    <p> <g:link controller="welcome" action="team"> Nuestro Equipo ( Conócenos )</g:link></p>
+                    <p> <g:link controller="welcome" action="news"> Noticias ( Infórmate )</g:link></p>
+                    <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
                 </div>
               <div class="col-md-0">
                 <h3><i class="fa fa-heart"></i> Socialize</h3>

@@ -140,7 +140,7 @@ class UserController {
                 avatarDir.mkdirs()
             }
 
-            File fileDest = new File(webrootDir, "avatars/" + params.id.toString())
+            File fileDest = new File(webrootDir, "avatars/" + user.id.toString())
             f.transferTo(fileDest)
         }
 
@@ -149,18 +149,20 @@ class UserController {
         }
 
         if(params.lastname){
-            user.firstname = params.firstname
+            user.lastname = params.lastname
         }
 
-        if(params.labrol[0]=='Seleccione cargo en laboratorio...'){
+        if(params.labrol[0]!='Seleccione cargo en laboratorio...'){
             if(params.labrol[0]=="Otro"){
                 if(Labrol.findByLabrol_name(params.labrol[1])){
                     rol = Labrol.findByLabrol_name(params.labrol[1])
                 }
                 else{
                     rol = new Labrol(labrol_name: params.labrol[1])
+                    rol.save()
                 }
-                rol.addToUsers(springSecurityService.currentUser)
+                user.labrol = rol
+                user.save()
             }
             else{
                 if(Labrol.findByLabrol_name(params.labrol[0])){
@@ -168,30 +170,48 @@ class UserController {
                 }
                 else{
                     rol = new Labrol(labrol_name: params.labrol[0])
+                    rol.save()
                 }
-                rol.addToUsers(springSecurityService.currentUser)
+                user.labrol = rol
+                user.save()
             }
         }
 
-        if(params.campo[0]=='Seleccione cargo en laboratorio...') {
+        if(params.campo[0]!='Seleccione cargo en laboratorio...') {
             if (params.campo[0] == "Otro") {
                 if (Field.findByField_name(params.campo[1])) {
                     campo = Field.findByField_name(params.campo[1])
                 } else {
                     campo = new Field(field_name: params.campo[1])
                 }
-                rol.addToUsers(springSecurityService.currentUser)
+                campo.addToUsers(springSecurityService.currentUser).save()
             } else {
                 if (Field.findByField_name(params.campo[0])) {
                     campo = Field.findByField_name(params.campo[0])
                 } else {
                     campo = new Field(field_name: params.campo[0])
                 }
-                rol.addToUsers(springSecurityService.currentUser)
+                campo.addToUsers(springSecurityService.currentUser).save()
             }
         }
+
         flash.message = "Datos personales actualizados"
         redirect action:"personal", controller:"welcome"
+    }
+
+    @Secured(['permitAll'])
+    def avatar_image() {
+        def user = User.get(params.id)
+        def webrootDir = servletContext.getRealPath("/")
+        File avatar = new File(webrootDir, "avatars/" + user.id.toString())
+
+        if(!avatar.exists()) {
+            response.status = 404
+        } else {
+            OutputStream out = response.getOutputStream();
+            out.write(avatar.bytes);
+            out.close()
+        }
     }
 
     @Transactional

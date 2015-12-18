@@ -59,7 +59,12 @@ class WelcomeController {
 
         render(view: 'cuenta.gsp')
 
-         } 
+         }
+    def news() {
+
+        render(view: 'news.gsp')
+
+    }
     def avancetesis() {
 
         render(view: 'avancetesis.gsp')

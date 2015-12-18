@@ -2,8 +2,171 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="960a18b8-26c8-452e-96d3-6242f645821d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/controllers/labmmba/EventController.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__delete_closure14$_closure21.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__delete_closure14$_closure22.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__delete_closure14.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__save_closure12$_closure17.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__save_closure12$_closure18.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__save_closure12.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__update_closure13$_closure19.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__update_closure13$_closure20.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$__tt__update_closure13.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_delete_closure11.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_delete_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_edit_closure9.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_index_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_notFound_closure5$_closure15.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_notFound_closure5$_closure16.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_notFound_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_save_closure8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_show_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_update_closure10.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\ProyectController$_update_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__approve_closure20$_closure28.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__approve_closure20.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__delete_closure22$_closure31.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__delete_closure22$_closure32.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__delete_closure22.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__promote_closure19$_closure27.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__promote_closure19.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__save_closure18$_closure25.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__save_closure18$_closure26.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__save_closure18.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__update_closure21$_closure29.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__update_closure21$_closure30.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$__tt__update_closure21.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_approve_closure14.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_delete_closure17.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_delete_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_edit_closure15.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_index_closure9.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_notFound_closure8$_closure23.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_notFound_closure8$_closure24.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_notFound_closure8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_pending_closure10.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_promote_closure13.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_save_closure12.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_show_closure11.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\Desktop\U\Fundamentos_de_Ingenieria_de_Software\vistas\build\classes\main\labmmba\UserController$_update_closure16.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Administrator.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Administrator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/AdministratorController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/AdministratorController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/AdministratorRole.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/AdministratorRole.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Book$__clinit__closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Book$__clinit__closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Book.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Book.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__delete_closure15$_closure22.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__delete_closure15$_closure22.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__delete_closure15$_closure23.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__delete_closure15$_closure23.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__delete_closure15.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__delete_closure15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__save_closure13$_closure18.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__save_closure13$_closure18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__save_closure13$_closure19.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__save_closure13$_closure19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__save_closure13.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__save_closure13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__update_closure14$_closure20.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__update_closure14$_closure20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__update_closure14$_closure21.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__update_closure14$_closure21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__update_closure14.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$__tt__update_closure14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_delete_closure12.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_delete_closure12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_delete_closure4.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_delete_closure4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_edit_closure10.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_edit_closure10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_index_closure7.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_index_closure7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_list_closure5.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_list_closure5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_notFound_closure6$_closure16.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_notFound_closure6$_closure16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_notFound_closure6$_closure17.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_notFound_closure6$_closure17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_notFound_closure6.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_notFound_closure6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_save_closure9.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_save_closure9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_show_closure8.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_show_closure8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_update_closure11.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController$_update_closure11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/BookController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/BookController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Event.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Event.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/EventController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/EventController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Experiment.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Experiment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ExperimentController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ExperimentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Field.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Field.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/FieldController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/FieldController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Labrol.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Labrol.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/LabrolController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/LabrolController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Magazine$__clinit__closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Magazine$__clinit__closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Magazine.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Magazine.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/MagazineController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/MagazineController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Proyect.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Proyect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__delete_closure15$_closure22.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__delete_closure15$_closure22.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__delete_closure15$_closure23.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__delete_closure15$_closure23.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__delete_closure15.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__delete_closure15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__save_closure13$_closure18.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__save_closure13$_closure18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__save_closure13$_closure19.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__save_closure13$_closure19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__save_closure13.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__save_closure13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__update_closure14$_closure20.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__update_closure14$_closure20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__update_closure14$_closure21.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__update_closure14$_closure21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__update_closure14.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$__tt__update_closure14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_create_closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_create_closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_delete_closure12.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_delete_closure12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_delete_closure5.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_delete_closure5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_edit_closure10.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_edit_closure10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_index_closure7.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_index_closure7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_notFound_closure6$_closure16.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_notFound_closure6$_closure16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_notFound_closure6$_closure17.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_notFound_closure6$_closure17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_notFound_closure6.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_notFound_closure6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_save_closure2.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_save_closure2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_save_closure9.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_save_closure9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_show_closure8.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_show_closure8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_update_closure11.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_update_closure11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_update_closure4.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_update_closure4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_user_save_closure3.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController$_user_save_closure3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ProyectController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Role.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Role.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Study.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Study.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/StudyController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/StudyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Thesi$__clinit__closure2.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Thesi$__clinit__closure2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Thesi.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Thesi.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController$_notFound_closure6$_closure17.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController$_notFound_closure6$_closure17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController$_notFound_closure6.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController$_notFound_closure6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/ThesiController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/University$__clinit__closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/University$__clinit__closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/University.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/University.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UniversityController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UniversityController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/User$__clinit__closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/User$__clinit__closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/User$__clinit__closure2.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/User$__clinit__closure2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/User.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure21$_closure29.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure21$_closure29.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure21.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__approve_closure21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure23$_closure32.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure23$_closure32.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure23$_closure33.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure23$_closure33.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure23.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__delete_closure23.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__promote_closure20$_closure28.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__promote_closure20$_closure28.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__promote_closure20.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__promote_closure20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure19$_closure26.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure19$_closure26.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure19$_closure27.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure19$_closure27.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure19.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__save_closure19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure22$_closure30.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure22$_closure30.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure22$_closure31.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure22$_closure31.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure22.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$__tt__update_closure22.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_delete_closure18.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_delete_closure18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure9$_closure24.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure9$_closure24.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure9$_closure25.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure9$_closure25.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure9.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_notFound_closure9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_update_closure17.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController$_update_closure17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/UserRole.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/UserRole.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/Welcome.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/Welcome.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/labmmba/WelcomeController.class" afterPath="$PROJECT_DIR$/build/classes/main/labmmba/WelcomeController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/application.class" afterPath="$PROJECT_DIR$/build/classes/main/application.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/assets/images/pspbrwse.jbf" afterPath="$PROJECT_DIR$/grails-app/assets/images/pspbrwse.jbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/assets/images/slider/slide21.jpg" afterPath="$PROJECT_DIR$/grails-app/assets/images/slider/slide21.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.3/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/labmmba/Book.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/labmmba/Book.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/labmmba/BookController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/labmmba/BookController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/labmmba/Magazine.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/labmmba/Magazine.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/labmmba/MagazineController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/labmmba/MagazineController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/labmmba/WelcomeController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/labmmba/WelcomeController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/welcome/contact.gsp" afterPath="$PROJECT_DIR$/grails-app/views/welcome/contact.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/welcome/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/welcome/index.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/welcome/publicaciones.gsp" afterPath="$PROJECT_DIR$/grails-app/views/welcome/publicaciones.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/welcome/resumenperfil.gsp" afterPath="$PROJECT_DIR$/grails-app/views/welcome/resumenperfil.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/stacktrace.log" afterPath="$PROJECT_DIR$/build/stacktrace.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/welcome/team.gsp" afterPath="$PROJECT_DIR$/grails-app/views/welcome/team.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vistas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,31 +190,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="congresos.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/congresos.gsp">
+      <file leaf-file-name="resumenperfil.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/resumenperfil.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5510206">
-              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="89" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="proyectos.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/proyectos.gsp">
+      <file leaf-file-name="publicaciones.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/publicaciones.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9387755">
-              <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="141" column="87" selection-start-line="141" selection-start-column="87" selection-end-line="141" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProyectController.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/ProyectController.groovy">
+      <file leaf-file-name="BookController.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/BookController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.869566">
-              <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+            <state vertical-scroll-proportion="-6.652174">
+              <caret line="93" column="53" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
               <folding>
                 <element signature="e#17#68#0" expanded="true" />
               </folding>
@@ -59,84 +222,86 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Proyect.groovy" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Proyect.groovy">
+      <file leaf-file-name="Welcome.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Welcome.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WelcomeController.groovy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/WelcomeController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40064102">
+              <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/news.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Book.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Book.groovy">
           <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventController.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/EventController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-34.0">
-              <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="57" />
-              <folding>
-                <element signature="e#17#68#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Event.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Event.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
+            <state vertical-scroll-proportion="0.0">
               <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MagazineController.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/MagazineController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="57" />
+              <folding>
+                <element signature="e#17#68#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Magazine.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Magazine.groovy">
           <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="estudios.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/estudios.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9387755">
-              <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personal.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/personal.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.632653">
-              <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudyController.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/StudyController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3913045">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="29" />
-              <folding>
-                <element signature="e#17#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-53.260868">
-              <caret line="182" column="65" selection-start-line="182" selection-start-column="65" selection-end-line="182" selection-end-column="65" />
-              <folding>
-                <element signature="e#17#68#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -159,20 +324,34 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/WelcomeController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/init/BootStrap.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/application.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/labmmba/Thesi.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/labmmba/Event.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/welcome/congresos.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/EventController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/welcome/estudios.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/welcome/personal.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/StudyController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/welcome/proyectos.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/ProyectController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/user/show.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/welcome/index.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/conf/application.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/labmmba/Thesi.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/application.yml" />
+        <option value="$PROJECT_DIR$/grails-app/views/welcome/experimentos.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/ExperimentController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/welcome/estudios.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/domain/labmmba/University.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/ThesiController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/StudyController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/labmmba/Magazine.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/welcome/resumenperfil.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/MagazineController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/welcome/publicaciones.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/domain/labmmba/Book.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/BookController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/labmmba/WelcomeController.groovy" />
       </list>
     </option>
   </component>
@@ -212,9 +391,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,6 +446,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="welcome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,6 +593,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="gradle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -419,6 +639,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,6 +651,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Grails.Grails:vistas">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -593,6 +817,15 @@
       <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -665,6 +898,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
@@ -688,6 +927,9 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="960a18b8-26c8-452e-96d3-6242f645821d" name="Default" comment="" />
@@ -695,44 +937,50 @@
       <option name="number" value="Default" />
       <updated>1450314231188</updated>
       <workItem from="1450314232445" duration="18062000" />
+      <workItem from="1450361614700" duration="9407000" />
+      <workItem from="1450371553887" duration="374000" />
+      <workItem from="1450381108190" duration="2217000" />
+      <workItem from="1450395299177" duration="2079000" />
+      <workItem from="1450397832234" duration="7617000" />
+      <workItem from="1450406227060" duration="72000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18062000" />
+    <option name="totallyTimeSpent" value="39828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -765,6 +1013,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -773,6 +1029,99 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/congresos.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="89" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/proyectos.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/ProyectController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+          <folding>
+            <element signature="e#17#68#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Proyect.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/EventController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="57" />
+          <folding>
+            <element signature="e#17#68#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Event.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/estudios.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/personal.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/StudyController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="e#17#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="182" column="65" selection-start-line="182" selection-start-column="65" selection-end-line="182" selection-end-column="65" />
+          <folding>
+            <element signature="e#17#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/avancetesis.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5131868">
@@ -781,31 +1130,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/ThesiController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2361111">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/application.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/init/BootStrap.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/EventController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="57" />
+          <folding>
+            <element signature="e#17#68#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/congresos.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="89" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/ProyectController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+          <folding>
+            <element signature="e#17#68#0" expanded="false" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Proyect.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/user/admin_page.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/user/edit.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/assets/stylesheets/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15224192">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/error.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/UrlMappings.groovy">
@@ -816,67 +1212,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/WelcomeController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/logback.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.130435">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/application.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.444445">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/init/BootStrap.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/spring/resources.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="53" />
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/ExperimentController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+          <folding>
+            <element signature="e#17#68#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Thesi.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Event.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/user/show.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.3923077">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="37" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Study.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5043956">
+          <caret line="84" column="59" selection-start-line="76" selection-start-column="31" selection-end-line="95" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/University.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/ThesiController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding>
+            <element signature="e#17#68#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/estudios.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9387755">
-          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="124" column="22" selection-start-line="124" selection-start-column="22" selection-end-line="126" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/personal.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/User.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.632653">
-          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
+        <state vertical-scroll-proportion="-6.189873">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Labrol.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-53.260868">
-          <caret line="182" column="65" selection-start-line="182" selection-start-column="65" selection-end-line="182" selection-end-column="65" />
-          <folding>
-            <element signature="e#17#68#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -890,51 +1354,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/EventController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/UserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.0">
-          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="154" column="8" selection-start-line="154" selection-start-column="8" selection-end-line="177" selection-end-column="9" />
           <folding>
             <element signature="e#17#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/congresos.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/personal.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5510206">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="89" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="99" selection-start-line="89" selection-start-column="76" selection-end-line="89" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Field.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/resumenperfil.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Magazine.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/experimentos.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34395605">
+          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/proyectos.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9387755">
-          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.35494506">
+          <caret line="98" column="52" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="183" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/ProyectController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/MagazineController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.869566">
-          <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="57" />
           <folding>
             <element signature="e#17#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Proyect.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/publicaciones.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="87" selection-start-line="141" selection-start-column="87" selection-end-line="141" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Event.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Book.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/BookController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.652174">
+          <caret line="93" column="53" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+          <folding>
+            <element signature="e#17#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/labmmba/Welcome.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/welcome/news.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/labmmba/WelcomeController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40064102">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

@@ -17,6 +17,7 @@ class User implements Serializable {
 	boolean passwordExpired
 
 	static hasMany = [books: Book, events: Event, experiments: Experiment, fields: Field, proyects: Proyect, magazines: Magazine, studys: Study]
+	static hasOne = [labrol: Labrol]
 
 	User(String username, String password) {
 		this()
@@ -60,6 +61,7 @@ class User implements Serializable {
 	static transients = ['springSecurityService']
 
 	static constraints = {
+		labrol nullable: true
 		username blank: false, unique: true
 		password blank: false
 	}

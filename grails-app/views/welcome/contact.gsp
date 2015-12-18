@@ -1,72 +1,105 @@
 <!doctype html>
 <html lang="en">
     <head>
+        
         <meta charset="utf-8">
-        <title>Office</title>
+        <title>Lammba - Laboratorio de Microbiología Molecular y Biotecnología Ambiental</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" type="text/css" media="all" href="assets/css/style-projects.css">
+        <g:external base="http://fonts.googleapis.com/css?family=Open+Sans:400,300" type="css"/>
+        <g:external base="http://fonts.googleapis.com/css?family=PT+Sans" type="css"/>
+        <g:external base="http://fonts.googleapis.com/css?family=Raleway" type="css"/>
+        <g:external dir="assets" file="bootstrap.css" />
+        <g:external dir="assets" file="font-awesome.min.css" />
+        <g:external dir="assets" file="style.css" />
+        <g:external dir="assets" file="animate.min.css" />
+        <g:external dir="assets" file="login.css" />
+        <g:external dir="assets" file="style-projects.css" />
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <g:external dir="assets" file="jquery.cookie.js" />
+        <g:external dir="assets" file="jquery.hoverIntent.minified.js" />
+        <g:external dir="assets" file="jquery.dcjqaccordion.2.7.min.js" />
+        <g:external dir="assets" file="jquery-2.1.3.js" />
         
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.ico">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <g:external dir="assets" file="apple-touch-icon-144-precomposed.png" />
+        <g:external dir="assets" file="apple-touch-icon-114-precomposed.png" />
+        <g:external dir="assets" file="apple-touch-icon-72-precomposed.png" />
+        <g:external dir="assets" file="apple-touch-icon-57-precomposed.png" />
+        <g:external dir="assets" file="favicon.ico" />
     </head>
+  <body>
 
+    <!-- Header -->
+        
+    <nav id="navbar-section" class="navbar navbar-default navbar-static-top navbar-sticky" role="navigation">
+        <div class="container">
+        
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-    <body>
-
-        <!-- Header -->
-        
-        <nav id="navbar-section" class="navbar navbar-default navbar-static-top navbar-sticky" role="navigation">
-            <div class="container">
-        
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand animated fadeInDownBig" href="index.html"><img src="assets/img/slider/Office.png" width="100" alt="Office"></a>      
-                </div>
-        
-                <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav pull-right">
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="blog.html">Blog</a>
-                        </li>
-                        <li>
-                            <a href="team.html">Team</a>
-                        </li>
-                        <li class="active">
-                            <a href="contact.html"><span>Contact</span></a>
-                        </li>
-                    </ul>         
-                </div>
+                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a> 
             </div>
-        </nav>
+        
+            <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <g:link controller="welcome" action="index">Home</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="welcome" action="about">Sobre Nosotros</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="welcome" action="news">Noticias</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="welcome" action="team">Nuestro Equipo</g:link>
+                    </li>
+                    <li class="active">
+                        <g:link controller="welcome" action="contact">Contacto</g:link>
+                    </li>
+                    <sec:ifLoggedIn>
+                    <li><a href='<c:url value='j_spring_security_logout'/>'> Logout</a></li>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                    <li><div id="wrap">
+                      <div id="regbar">
+                        <div id="navthing">
+                          <a href="#" id="loginform">Ingresar</a> | <a href="#">Registrarse</a>
+                        <div class="login">
+                          <div class="arrow-up"></div>
+                          <div class="formholder">
+                            <div class="randompad">
+                               <fieldset>
+                                 <p>Usuario</p>
+                                 <input type="email" value="example@example.com" />
+                                 <p>Contraseña</p>
+                                 <input type="password" />
+                                 <input type="submit" value="Ingresar" />
+                               </fieldset>
+                            </div>
+                          </div>
+                        </div>
 
-        <!--End Header -->
+                        </div>
+                      </div>
+                    </div></li>
+                    </sec:ifNotLoggedIn>
+
+                </ul>         
+            </div>
+        </div>
+    </nav>
+
+    <!-- End Header -->
 
 
         <!-- Main Container -->
@@ -74,7 +107,7 @@
         <div class="container-fluid-kamn">
             <div class="row">
                 <div>
-                    <iframe width="100%" height="450px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3618.727010735933!2d91.837871!3d24.907291700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1404919738144"></iframe>
+                    <iframe width="100%" height="450px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.820903760036!2d-71.59652598510536!3d-33.034848583687975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e08fd59cf72f%3A0xd4edb558ea6e3929!2sUniversidad+T%C3%A9cnica+Federico+Santa+Mar%C3%ADa!5e0!3m2!1ses!2scl!4v1450333627163"></iframe>
                     <br />
                 </div>
                 <div class="col-lg-4 col-lg-offset-1">
@@ -108,18 +141,18 @@
                         <form action="http://templates.designorbital.com/baleen/contact.php" method="post" id="contact-form">
                             <fieldset>
                                 <div class="form-group form-group-fullname">
-                                    <label class="control-label" for="fullname">NAME *</label>
+                                    <label class="control-label" for="fullname">Nombre: *</label>
                                     <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter Your Name">
                                 </div>
                                 <div class="form-group form-group-email">
-                                    <label class="control-label" for="email">E-MAIL *</label>
+                                    <label class="control-label" for="email">Correo Electrónico: *</label>
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Enter Your E-Mail">
                                 </div>
                                 <div class="form-group form-group-message">
-                                    <label class="control-label" for="message">MESSAGE *</label>
+                                    <label class="control-label" for="message">Mensaje: *</label>
                                     <textarea class="form-control" name="message" id="message" rows="3"></textarea>
                                 </div>           
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
                             </fieldset>
                         </form>
                     </div> 
@@ -134,7 +167,7 @@
     <footer> 
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-0">
                     <h3><i class="fa fa-map-marker"></i> Contact:</h3>
                     <p class="footer-contact">
                         Via Ludovisi 39-45, Rome, 54267, Italy<br>
@@ -142,15 +175,16 @@
                         Email: hello@LawOffice.org<br>
                     </p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-0">
                     <h3><i class="fa fa-external-link"></i> Links</h3>
-                    <p> <a href="#"> About ( Who we are )</a></p>
-                    <p> <a href="#"> Services ( What we do )</a></p>
-                    <p> <a href="#"> Contact ( Feel free to contact )</a></p>
-                    <p> <a href="#"> Blog ( Write to us )</a></p>
-                    <p> <a href="#"> Team ( Meet the Team )</a></p> 
+                    <p> <g:link controller="welcome" action="about"> Sobre Nosotros ( Quiénes somos )</g:link></p>
+                    <p> <g:link controller="welcome" action="team"> Nuestro Equipo ( Conócenos )</g:link></p>
+                    <p> <g:link controller="welcome" action="news"> Noticias ( Infórmate )</g:link></p>
+                    <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
+
+
                 </div>
-              <div class="col-md-4">
+              <div class="col-md-0">
                 <h3><i class="fa fa-heart"></i> Socialize</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
@@ -178,12 +212,52 @@
 
 
     
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
+    <g:external dir="assets" file="jquery-1.10.2.min.js" />
+    <g:external dir="assets" file="bootstrap.min.js" />
+    <g:external dir="assets" file="wow.min.js" />
     <script>
       new WOW().init();
     </script>
+     <script type="text/javascript">$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});</script>
+<script type="text/javascript">
+$('input[type="submit"]').mousedown(function(){
+  $(this).css('background', '#2ecc71');
+});
+$('input[type="submit"]').mouseup(function(){
+  $(this).css('background', '#1abc9c');
+});
 
+$('#loginform').click(function(){
+  $('.login').fadeToggle('slow');
+  $(this).toggleClass('green');
+});
+
+
+
+$(document).mouseup(function (e)
+{
+    var container = $(".login");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+        $('#loginform').removeClass('green');
+    }
+});
+</script>
   </body>
 </html>

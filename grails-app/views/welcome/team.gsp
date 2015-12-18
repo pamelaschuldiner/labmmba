@@ -1,33 +1,38 @@
 <!doctype html>
+
 <html lang="en">
     <head>
+        
         <meta charset="utf-8">
-        <title>Office</title>
+        <title>Lammba - Laboratorio de Microbiología Molecular y Biotecnología Ambiental</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" type="text/css" media="all" href="assets/css/style-projects.css">
+        <g:external base="http://fonts.googleapis.com/css?family=Open+Sans:400,300" type="css"/>
+        <g:external base="http://fonts.googleapis.com/css?family=PT+Sans" type="css"/>
+        <g:external base="http://fonts.googleapis.com/css?family=Raleway" type="css"/>
+        <g:external dir="assets" file="bootstrap.css" />
+        <g:external dir="assets" file="font-awesome.min.css" />
+        <g:external dir="assets" file="style.css" />
+        <g:external dir="assets" file="animate.min.css" />
+        <g:external dir="assets" file="login.css" />
+        <g:external dir="assets" file="style-projects.css" />
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <g:external dir="assets" file="jquery.cookie.js" />
+        <g:external dir="assets" file="jquery.hoverIntent.minified.js" />
+        <g:external dir="assets" file="jquery.dcjqaccordion.2.7.min.js" />
+        <g:external dir="assets" file="jquery-2.1.3.js" />
         
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.ico">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <g:external dir="assets" file="apple-touch-icon-144-precomposed.png" />
+        <g:external dir="assets" file="apple-touch-icon-114-precomposed.png" />
+        <g:external dir="assets" file="apple-touch-icon-72-precomposed.png" />
+        <g:external dir="assets" file="apple-touch-icon-57-precomposed.png" />
+        <g:external dir="assets" file="favicon.ico" />
     </head>
-
-
-    <body>
+  <body>
 
     <!-- Header -->
         
@@ -41,111 +46,268 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand wow fadeInDownBig" href="index.html"><img src="assets/img/slider/Office.png" width="100" alt="Office"></a>      
+
+                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a> 
             </div>
         
             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav pull-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <g:link controller="welcome" action="index">Home</g:link>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <g:link controller="welcome" action="about">Sobre Nosotros</g:link>
                     </li>
                     <li>
-                        <a href="blog.html">Blog</a>
+                        <g:link controller="welcome" action="news">Noticias</g:link>
                     </li>
                     <li class="active">
-                        <a href="team.html">Team</a>
+                        <g:link controller="welcome" action="team">Nuestro Equipo</g:link>
                     </li>
                     <li>
-                        <a href="contact.html"><span>Contact</span></a>
+                        <g:link controller="welcome" action="contact">Contacto</g:link>
                     </li>
+                    <sec:ifLoggedIn>
+                    <li><a href='<c:url value='j_spring_security_logout'/>'> Logout</a></li>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                    <li><div id="wrap">
+                      <div id="regbar">
+                        <div id="navthing">
+                          <a href="#" id="loginform">Ingresar</a> | <a href="#">Registrarse</a>
+                        <div class="login">
+                          <div class="arrow-up"></div>
+                          <div class="formholder">
+                            <div class="randompad">
+                               <fieldset>
+                                 <p>Usuario</p>
+                                 <input type="email" value="example@example.com" />
+                                 <p>Contraseña</p>
+                                 <input type="password" />
+                                 <input type="submit" value="Ingresar" />
+                               </fieldset>
+                            </div>
+                          </div>
+                        </div>
+
+                        </div>
+                      </div>
+                    </div></li>
+                    </sec:ifNotLoggedIn>
+
                 </ul>         
             </div>
         </div>
     </nav>
 
-    <div class="row container-kamn">  
-        <img src="assets/img/slider/slide9.jpg" width="100%" class="blog-post" alt="Feature-img" align="right" width="100%"> 
+    <!-- End Header -->
+
+
+      <!-- Main Container -->
+
+    <div class="row container-kamn">
+        <g:img dir="assets/" file="team.jpg" class="blog-post" alt="Feature-img" align="right" width="100%"/>
     </div>
 
-    <!--End Header -->
-
-
-    <!-- Main Container -->
-
-    <div id="banners"></div>
+   <div id="banners"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="blockquote-box blockquote-info animated wow fadeInLeft clearfix">
                     <div class="square pull-left">
-                        <img src="assets/img/team/member2.png" alt="Feature-img" height="80" width="100">
+                        <img src="/assets/team/myriamgonzalez.jpg" alt="Feature-img" height="100" width="100">
                     </div>
                     <h4>
-                        John Doe
+                        Myriam González
                     </h4>
                     <p>
-                        Web Developer , Technext
+                        Jefe de Laboratorio
                     </p>
+
                 </div>
                 <div class="blockquote-box blockquote-primary animated wow fadeInLeft clearfix">
                     <div class="square pull-left">
-                        <img src="assets/img/team/member1.png" alt="Feature-img" height="80" width="100">
+                        <img src="/assets/team/beatrizcamara.jpg" alt="Feature-img" height="100" width="100">
                     </div>
                     <h4>
-                        Jane Ley
+                        Beatriz Cámara
                     </h4>
-                    <p>
-                        Software Developer , Technext
-                    </p>
                 </div>
+
                 <div class="blockquote-box blockquote-success animated wow fadeInLeft clearfix">
                     <div class="square pull-left">
-                        <img src="assets/img/team/member2.png" alt="Feature-img" height="80" width="100">
+                        <img src="/assets/team/fabiolaaltamira.jpg" alt="Feature-img" height="100" width="100">
                     </div>
                     <h4>
-                        Jany Doe
+                        Fabiola Altamira
                     </h4>
                     <p>
-                        App Developer , Technext
+                        Tesista de Magíster
                     </p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="blockquote-box blockquote-danger animated wow fadeInRight clearfix">
                     <div class="square pull-left">
-                        <img src="assets/img/team/member3.png" alt="Feature-img" height="80" width="100">
+                        <img src="/assets/team/michaelseeger.jpg" alt="Feature-img" height="100" width="100">
                     </div>
                     <h4>
-                        John Doe
+                        Michael Seeger
                     </h4>
                     <p>
-                        Android Developer , Technext
+                        Director del Laboratorio
                     </p>
                 </div>
                 <div class="blockquote-box blockquote-warning animated wow fadeInRight clearfix">
                     <div class="square pull-left">
-                        <img src="assets/img/team/member2.png" alt="Feature-img" height="80" width="100">
+                        <img src="/assets/team/guillermobravo.jpg" alt="Feature-img" height="100" width="100">
                     </div>
                     <h4>
-                        Chris Way
+                        Guillermo Bravo
                     </h4>
-                    <p>
-                        iOS Developer , Technext
-                    </p>
                 </div>
                 <div class="blockquote-box animated wow fadeInRight clearfix">
                     <div class="square pull-left">
-                        <img src="assets/img/team/member1.png" alt="Feature-img" height="80" width="100">
+                        <img src="/assets/team/pamelavillegas.jpg" alt="Feature-img" height="100" width="100">
                     </div>
                     <h4>
-                        Christopher
+                        Pamela Villegas
+                    </h4>
+                </div>
+
+            </div>
+                        <div class="col-md-6">
+                <div class="blockquote-box blockquote-info animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/mariajosevargas.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        María José Vargas
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-primary animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/francocardenas.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Franco Cárdenas
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-success animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/hyroncanchignia.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Hyron Canchignia
+                    </h4>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="blockquote-box blockquote-danger animated wow fadeInRight clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/patriciaaguila.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Patricia Águila
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-warning animated wow fadeInRight clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/annaespinoza.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Anna Espinoza
+                    </h4>
+                </div>
+                <div class="blockquote-box animated wow fadeInRight clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/mariajosevargas.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Valentina Méndez
                     </h4>
                     <p>
-                        Web Developer , Technext
+                        Investigador Asociado
                     </p>
+                </div>
+                
+            </div>
+               <div class="col-md-6">
+                <div class="blockquote-box blockquote-info animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/franciscomontero.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Francisco Montero
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-primary animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                         <img src="/assets/team/sebastianfuentes.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Sebastián Fuentes
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-success animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/paulinavega.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Paulina Vega
+                    </h4>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="blockquote-box blockquote-danger animated wow fadeInRight clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/barbarabarra.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Bárbara Barra
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-warning animated wow fadeInRight clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/agustinaundabarrena.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Agustina Undabarrena
+                    </h4>
+                 </div>
+                <div class="blockquote-box animated wow fadeInRight clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/valentinagonzalez.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Valentina González
+                    </h4>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="blockquote-box blockquote-info animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/pabloalviz.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Pablo Alviz
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-primary animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                         <img src="/assets/team/vivianaurtuvia.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Viviana Urtuvia
+                    </h4>
+                </div>
+                <div class="blockquote-box blockquote-success animated wow fadeInLeft clearfix">
+                    <div class="square pull-left">
+                        <img src="/assets/team/felipeaguilera.jpg" alt="Feature-img" height="100" width="100">
+                    </div>
+                    <h4>
+                        Felipe Aguilera
+                    </h4>
                 </div>
             </div>
         </div>
@@ -153,11 +315,12 @@
     <!--End Main Container -->
 
 
+
     <!-- Footer -->
     <footer> 
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-0">
                     <h3><i class="fa fa-map-marker"></i> Contact:</h3>
                     <p class="footer-contact">
                         Via Ludovisi 39-45, Rome, 54267, Italy<br>
@@ -165,15 +328,14 @@
                         Email: hello@LawOffice.org<br>
                     </p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-0">
                     <h3><i class="fa fa-external-link"></i> Links</h3>
-                    <p> <a href="#"> About ( Who we are )</a></p>
-                    <p> <a href="#"> Services ( What we do )</a></p>
-                    <p> <a href="#"> Contact ( Feel free to contact )</a></p>
-                    <p> <a href="#"> Blog ( Write to us )</a></p>
-                    <p> <a href="#"> Team ( Meet the Team )</a></p> 
+                    <p> <g:link controller="welcome" action="about"> Sobre Nosotros ( Quiénes somos )</g:link></p>
+                    <p> <g:link controller="welcome" action="team"> Nuestro Equipo ( Conócenos )</g:link></p>
+                    <p> <g:link controller="welcome" action="news"> Noticias ( Infórmate )</g:link></p>
+                    <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
                 </div>
-              <div class="col-md-4">
+              <div class="col-md-0">
                 <h3><i class="fa fa-heart"></i> Socialize</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
@@ -200,12 +362,52 @@
     </div>
 
     
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
+    <g:external dir="assets" file="jquery-1.10.2.min.js" />
+    <g:external dir="assets" file="bootstrap.min.js" />
+    <g:external dir="assets" file="wow.min.js" />
     <script>
       new WOW().init();
     </script>
+     <script type="text/javascript">$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});</script>
+<script type="text/javascript">
+$('input[type="submit"]').mousedown(function(){
+  $(this).css('background', '#2ecc71');
+});
+$('input[type="submit"]').mouseup(function(){
+  $(this).css('background', '#1abc9c');
+});
 
+$('#loginform').click(function(){
+  $('.login').fadeToggle('slow');
+  $(this).toggleClass('green');
+});
+
+
+
+$(document).mouseup(function (e)
+{
+    var container = $(".login");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+        $('#loginform').removeClass('green');
+    }
+});
+</script>
   </body>
 </html>

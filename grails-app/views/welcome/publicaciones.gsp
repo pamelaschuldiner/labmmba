@@ -87,15 +87,15 @@
                 <div id='dynamicInput'>
                    Elija el tipo de publicación que desea añadir:</p>
                    <h3 class="lead"> <b>Revista </b></h3>
-                   <form>
+                   <g:form controller="magazine" action="upload" enctype="multipart/form-data">
                     <table> 
                         <tr><p> 
                             <td align='left'><p>PDF Revista:  </td>
-                            <td align='left'><input id="file" type="file" name="pic" size="40"></td> 
+                            <td align='left'><input id="file" type="file" name="pdf" size="40" required="true"></td>
                         </p></tr> 
                         <tr><p> 
                             <td align='left'>Área de Investigación</td>
-                            <td align='left'><select class="others">
+                            <td align='left'><select class="others" size="6" name="field">
                                       <option selected="selected">Seleccione área de investigación...</option>
                                       <option name="choice" id="choice1" type="radio" value="Biotecnología Vegetal" onclick="hideTextBox2()" class="others"/><label for="choice1">Biotecnología Vegetal</label>
                                       <option name="choice" id="choice1" type="radio" value="Compuestos Bioactivos" onclick="hideTextBox2()" class="others"/><label for="choice2">Compuestos Bioactivos</label>
@@ -103,44 +103,46 @@
                                       <option name="choice" id="choice1" type="radio" value="Biotecnología" onclick="hideTextBox2()" class="others"/><label for="choice4">Biotecnología Ambiental</label>
                                       <option name="choice" id="choice5" type="radio" value="Otro" onclick="displayTextBox2()" class="others"/><label for="choice5">Otro</label>
                                 </select></td>
+                                <td>
+                                    <div id="otherTextBox2" style="display:none;visibility:hidden;" class="others">
+                                        <input type="text" placeholder=":focus" class="focus" name="field" id="othertext2">
+                                    </div>
+                                </td>
 
-                                <div id="otherTextBox2" style="display:none;visibility:hidden;">
-                                    <input type="text" placeholder=":focus" class="focus" name="lastname" id="othertext2">
-                                </div>
                         </p></tr>
                       </table> 
-                            <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
+                            <g:actionSubmitImage value="upload" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
  
-                    </form>
+                    </g:form>
                     <h3 class="lead"> <b>Libro </b></h3>                   
-                    <g:form>
+                    <g:form controller="book" action="upload" enctype="multipart/form-data">
                         <table> 
                             <tr><p> 
                                 <td align='left'>Título Libro:</td> 
-                                <td align='left'><g:textField name='book_name' class='others' size='40'/></td> 
+                                <td align='left'><g:textField name='book_name' class='others' size='40' required="true"/></td>
                             </p></tr> 
                             <tr><p> 
                                 <td align='left'>Autores:</td> 
-                                <td align='left'><g:textField name='book_authors' class='others' size='40'/></td>
+                                <td align='left'><g:textField name='book_authors' class='others' size='40' required="true"/></td>
                             </p></tr> 
                             <tr><p> 
                                 <td align='left'>Año:</td> 
-                                <td align='left'><g:textField name='book_year' class='others' size='40'/></td> 
+                                <td align='left' class="others"> <g:datePicker name="book_year" precision="year" noSelection="['':'-Choose-']" relativeYears="[-50..0]" size='40'/> </td>
                             </p></tr> 
                             <tr><p> 
                                 <td align='left'>ISBN:</td> 
-                                <td align='left'><g:textField name='book_isbn' class='others' size='40'/></td> 
+                                <td align='left'><g:textField name='book_isbn' class='others' size='40' required="true"/></td>
                             </p></tr> 
                             <tr><p> 
                                 <td align='left'>Editorial:</td> 
-                                <td align='left'><g:textField name='book_ed' class='others' size='40'/></td> 
+                                <td align='left'><g:textField name='book_ed' class='others' size='40' required="true"/></td>
                             </p></tr> 
                             <tr><p> 
                                 <td align='left'>PDF Libro:</td> 
-                                <td align='left'><input id="file" type="file" name="pic" size="40"> </td> 
+                                <td align='left'><input id="file" type="file" name="pdf" size="40" required="true"> </td>
                             </p></tr>
                         </table>
-                                <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
+                                <g:actionSubmitImage value="upload" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                     </g:form>
 
 
@@ -240,6 +242,7 @@
 
   </body>
   <script>
+
          function addInput(){
             var x = document.getElementById("pub").value;
             if(x=="Libro"){
@@ -256,4 +259,100 @@
 
        
     </script>
+<script>
+
+
+    function displayTextBox()
+    {
+        var objElement = document.getElementById('otherTextBox');
+        otherTextBox.style.display = 'block';
+        otherTextBox.style.visibility = 'visible';
+    }
+    function displayTextBox2()
+    {
+        var objElement2 = document.getElementById('otherTextBox2');
+        otherTextBox2.style.display = 'block';
+        otherTextBox2.style.visibility = 'visible';
+    }
+
+    function hideTextBox2()
+    {
+        var objElement2 = document.getElementById('otherTextBox2');
+        otherTextBox2.style.display = 'none';
+        otherTextBox2.style.visibility = 'hidden';
+    }
+
+    function hideTextBox()
+    {
+        var objElement = document.getElementById('otherTextBox');
+        otherTextBox.style.display = 'none';
+        otherTextBox.style.visibility = 'hidden';
+    }
+
+    function validate()
+    {
+        var arrElements = document.getElementsByName('choice');
+        var objElement;
+        var objElement2;
+        var boolContinue = false;
+        var objOtherText;
+
+        for(var i=0, _length=arrElements.length; i<_length; i++)
+        {
+            objElement = arrElements[i];
+
+            if(objElement.checked)
+            {
+                if(objElement.id == 'choice7')
+                {
+                    objOtherText = document.getElementById('othertext');
+
+                    if(strTrim(objOtherText.value).length>0)
+                    {
+                        boolContinue = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    boolContinue = true;
+                    break;
+                }
+            }
+        }
+        for(var i=0, _length=arrElements.length; i<_length; i++)
+        {
+            objElement2 = arrElements[i];
+
+            if(objElement1.checked)
+            {
+                if(objElement2.id == 'choice5')
+                {
+                    objOtherText = document.getElementById('othertext2');
+
+                    if(strTrim(objOtherText.value).length>0)
+                    {
+                        boolContinue = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    boolContinue = true;
+                    break;
+                }
+            }
+        }
+        if(boolContinue)
+        {
+            alert('Continue, user completed the information.')
+        }
+        else
+        {
+            alert('Ask user to complete the data.')
+        }
+    }
+
+
+</script>
 </html>

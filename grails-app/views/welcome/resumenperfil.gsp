@@ -125,6 +125,7 @@
                         <div class="message" role="status">${flash.message}</div>
                     </g:if>
                     <table>
+                        <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}"  width="108"/>
                         <tr><p>
                             <td align="left">Username:     </td>
                             <td align="left"><f:display bean="user" property="username"/> </td>
@@ -139,6 +140,22 @@
                             <td align="left">Apellidos:     </td>
                             <td align="left"><f:display bean="user" property="lastname"/> </td>
                         </p></tr>
+                        <g:if test="${user.labrol}">
+                             <tr><p>
+                                <td align="left">Cargo Laboratorio: </td>
+                                <td align="left">${user.labrol.labrol_name}  </td>
+                             </p></tr>
+                        </g:if>
+
+                            <td align="left">Areas: </td>
+                            <g:each in="${user.fields.sort({it.id})}">
+                                <tr><p>
+                                     <td align="left"></td>
+                                     <td align="left">${it.field_name}  </td>
+                                </p></tr>
+                            </g:each>
+
+
 
                         <tr><p>
                             <td align="left">Estudios:     </td>
@@ -181,6 +198,8 @@
                                     </table>
                                 </g:each>
                         </p></tr>
+
+
                     </table>
 
                 </ul>
