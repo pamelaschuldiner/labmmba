@@ -155,7 +155,7 @@ class StudyController {
         if (!thesiDir.exists()) {
             thesiDir.mkdirs()
         }
-        File fileDest = new File(webrootDir, "thesis/" + params.id.toString() + ".pdf")
+        File fileDest = new File(webrootDir, "thesis/" + thesis.id.toString() + ".pdf")
         f.transferTo(fileDest)
 
         flash.message = "Exito al crear items"

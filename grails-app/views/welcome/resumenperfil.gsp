@@ -74,13 +74,26 @@
                               <div class="arrow-up"></div>
                               <div class="formholder">
                                 <div class="randompad">
-                                   <fieldset>
-                                     <p>Usuario</p>
-                                     <input type="email" value="example@example.com" />
-                                     <p>Contraseña</p>
-                                     <input type="password" />
-                                     <input type="submit" value="Ingresar" />
-                                   </fieldset>
+                                    <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                        <p>
+                                            <label for="username">Nombre de usuario:</label>
+                                            <input type="text" class="text_" name="j_username" id="username">
+                                        </p>
+
+                                        <p>
+                                            <label for="password">Contraseña:</label>
+                                            <input type="password" class="text_" name="j_password" id="password">
+                                        </p>
+
+                                        <p id="remember_me_holder">
+                                            <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                            <label for="remember_me">Recuérdame</label>
+                                        </p>
+
+                                        <p>
+                                            <input type="submit" id="submit" value="Identifícate">
+                                        </p>
+                                    </form>
                                 </div>
                               </div>
                             </div>
@@ -108,51 +121,68 @@
 
                 <h3 class="lead"> Estudios </h3><hr>
                 <ul class="input-list style-2 clearfix">
-                <g:form controller="study" action="save2">
-                    <p><div id="dynamicInput">
-                            <form>
-                                  <table>
+                    <g:if test="${flash.message}">
+                        <div class="message" role="status">${flash.message}</div>
+                    </g:if>
+                    <table>
+                        <tr><p>
+                            <td align="left">Username:     </td>
+                            <td align="left"><f:display bean="user" property="username"/> </td>
+                        </p></tr>
+
+                        <tr><p>
+                            <td align="left">Nombres:     </td>
+                            <td align="left"><f:display bean="user" property="firstname"/> </td>
+                        </p></tr>
+
+                        <tr><p>
+                            <td align="left">Apellidos:     </td>
+                            <td align="left"><f:display bean="user" property="lastname"/> </td>
+                        </p></tr>
+
+                        <tr><p>
+                            <td align="left">Estudios:     </td>
+                                <g:each in="${user.studys.sort({it.id})}">
+                                    <table>
                                     <tr><p>
-                                      <td align="left">Tipo de Estudio:     </td>
-                                      <td align="left">                            <select>
-                                      <option value="Pregrado" name="study_type">Pregrado</option>
-                                      <option value="Postgrado" name="study_type">Postgrado</option>
-                                    </select></td>
-                                    </tr> </p>
-                                    <tr><p>
-                                      <td align="left">Nombre Estudio:     </td>
-                                      <td align="left"><g:textField name="study_name" class="others" size="40"/></td>
-                                    </tr></p>
-                                    <tr><p>
-                                      <td align="left">Universidad:     </td>
-                                      <td align="left"><g:textField name="uni_name" class="others" size="40"/></td>
+                                        <td align="left">${it.study_type}: </td>
+                                        <td align="left">${it.study_name}  </td>
                                     </p></tr>
                                     <tr><p>
-                                      <td align="left">País:     </td>
-                                      <td align="left"><g:textField name="uni_count" class="others" size="40"/></td>
+                                        <td align="left">Universidad: </td>
+                                        <td align="left">${labmmba.University.findByStudy(it.id).list().first().uni_name}  </td>
                                     </p></tr>
                                     <tr><p>
-                                      <td align="left">Tesis:     </td>
-                                      <td align="left"><g:textField name="thesis_name" class="others" size="40"/></td>
+                                        <td align="left">Pais: </td>
+                                        <td align="left"><g:country code="${labmmba.University.findByStudy(it.id).list().first().uni_count}"/>  </td>
                                     </p></tr>
                                     <tr><p>
-                                      <td align="left">Profesor Tutor:     </td>
-                                      <td align="left"><g:textField name="thesis_tutor" class="others" size="40"/></td>
+                                        <td align="left">Ciudad: </td>
+                                        <td align="left">${labmmba.University.findByStudy(it.id).list().first().uni_city}  </td>
                                     </p></tr>
-                                    <tr><p>
-                                      <td align="left">Profesor Cotutor:     </td>
-                                      <td align="left"><g:textField name="thesis_cotutor" class="others" size="40"/></td>
-                                    </p></tr>
-                                    <tr><p>
-                                      <td align="left">PDF Tesis:     </td>
-                                      <td align="left"><g:textField name="thesis_url" class="others" size="40"/></td>
-                                    </p></tr>
-                                  </table>
-                                </form>
-                        </div>
-                        <g:actionSubmit value="Save"/>
-                    </p>
-                </g:form>
+
+                                        <g:each in="${it.thesis}">
+                                            <tr><p>
+                                                <td align="left">Thesis: </td>
+                                                <td align="left"><g:link controller="thesi" action="download" resource="${it}">${it.thesis_name}</g:link>  </td>
+                                            </p></tr>
+                                            <tr><p>
+                                                <td align="left">Tutor: </td>
+                                                <td align="left">${it.thesis_tutor}  </td>
+                                            </p></tr>
+                                            <g:if test="${it.thesis_cotutor}">
+                                                <tr><p>
+                                                   <td align="left">Cotutor: </td>
+                                                   <td align="left">${it.thesis_cotutor}  </td>
+                                                </p></tr>
+                                            </g:if>
+
+                                        </g:each>
+                                    </table>
+                                </g:each>
+                        </p></tr>
+                    </table>
+
                 </ul>
             </div>
 

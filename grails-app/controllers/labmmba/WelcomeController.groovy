@@ -9,7 +9,7 @@ class WelcomeController {
 
     def index() {
         if( springSecurityService.isLoggedIn()){
-            render(view: 'resumenperfil')
+            redirect(controller: "welcome", action: 'resumenperfil')
         }
     }
 
@@ -35,7 +35,6 @@ class WelcomeController {
 
     	 }
 
-    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def estudios() {
 
         render(view: 'estudios.gsp')
@@ -76,9 +75,12 @@ class WelcomeController {
         render(view: 'personal.gsp')
 
          }
-    def resumenperfil() {
+    def resumenperfil(User user) {
+        if(user==null){
+            user = User.findById(springSecurityService.currentUser.id)
+        }
 
-        render(view: 'resumenperfil.gsp')
+        respond user
 
          }
     def congresos() {

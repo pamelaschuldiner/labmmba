@@ -2,6 +2,7 @@ package labmmba
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
 class ThesiController {
@@ -48,6 +49,20 @@ class ThesiController {
 
     def edit(Thesi thesi) {
         respond thesi
+    }
+
+    @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])
+    def download(Thesi thesi) {
+        def webrootDir = servletContext.getRealPath("/")
+        def path = webrootDir + "thesis/" + thesi.id.toString() + ".pdf"
+        def thesis = new File(path)
+        if(thesis.exists()){
+            render(contentType: "multipart/form-data", file: thesis, fileName: thesi.thesis_name + ".pdf" )
+        }
+        else{
+            flash.message = "El usuario no a subido el pdf"
+            redirect(controller: "welcome",action: "resumenperfil")
+        }
     }
 
     @Transactional
