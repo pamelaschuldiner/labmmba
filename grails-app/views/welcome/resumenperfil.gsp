@@ -127,6 +127,7 @@
                     <table>
                         <!--Username y nombre -->
                         <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}"  width="108"/>
+                        <p><g:submitButton name="show_edit" value="Editar" onclick="for (var i = 0; i < document.getElementsByClassName('edit').length; i++){document.getElementsByClassName('edit')[i].style.visibility = 'visible'}" ></g:submitButton></p>
                         <tr><p>
                             <td align="left">Username:     </td>
                             <td align="left"><f:display bean="user" property="username"/> </td>
@@ -166,18 +167,23 @@
                                     <tr><p>
                                         <td align="left">${it.study_type}: </td>
                                         <td align="left">${it.study_name}  </td>
+                                        <td align="left" class="edit" style="visibility:hidden" >
+                                            <g:form controller="study" action="delete" resource="${it}"  method="delete">
+                                                <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
+                                            </g:form>
+                                        </td>
                                     </p></tr>
                                     <tr><p>
                                         <td align="left">Universidad: </td>
-                                        <td align="left">${labmmba.University.findByStudy(it.id).list().first().uni_name}  </td>
+                                        <td align="left">${it.university.uni_name}  </td>
                                     </p></tr>
                                     <tr><p>
                                         <td align="left">Pais: </td>
-                                        <td align="left"><g:country code="${labmmba.University.findByStudy(it.id).list().first().uni_count}"/>  </td>
+                                        <td align="left"><g:country code="${it.university.uni_count}"/>  </td>
                                     </p></tr>
                                     <tr><p>
                                         <td align="left">Ciudad: </td>
-                                        <td align="left">${labmmba.University.findByStudy(it.id).list().first().uni_city}  </td>
+                                        <td align="left">${it.university.uni_city}  </td>
                                     </p></tr>
 
                                         <g:each in="${it.thesis}">
@@ -214,6 +220,11 @@
                                         <td align="left">Revista: </td>
                                         <sec:ifLoggedIn>
                                             <td align="left"><g:link controller="magazine" action="download" resource="${it}">${it.mag_name}</g:link></td>
+                                            <td align="left" class="edit" style="visibility:hidden" >
+                                                <g:form controller="magazine" action="delete" resource="${it}"  method="delete">
+                                                    <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
+                                                </g:form>
+                                            </td>
                                         </sec:ifLoggedIn>
                                         <sec:ifNotLoggedIn>
                                             <td align="left">${it.mag_name} </td>
@@ -225,12 +236,18 @@
                                     </p></tr>
                                 </table>
                             </g:each>
+
                             <g:each in="${user.books.sort({it.id})}">
                                 <table>
                                     <tr><p>
                                         <td align="left">Libro: </td>
                                         <sec:ifLoggedIn>
                                             <td align="left"><g:link controller="books" action="download" resource="${it}">${it.book_name}</g:link></td>
+                                            <td align="left" class="edit" style="visibility:hidden" >
+                                                <g:form controller="book" action="delete" resource="${it}"  method="delete">
+                                                    <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
+                                                </g:form>
+                                            </td>
                                         </sec:ifLoggedIn>
                                         <sec:ifNotLoggedIn>
                                             <td align="left">${it.book_name}  </td>
@@ -263,6 +280,11 @@
                                     <tr><p>
                                         <td align="left">Proyecto: </td>
                                         <td align="left">${it.proy_name}  </td>
+                                        <td align="left" class="edit" style="visibility:hidden" >
+                                            <g:form controller="proyect" action="delete" resource="${it}"  method="delete">
+                                                <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
+                                            </g:form>
+                                        </td>
                                     </p></tr>
                                     <tr><p>
                                         <td align="left">Año Inicio: </td>
@@ -291,6 +313,11 @@
                                     <tr><p>
                                         <td align="left">Congreso: </td>
                                         <td align="left">${it.event_name}  </td>
+                                        <td align="left" class="edit" style="visibility:hidden" >
+                                            <g:form controller="proyect" action="delete" resource="${it}"  method="delete">
+                                                <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
+                                            </g:form>
+                                        </td>
                                     </p></tr>
                                     <tr><p>
                                         <td align="left">Ciudad: </td>

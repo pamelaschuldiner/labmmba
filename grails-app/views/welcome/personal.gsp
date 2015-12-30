@@ -101,7 +101,7 @@
                                             <p>          </p>
                         <tr><p>
                           <td align="left">Foto de perfil:     </td>
-                          <td align="left"><input type="file" name="avatar" size="40"></td>
+                          <td align="left"><input type="file" name="avatar" size="40" accept="image/*"></td>
                         </tr></p>
                     </table>
                     <p>          </p>

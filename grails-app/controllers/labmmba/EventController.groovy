@@ -71,8 +71,9 @@ class EventController {
         File fileDest = new File(webrootDir, "thesis/" + params.id.toString() + ".pdf")
         f.transferTo(fileDest)
 
-        def evento = new Event(params).save()
+        def evento = new Event(params)
         springSecurityService.currentUser.addToEvents(evento).save()
+        evento.save()
 
         flash.message = "Congreso Creado"
         redirect action:"congresos", controller:"welcome"
@@ -108,6 +109,7 @@ class EventController {
         }
     }
 
+    @Secured(['ROLE_USER','ROLE_PENDING_USER','ROLE_ADMIN'])
     @Transactional
     def delete(Event event) {
 
@@ -122,7 +124,7 @@ class EventController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'event.label', default: 'Event'), event.id])
-                redirect action:"index", method:"GET"
+                redirect controller: "welcome", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

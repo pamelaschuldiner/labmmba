@@ -115,7 +115,7 @@
                         </tr></p>
                         <tr><p>
                           <td align="left">PDF presentación:     </td>
-                          <td align="left"><input type="file" name="presentacion" size="40" required="true"></td>
+                          <td align="left"><input type="file" name="presentacion" size="40" required="true" accept="application/pdf"></td>
                         </tr></p>
                     </table>
                     <p></p>

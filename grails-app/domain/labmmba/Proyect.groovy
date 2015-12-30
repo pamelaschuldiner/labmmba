@@ -10,8 +10,8 @@ class Proyect {
     String proy_role
     String proy_obs
 
-    static hasMany = [users: User]
-    static belongsTo = User
+
+    static belongsTo = [user: User]
 
     static mapping = {
     users joinTable: [name: "proyect_user", key: 'm_proyect_id' ]

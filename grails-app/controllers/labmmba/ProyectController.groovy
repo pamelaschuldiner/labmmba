@@ -101,7 +101,7 @@ class ProyectController {
             '*'{ respond proyect, [status: OK] }
         }
     }
-
+    @Secured(['ROLE_USER','ROLE_PENDING_USER','ROLE_ADMIN'])
     @Transactional
     def delete(Proyect proyect) {
 
@@ -116,7 +116,7 @@ class ProyectController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'proyect.label', default: 'Proyect'), proyect.id])
-                redirect action:"index", method:"GET"
+                redirect controller: "welcome", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

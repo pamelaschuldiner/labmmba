@@ -75,7 +75,6 @@ class MagazineController {
             else{
                 magazine.field = new Field(field_name: params.field[1]).save()
             }
-            magazine.save(flush: true)
         }
         else{
             if(Field.findByField_name(params.field[0])){
@@ -84,9 +83,10 @@ class MagazineController {
             else{
                 magazine.field = new Field(field_name: params.field[0]).save()
             }
-            magazine.save(flush: true)
         }
+
         springSecurityService.currentUser.addToMagazines(magazine).save()
+        print magazine.save(flush: true)
 
         def webrootDir = servletContext.getRealPath("/")
         def magazineDir = new File(webrootDir + "magazines")
@@ -143,6 +143,7 @@ class MagazineController {
         }
     }
 
+    @Secured(['ROLE_PENDING_USER','ROLE_USER','ROLE_ADMIN'])
     @Transactional
     def delete(Magazine magazine) {
 
@@ -157,7 +158,7 @@ class MagazineController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'magazine.label', default: 'Magazine'), magazine.id])
-                redirect action:"index", method:"GET"
+                redirect controller: "welcome", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

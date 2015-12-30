@@ -91,8 +91,9 @@ class BookController {
             return
         }
 
-        def book = new Book(params).save(flush: true)
+        def book = new Book(params)
         springSecurityService.currentUser.addToBooks(book).save()
+        book.save(flush: true)
 
         def webrootDir = servletContext.getRealPath("/")
         def bookDir = new File(webrootDir + "books")
@@ -124,6 +125,7 @@ class BookController {
         }
     }
 
+    @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])
     @Transactional
     def delete(Book book) {
 
@@ -138,7 +140,7 @@ class BookController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'book.label', default: 'Book'), book.id])
-                redirect action:"index", method:"GET"
+                redirect controller: "welcome", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

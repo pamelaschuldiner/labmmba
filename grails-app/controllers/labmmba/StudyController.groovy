@@ -34,7 +34,7 @@ class StudyController {
 
         if (study.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond study.errors, view:'create'
+            respond study.errors,  view:'create'
             return
         }
 
@@ -85,6 +85,7 @@ class StudyController {
     @Transactional
     def delete(Study study) {
 
+        print "Entro"
         if (study == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -96,9 +97,9 @@ class StudyController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'study.label', default: 'Study'), study.id])
-                redirect action:"index", method:"GET"
+                redirect controller:"welcome", action:"index", method:"GET"
             }
-            '*'{ render status: NO_CONTENT }
+
         }
     }
 
@@ -141,13 +142,14 @@ class StudyController {
             redirect action:"estudios", controller:"welcome"
         }
 
-        estudio.addToUsers(springSecurityService.currentUser)
+        springSecurityService.currentUser.addToStudys(estudio)
         thesis.addToStudys(estudio)
         universidad.addToStudys(estudio)
 
+        universidad.save(flush: true)
         estudio.save(flush: true)
         thesis.save(flush: true)
-        universidad.save(flush: true)
+
 
         def webrootDir = servletContext.getRealPath("/")
         def thesiDir = new File(webrootDir + "thesis")

@@ -84,6 +84,9 @@
 
                 <h3 class="lead"> Articulos científicos </h3><hr>
                 <ul class="input-list style-2 clearfix">
+                    <g:if test="${flash.message}">
+                        <div class="message" role="status">${flash.message}</div>
+                    </g:if>
                 <div id='dynamicInput'>
                    Elija el tipo de publicación que desea añadir:</p>
                    <h3 class="lead"> <b>Revista </b></h3>
@@ -91,7 +94,7 @@
                     <table> 
                         <tr><p> 
                             <td align='left'><p>PDF Revista:  </td>
-                            <td align='left'><input id="file" type="file" name="pdf" size="40" required="true"></td>
+                            <td align='left'><input id="file" type="file" name="pdf" size="40" required="true" accept="application/pdf"></td>
                         </p></tr> 
                         <tr><p> 
                             <td align='left'>Área de Investigación</td>
@@ -139,7 +142,7 @@
                             </p></tr> 
                             <tr><p> 
                                 <td align='left'>PDF Libro:</td> 
-                                <td align='left'><input id="file" type="file" name="pdf" size="40" required="true"> </td>
+                                <td align='left'><input id="file" type="file" name="pdf" size="40" required="true" accept="application/pdf"> </td>
                             </p></tr>
                         </table>
                                 <g:actionSubmitImage value="upload" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>

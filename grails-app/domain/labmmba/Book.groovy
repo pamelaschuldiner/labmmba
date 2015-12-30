@@ -7,9 +7,7 @@ class Book {
     String book_isbn
     String book_authors
 
-
-    static hasMany = [users: User]
-    static belongsTo = User
+    static belongsTo = [user: User]
 
     static constraints = {
     }

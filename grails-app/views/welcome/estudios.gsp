@@ -166,7 +166,7 @@
                                     </p></tr>
                                     <tr><p>
                                       <td align="left">PDF Tesis:     </td>
-                                      <td align="left"><input type="file" name="thesis" size="40" required="true"/></p>
+                                      <td align="left"><input type="file" name="thesis" size="40" required="true" accept="application/pdf"/></p>
                                     </tr></p>
                                   </table>
 

@@ -10,8 +10,7 @@ class Event {
     Date event_datef
     String event_pname
 
-    static hasMany = [users: User]
-    static belongsTo = User
+    static belongsTo = [user: User]
 
     static constraints = {
 
