@@ -86,7 +86,7 @@ class MagazineController {
             }
             magazine.save(flush: true)
         }
-        springSecurityService.currentUser..addToMagazines(magazine).save()
+        springSecurityService.currentUser.addToMagazines(magazine).save()
 
         def webrootDir = servletContext.getRealPath("/")
         def magazineDir = new File(webrootDir + "magazines")
@@ -102,6 +102,20 @@ class MagazineController {
 
         redirect action:"publicaciones", controller:"welcome"
 
+    }
+
+    @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])
+    def download(Magazine magazine) {
+        def webrootDir = servletContext.getRealPath("/")
+        def path = webrootDir + "magazines/" + magazine.id.toString() + ".pdf"
+        def magazineFile = new File(path)
+        if(magazineFile.exists()){
+            render(contentType: "multipart/form-data", file: magazineFile, fileName: magazine.mag_name + ".pdf" )
+        }
+        else{
+            flash.message = "El usuario no a subido el pdf"
+            redirect(controller: "welcome",action: "resumenperfil")
+        }
     }
 
     @Transactional

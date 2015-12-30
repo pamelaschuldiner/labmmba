@@ -110,6 +110,20 @@ class BookController {
 
     }
 
+    @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])
+    def download(Book book) {
+        def webrootDir = servletContext.getRealPath("/")
+        def path = webrootDir + "books/" + book.id.toString() + ".pdf"
+        def bookFile = new File(path)
+        if(bookFile.exists()){
+            render(contentType: "multipart/form-data", file: bookFile, fileName: book.book_name + ".pdf" )
+        }
+        else{
+            flash.message = "El usuario no a subido el pdf"
+            redirect(controller: "welcome",action: "resumenperfil")
+        }
+    }
+
     @Transactional
     def delete(Book book) {
 

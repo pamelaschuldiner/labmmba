@@ -55,9 +55,9 @@ class ThesiController {
     def download(Thesi thesi) {
         def webrootDir = servletContext.getRealPath("/")
         def path = webrootDir + "thesis/" + thesi.id.toString() + ".pdf"
-        def thesis = new File(path)
-        if(thesis.exists()){
-            render(contentType: "multipart/form-data", file: thesis, fileName: thesi.thesis_name + ".pdf" )
+        def thesisFile = new File(path)
+        if(thesisFile.exists()){
+            render(contentType: "multipart/form-data", file: thesisFile, fileName: thesi.thesis_name + ".pdf" )
         }
         else{
             flash.message = "El usuario no a subido el pdf"

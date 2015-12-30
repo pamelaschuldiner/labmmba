@@ -13,12 +13,12 @@ class UserController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond User.list(params), model:[userCount: User.count()]
+        respond User.findAllByEnabled(true,params), model:[userCount: User.findAllByEnabled(true).size()]
     }
 	
 	def pending(Integer max) {
-        def pendingUsers = UserRole.findAllByRole(Role.findByAuthority('ROLE_PENDING_USER'))*.user
-		respond pendingUsers, model:[userCount: pendingUsers.size()]
+        params.max = Math.min(max ?: 10, 100)
+        respond User.findAllByEnabled(false,params), model:[userCount: User.findAllByEnabled(false).size()]
     }
 	
     def show(User user) {

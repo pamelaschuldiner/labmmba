@@ -52,14 +52,23 @@ class ProyectController {
     @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     @Transactional
     def user_save(){
-        def proyecto = new Proyect(params).save()
-        if(proyecto!=null){
-            springSecurityService.currentUser.addToProyects(proyecto).save()
-            flash.message = "Proyecto creado"
-            redirect action:"proyectos", controller:"welcome"
+        def proyecto = new Proyect(params)
+        print params.proy_start.before(params.proy_end)
+        print params.proy_end.equals(params.proy_start)
+        if(params.proy_start.before(params.proy_end)||params.proy_end.equals(params.proy_start)){
+            if(proyecto!=null&&springSecurityService.currentUser!=null){
+                springSecurityService.currentUser.addToProyects(proyecto).save()
+                proyecto.save()
+                flash.message = "Proyecto creado"
+                redirect action:"proyectos", controller:"welcome"
+            }
+            else{
+                flash.message = "Error creando proyecto"
+                redirect action:"proyectos", controller:"welcome"
+            }
         }
         else{
-            flash.message = "Error creando proyecto"
+            flash.message = "Fecha de fin debe ser menor o igual a fecha de inicio"
             redirect action:"proyectos", controller:"welcome"
         }
 

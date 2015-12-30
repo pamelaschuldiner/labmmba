@@ -125,6 +125,7 @@
                         <div class="message" role="status">${flash.message}</div>
                     </g:if>
                     <table>
+                        <!--Username y nombre -->
                         <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}"  width="108"/>
                         <tr><p>
                             <td align="left">Username:     </td>
@@ -135,28 +136,29 @@
                             <td align="left">Nombres:     </td>
                             <td align="left"><f:display bean="user" property="firstname"/> </td>
                         </p></tr>
-
                         <tr><p>
                             <td align="left">Apellidos:     </td>
                             <td align="left"><f:display bean="user" property="lastname"/> </td>
                         </p></tr>
+                        <!--Roles y areas -->
                         <g:if test="${user.labrol}">
                              <tr><p>
                                 <td align="left">Cargo Laboratorio: </td>
                                 <td align="left">${user.labrol.labrol_name}  </td>
                              </p></tr>
                         </g:if>
-
-                            <td align="left">Areas: </td>
+                        <tr><p>
+                            <td align="left">Areas:     </td>
                             <g:each in="${user.fields.sort({it.id})}">
-                                <tr><p>
-                                     <td align="left"></td>
-                                     <td align="left">${it.field_name}  </td>
-                                </p></tr>
+                                <table>
+                                    <tr><p>
+                                        <td align="left"></td>
+                                        <td align="left">${it.field_name}  </td>
+                                    </p></tr>
+                                </table>
                             </g:each>
-
-
-
+                        </p></tr>
+                        <!--Estudios,universidades y thesis -->
                         <tr><p>
                             <td align="left">Estudios:     </td>
                                 <g:each in="${user.studys.sort({it.id})}">
@@ -181,7 +183,12 @@
                                         <g:each in="${it.thesis}">
                                             <tr><p>
                                                 <td align="left">Thesis: </td>
-                                                <td align="left"><g:link controller="thesi" action="download" resource="${it}">${it.thesis_name}</g:link>  </td>
+                                                <sec:ifLoggedIn>
+                                                    <td align="left"><g:link controller="thesi" action="download" resource="${it}">${it.thesis_name}</g:link> </td>
+                                                </sec:ifLoggedIn>
+                                                <sec:ifNotLoggedIn>
+                                                    <td align="left">${it.thesis_name} </td>
+                                                </sec:ifNotLoggedIn>
                                             </p></tr>
                                             <tr><p>
                                                 <td align="left">Tutor: </td>
@@ -198,7 +205,116 @@
                                     </table>
                                 </g:each>
                         </p></tr>
-
+                        <!--Libros y revistas -->
+                        <tr><p>
+                            <td align="left">Publicaciones:</td>
+                            <g:each in="${user.magazines.sort({it.id})}">
+                                <table>
+                                    <tr><p>
+                                        <td align="left">Revista: </td>
+                                        <sec:ifLoggedIn>
+                                            <td align="left"><g:link controller="magazine" action="download" resource="${it}">${it.mag_name}</g:link></td>
+                                        </sec:ifLoggedIn>
+                                        <sec:ifNotLoggedIn>
+                                            <td align="left">${it.mag_name} </td>
+                                        </sec:ifNotLoggedIn>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Campo: </td>
+                                        <td align="left">${it.field.field_name}  </td>
+                                    </p></tr>
+                                </table>
+                            </g:each>
+                            <g:each in="${user.books.sort({it.id})}">
+                                <table>
+                                    <tr><p>
+                                        <td align="left">Libro: </td>
+                                        <sec:ifLoggedIn>
+                                            <td align="left"><g:link controller="books" action="download" resource="${it}">${it.book_name}</g:link></td>
+                                        </sec:ifLoggedIn>
+                                        <sec:ifNotLoggedIn>
+                                            <td align="left">${it.book_name}  </td>
+                                        </sec:ifNotLoggedIn>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Edicion: </td>
+                                        <td align="left">${it.book_ed}  </td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Año: </td>
+                                        <td align="left"><g:formatDate format="yyyy" date="${it.book_year}" /></td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">ISBN: </td>
+                                        <td align="left">${it.book_isbn}  </td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Autores: </td>
+                                        <td align="left">${it.book_authors}  </td>
+                                    </p></tr>
+                                </table>
+                            </g:each>
+                        </p></tr>
+                        <!-- Proyectos  -->
+                        <tr><p>
+                            <td align="left">Proyectos:</td>
+                            <g:each in="${user.proyects.sort({it.id})}">
+                                <table>
+                                    <tr><p>
+                                        <td align="left">Proyecto: </td>
+                                        <td align="left">${it.proy_name}  </td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Año Inicio: </td>
+                                        <td align="left"><g:formatDate format="yyyy" date="${it.proy_start}" /></td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Año Fin: </td>
+                                        <td align="left"><g:formatDate format="yyyy" date="${it.proy_end}" /></td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Rol: </td>
+                                        <td align="left">${it.proy_role}  </td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Observacion: </td>
+                                        <td align="left">${it.proy_obs}  </td>
+                                    </p></tr>
+                                </table>
+                            </g:each>
+                        </p></tr>
+                        <!-- Congresos  -->
+                        <tr><p>
+                            <td align="left">Congresos:</td>
+                            <g:each in="${user.events.sort({it.id})}">
+                                <table>
+                                    <tr><p>
+                                        <td align="left">Congreso: </td>
+                                        <td align="left">${it.event_name}  </td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Ciudad: </td>
+                                        <td align="left">${it.event_city}  </td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Ciudad: </td>
+                                        <td align="left"><g:country code="${it.event_count}"/></td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Fecha Inicio: </td>
+                                        <td align="left"><g:formatDate format="yyyy-MM-dd" date="${it.event_datei}" /></td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Fecha Fin: </td>
+                                        <td align="left"><g:formatDate format="yyyy-MM-dd" date="${it.event_datef}" /></td>
+                                    </p></tr>
+                                    <tr><p>
+                                        <td align="left">Nombre Presentacion: </td>
+                                        <td align="left">${it.event_pname}  </td>
+                                    </p></tr>
+                                </table>
+                            </g:each>
+                        </p></tr>
 
                     </table>
 

@@ -82,7 +82,13 @@ class WelcomeController {
          }
     def resumenperfil(User user) {
         if(user==null){
-            user = User.findById(springSecurityService.currentUser.id)
+            if(springSecurityService.currentUser==null){
+                redirect(controller: "welcome", action: "index")
+                return
+            }
+            else{
+                user = User.findById(springSecurityService.currentUser.id)
+            }
         }
 
         respond user

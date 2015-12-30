@@ -92,7 +92,7 @@
                     <table>
                         <tr><p>
                           <td align="left">*Nombre proyecto:     </td>
-                          <td align="left"><g:textField name="proy_name" class="others" size="40"/></td>
+                          <td align="left"><g:textField name="proy_name" class="others" size="40" required="true"/></td>
                         </tr></p>
                         <tr><p>
                           <td align="left">*Años de ejecución:     </td>
@@ -101,11 +101,11 @@
                         </tr></p>
                         <tr><p>
                           <td align="left">*Cargo en proyecto:     </td>
-                          <td align="left"><g:textField name="proy_role" class="others" size="40"/></td>
+                          <td align="left"><g:textField name="proy_role" class="others" size="40" required="true"/></td>
                         </tr></p>
                         <tr><p>
                           <td align="left">*Observaciones adicionales:     </td>
-                          <td align="left"><g:textArea name="proy_obs" value= "Ej: FONDEFF 1865"rows="5" cols="40" class="others"/></td>
+                          <td align="left"><g:textArea name="proy_obs" value= "Ej: FONDEFF 1865"rows="5" cols="40" class="others" required="true"/></td>
                         </tr></p>
                     </table>
                     <p></p>
