@@ -64,6 +64,46 @@
                     <li>
                         <g:link controller="welcome" action="contact">Contact</g:link>
                     </li>
+                    <sec:ifLoggedIn>
+                        <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                        <li><div id="wrap">
+                            <div id="regbar">
+                                <div id="navthing">
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <div class="login">
+                                        <div class="arrow-up"></div>
+                                        <div class="formholder">
+                                            <div class="randompad">
+                                                <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                                    <p>
+                                                        <label for="username">Nombre de usuario:</label>
+                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                    </p>
+
+                                                    <p>
+                                                        <label for="password">Contraseña:</label>
+                                                        <input type="password" class="text_" name="j_password" id="password">
+                                                    </p>
+
+                                                    <p id="remember_me_holder">
+                                                        <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                                        <label for="remember_me">Recuérdame</label>
+                                                    </p>
+
+                                                    <p>
+                                                        <input type="submit" id="submit" value="Identifícate">
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div></li>
+                    </sec:ifNotLoggedIn>
                 </ul>         
             </div>
         </div>
@@ -161,6 +201,7 @@
                         <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
                         <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
                         <li><g:link controller="welcome" action="experimentos">Experimentos</g:link></li>
+                        <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
                         <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
                         <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>
                         <li><g:link controller="welcome" action="avancetesis">Avance de Tesis</g:link></li>

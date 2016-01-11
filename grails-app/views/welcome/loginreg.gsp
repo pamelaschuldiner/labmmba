@@ -66,29 +66,46 @@
                     <li>
                         <g:link controller="welcome" action="contact">Contact</g:link>
                     </li>
-                    <li><div id="wrap">
-                          <div id="regbar">
-                            <div id="navthing">
-                              <a href="#" id="loginform">Login</a> | <a href="#">Register</a>
-                            <div class="login">
-                              <div class="arrow-up"></div>
-                              <div class="formholder">
-                                <div class="randompad">
-                                   <fieldset>
-                                     <label name="email">Email</label>
-                                     <input type="email" value="example@example.com" />
-                                     <label name="password">Password</label>
-                                     <input type="password" />
-                                     <input type="submit" value="Login" />
-                         
-                                   </fieldset>
+                    <sec:ifLoggedIn>
+                        <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                        <li><div id="wrap">
+                            <div id="regbar">
+                                <div id="navthing">
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <div class="login">
+                                        <div class="arrow-up"></div>
+                                        <div class="formholder">
+                                            <div class="randompad">
+                                                <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                                    <p>
+                                                        <label for="username">Nombre de usuario:</label>
+                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                    </p>
+
+                                                    <p>
+                                                        <label for="password">Contraseña:</label>
+                                                        <input type="password" class="text_" name="j_password" id="password">
+                                                    </p>
+
+                                                    <p id="remember_me_holder">
+                                                        <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                                        <label for="remember_me">Recuérdame</label>
+                                                    </p>
+
+                                                    <p>
+                                                        <input type="submit" id="submit" value="Identifícate">
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
-                              </div>
                             </div>
-                            
-                            </div>
-                          </div>
                         </div></li>
+                    </sec:ifNotLoggedIn>
                 </ul>         
             </div>
         </div>

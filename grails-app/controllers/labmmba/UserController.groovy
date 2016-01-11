@@ -9,23 +9,24 @@ import grails.plugin.springsecurity.annotation.Secured
 class UserController {
 
     def springSecurityService
-    static allowedMethods = [update_personal_data: "POST", save: "POST", update: "PUT", delete: "DELETE"]
+    def mailService
+    static allowedMethods = [update_personal_data: "POST", save: "POST", update: "PUT", delete: "DELETE", upload_imagen: "POST", upload_video: "POST", delete_imagen: "DELETE", delete_video: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.findAllByEnabled(true,params), model:[userCount: User.findAllByEnabled(true).size()]
     }
-	
+
 	def pending(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.findAllByEnabled(false,params), model:[userCount: User.findAllByEnabled(false).size()]
     }
-	
+
     def show(User user) {
         respond user
     }
 
-    @Secured("ROLE_ANONONYMOUS")
+    @Secured("permitAll")
     def create() {
         respond new User(params)
     }
@@ -46,7 +47,7 @@ class UserController {
         }
 
         user.save flush:true
-        UserRole.create user, Role.findByAuthority('ROLE_PENDING_USER'), true
+        UserRole.create user, Role.findByAuthority('ROLE_USER'), true
 
         request.withFormat {
             form multipartForm {
@@ -109,11 +110,11 @@ class UserController {
         }
     }
 
-    private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
-
     @Secured(['ROLE_PENDING_USER','ROLE_USER'])
     @Transactional
     def update_personal_data(){
+
+        def okcontents = ['image/png', 'image/jpeg', 'image/gif']
 
         def f = request.getFile("avatar")
         def size = f.bytes.size()
@@ -206,8 +207,9 @@ class UserController {
         File avatar = new File(webrootDir, "avatars/" + user.id.toString())
 
         if(!avatar.exists()) {
-            response.status = 404
-        } else {
+            redirect(url: g.resource(dir: 'assets/team', file: 'member1.png', absoulute: true))
+        }
+        else {
             OutputStream out = response.getOutputStream();
             out.write(avatar.bytes);
             out.close()
@@ -232,6 +234,123 @@ class UserController {
             }
             '*'{ render status: NO_CONTENT }
         }
+    }
+
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    def imagen() {
+
+        def webrootDir = servletContext.getRealPath("/")
+        def user = springSecurityService.currentUser
+        File media = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + params.name )
+
+        if(!media.exists()) {
+            response.status = 404
+        }
+        else {
+            OutputStream out = response.getOutputStream();
+            if(media.getPath().endsWith(".mp4")){
+                response.contentType = 'video/mp4'
+            }
+            out.write(media.bytes);
+            out.close()
+        }
+    }
+
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    def video() {
+
+        def webrootDir = servletContext.getRealPath("/")
+        def user = springSecurityService.currentUser
+        File media = new File(webrootDir, "galeria/videos/" + user.id + "/" + params.name )
+
+        if(!media.exists()) {
+            response.status = 404
+        }
+        else {
+            OutputStream out = response.getOutputStream();
+            response.contentType = 'video/mp4'
+            out.write(media.bytes);
+            out.close()
+        }
+    }
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    def delete_imagen() {
+
+        def webrootDir = servletContext.getRealPath("/")
+        def user = springSecurityService.currentUser
+        File media = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + params.name )
+        media.delete()
+        redirect action:"editarGaleria", controller:"welcome"
+    }
+
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    def delete_video() {
+
+        def webrootDir = servletContext.getRealPath("/")
+        def user = springSecurityService.currentUser
+        File media = new File(webrootDir, "galeria/videos/" + user.id + "/" + params.name )
+        media.delete()
+        redirect action:"editarGaleria", controller:"welcome"
+    }
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    def upload_imagen() {
+        def okcontents = ['image/png', 'image/jpeg', 'image/gif']
+        def f = request.getFile("imagen")
+        def size = f.bytes.size()
+        def webrootDir = servletContext.getRealPath("/")
+        def user = springSecurityService.currentUser
+        File mediaDir = new File(webrootDir, "galeria/imagenes/" + user.id + "/")
+        if (!okcontents.contains(f.getContentType())) {
+            flash.message = "Document must be one of: ${okcontents}"
+            redirect action:"editarGaleria", controller:"welcome"
+            return
+        }
+
+        if (size> 2097152) {
+            flash.message = "Avatar must be less than 2097152 bytes"
+            redirect action:"editarGaleria", controller:"welcome"
+            return
+        }
+
+        if (!mediaDir.exists()) {
+            mediaDir.mkdirs()
+        }
+
+        File fileDest = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + f.getOriginalFilename())
+        f.transferTo(fileDest)
+        redirect action:"editarGaleria", controller:"welcome"
+    }
+
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    def upload_video() {
+
+
+        def okcontents = ['video/mp4']
+        def f = request.getFile("video")
+        def size = f.bytes.size()
+        def webrootDir = servletContext.getRealPath("/")
+        def user = springSecurityService.currentUser
+        File mediaDir = new File(webrootDir, "galeria/videos/" + user.id + "/")
+        if (!okcontents.contains(f.getContentType())) {
+            flash.message = "Document must be one of: ${okcontents}"
+            redirect action:"editarGaleria", controller:"welcome"
+            return
+        }
+
+        if (size> 2097152) {
+            flash.message = "Avatar must be less than 2097152 bytes"
+            redirect action:"editarGaleria", controller:"welcome"
+            return
+        }
+
+        if (!mediaDir.exists()) {
+            mediaDir.mkdirs()
+        }
+
+        File fileDest = new File(webrootDir, "galeria/videos/" + user.id + "/" + f.getOriginalFilename())
+        f.transferTo(fileDest)
+        redirect action:"editarGaleria", controller:"welcome"
+
     }
 
     protected void notFound() {

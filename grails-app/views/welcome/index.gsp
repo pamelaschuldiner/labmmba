@@ -67,13 +67,13 @@
                         <g:link controller="welcome" action="contact">Contact</g:link>
                     </li>
                     <sec:ifLoggedIn>
-                    <li><a href='<c:url value='j_spring_security_logout'/>'> Logout</a></li>
+                    <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
                     <li><div id="wrap">
                       <div id="regbar">
                         <div id="navthing">
-                          <a href="#" id="loginform">Ingresar</a> | <a href="#">Registrarse</a>
+                          <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
                         <div class="login">
                           <div class="arrow-up"></div>
                           <div class="formholder">
@@ -151,7 +151,7 @@
 
                         <!-- Begin Slide 3 -->
                         <div class="item">
-                        <g:img dir="assets/slider" file="slide2.jpg" alt="" height="400"/>
+                            <g:img dir="assets/slider" file="slide2.jpg" alt="" height="400"/>
                             <div class="carousel-caption">
                                 <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
                                 <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>

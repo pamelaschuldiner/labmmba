@@ -8,8 +8,11 @@ class WelcomeController {
     def springSecurityService
 
     def index() {
-        if( springSecurityService.isLoggedIn()){
+        if( springSecurityService.isLoggedIn()&&getPrincipal().username!="admin"){
             redirect(controller: "welcome", action: 'resumenperfil')
+        }
+        if(springSecurityService.isLoggedIn()&&getPrincipal().username=="admin"){
+            redirect(controller: "user", action: 'index')
         }
     }
 
@@ -82,7 +85,7 @@ class WelcomeController {
          }
     def resumenperfil(User user) {
         if(user==null){
-            if(springSecurityService.currentUser==null){
+            if(springSecurityService.currentUser==null&&getPrincipal().username!="admin"){
                 redirect(controller: "welcome", action: "index")
                 return
             }
@@ -91,12 +94,40 @@ class WelcomeController {
             }
         }
 
-        respond user
+        def webrootDir = servletContext.getRealPath("/")
 
+        File imagesDir = new File(webrootDir, "galeria/imagenes/" + user.id.toString())
+        if (!imagesDir.exists()) {
+            imagesDir.mkdirs()
+        }
+        File videosDir = new File(webrootDir, "galeria/videos/" + user.id.toString())
+        if (!videosDir.exists()) {
+            videosDir.mkdirs()
+        }
+
+        render(view: 'resumenperfil.gsp', model: [user: user, images: imagesDir.listFiles(), videos:videosDir.listFiles() ])
          }
+
     def congresos() {
 
         render(view: 'congresos.gsp')
 
          }
+
+    def editarGaleria() {
+        def user = springSecurityService.currentUser
+        def webrootDir = servletContext.getRealPath("/")
+
+        File imagesDir = new File(webrootDir, "galeria/imagenes/" + user.id.toString())
+        if (!imagesDir.exists()) {
+            imagesDir.mkdirs()
+        }
+        File videosDir = new File(webrootDir, "galeria/videos/" + user.id.toString())
+        if (!videosDir.exists()) {
+            videosDir.mkdirs()
+        }
+
+        render(view: 'editarGaleria.gsp', model: [images: imagesDir.listFiles(), videos:videosDir.listFiles() ])
+
+    }
 }

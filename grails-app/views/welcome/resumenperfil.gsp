@@ -8,6 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+        <g:external dir="assets" file="jquery-2.1.3.js" />
         <g:external base="http://fonts.googleapis.com/css?family=Open+Sans:400,300" type="css"/>
         <g:external base="http://fonts.googleapis.com/css?family=PT+Sans" type="css"/>
         <g:external base="http://fonts.googleapis.com/css?family=Raleway" type="css"/>
@@ -19,10 +20,9 @@
         <g:external dir="assets" file="style-projects.css" />
         <g:external dir="assets" file="jquery.cookie.js" />
         <g:external dir="assets" file="jquery.hoverIntent.minified.js" />
-        <g:external dir="assets" file="jquery.dcjqaccordion.2.7.min.js" />
+        <g:external dir="assets" file="jquery.dcjqaccordion.2.9.js" />
         <g:external dir="assets" file="index.js" />
-        <g:external dir="assets" file="jquery-2.1.3.js" />
-        
+
 
         <!-- Favicon and touch icons -->
         <g:external dir="assets" file="apple-touch-icon-144-precomposed.png" />
@@ -31,7 +31,7 @@
         <g:external dir="assets" file="apple-touch-icon-57-precomposed.png" />
         <g:external dir="assets" file="favicon.ico" />
 
-</head>
+    </head>
     <body>
 
     <!-- Header -->
@@ -66,41 +66,51 @@
                     <li>
                         <g:link controller="welcome" action="contact">Contact</g:link>
                     </li>
-                    <li><div id="wrap">
-                          <div id="regbar">
-                            <div id="navthing">
-                              <a href="#" id="loginform">Ingresar</a> | <a href="#">Registrarse</a>
-                            <div class="login">
-                              <div class="arrow-up"></div>
-                              <div class="formholder">
-                                <div class="randompad">
-                                    <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
-                                        <p>
-                                            <label for="username">Nombre de usuario:</label>
-                                            <input type="text" class="text_" name="j_username" id="username">
-                                        </p>
+                    <li>
+                        <sec:ifAllGranted roles='ROLE_ADMIN'>
+                            <g:link controller="user" action="pending">Administrar</g:link>
+                        </sec:ifAllGranted>
+                    </li>
+                    <sec:ifLoggedIn>
+                        <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                        <li><div id="wrap">
+                            <div id="regbar">
+                                <div id="navthing">
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <div class="login">
+                                        <div class="arrow-up"></div>
+                                        <div class="formholder">
+                                            <div class="randompad">
+                                                <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                                    <p>
+                                                        <label for="username">Nombre de usuario:</label>
+                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                    </p>
 
-                                        <p>
-                                            <label for="password">Contraseña:</label>
-                                            <input type="password" class="text_" name="j_password" id="password">
-                                        </p>
+                                                    <p>
+                                                        <label for="password">Contraseña:</label>
+                                                        <input type="password" class="text_" name="j_password" id="password">
+                                                    </p>
 
-                                        <p id="remember_me_holder">
-                                            <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
-                                            <label for="remember_me">Recuérdame</label>
-                                        </p>
+                                                    <p id="remember_me_holder">
+                                                        <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                                        <label for="remember_me">Recuérdame</label>
+                                                    </p>
 
-                                        <p>
-                                            <input type="submit" id="submit" value="Identifícate">
-                                        </p>
-                                    </form>
+                                                    <p>
+                                                        <input type="submit" id="submit" value="Identifícate">
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
-                              </div>
                             </div>
-
-                            </div>
-                          </div>
                         </div></li>
+                    </sec:ifNotLoggedIn>
                 </ul>         
             </div>
         </div>
@@ -127,7 +137,13 @@
                     <table>
                         <!--Username y nombre -->
                         <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}"  width="108"/>
-                        <p><g:submitButton name="show_edit" value="Editar" onclick="for (var i = 0; i < document.getElementsByClassName('edit').length; i++){document.getElementsByClassName('edit')[i].style.visibility = 'visible'}" ></g:submitButton></p>
+
+                        <sec:access url='/welcome/resumenperfil'>
+
+                            <p><g:submitButton name="show_edit" value="Editar" onclick="for (var i = 0; i < document.getElementsByClassName('edit').length; i++){document.getElementsByClassName('edit')[i].style.visibility = 'visible'}" ></g:submitButton></p>
+
+
+                        </sec:access>
                         <tr><p>
                             <td align="left">Username:     </td>
                             <td align="left"><f:display bean="user" property="username"/> </td>
@@ -343,6 +359,77 @@
                             </g:each>
                         </p></tr>
 
+                        <!-- Begin #carousel-section -->
+                        <g:if test="${images.length>0||videos.length>0}" >
+                            <tr><p>
+                                <section id="carousel-section" class="section-global-wrapper">
+                                    <div class="container-fluid-kamn">
+                                        <div class="row">
+                                            <div id="carousel-1" class="carousel slide">
+
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators visible-lg">
+                                                    <g:each in="${images}" status="i" var="image">
+                                                        <g:if test="${i==0}">
+                                                            <li data-target="#carousel-1" data-slide-to="${i}" class="active"></li>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <li data-target="#carousel-1" data-slide-to="${i}"></li>
+                                                        </g:else>
+                                                    </g:each>
+                                                    <g:each in="${videos}" status="i" var="video">
+                                                        <g:if test="${images.length==0}">
+                                                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <li data-target="#carousel-1" data-slide-to="${i+images.length}"></li>
+                                                        </g:else>
+                                                    </g:each>
+                                                </ol>
+
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner">
+                                                    <g:each in="${images}" status="i" var="image">
+                                                        <g:if test="${i==0}">
+                                                            <div class="item active">
+                                                                <img class="slide" src="${createLink(controller:'user', action:'imagen', params:[name: image.name])}"  height="400" width="100%"/>
+                                                            </div>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <div class="item">
+                                                                <img class="slide" src="${createLink(controller:'user', action:'imagen', params:[name: image.name])}" height="400" width="100%"/>
+                                                            </div>
+                                                        </g:else>
+                                                    </g:each>
+                                                    <g:each in="${videos}" status="i" var="video">
+                                                        <g:if test="${images.length==0&&i==0}">
+                                                            <div class="item active">
+                                                                <video class="slide" src="${createLink(controller:'user', action:'video', params:[name: video.name])}" height="400" width="100%" controls/>
+                                                            </div>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <div class="item">
+                                                                <video class="slide" src="${createLink(controller:'user', action:'video', params:[name: video.name])}" height="400" width="100%" controls/>
+                                                            </div>
+                                                        </g:else>
+                                                    </g:each>
+                                                </div>
+
+                                                <!-- Controls -->
+                                                <a class="left  carousel-control" href="#carousel-1" data-slide="prev" style="background-image: none;height: 90%;" onclick="$('#carousel-1').carousel('prev')">
+                                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                                </a>
+                                                <a class="right carousel-control" href="#carousel-1" data-slide="next" style="background-image: none;height: 90%;" onclick="$('#carousel-1').carousel('next')">
+                                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </p></tr>
+                        </g:if>
+
+                        <!-- End #carousel-section -->
                     </table>
 
                 </ul>
@@ -350,20 +437,31 @@
 
             <div class="col-sm-8 col-md-8">
 
-               <div id='cssmenu'>
-                    <ul>
-                        <li><g:link controller="welcome" action="resumenperfil">Resumen de Perfil</g:link></li>
-                        <li><g:link controller="welcome" action="personal">Personal</g:link></li>
-                        <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
-                        <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
-                        <li><g:link controller="welcome" action="experimentos">Experimentos</g:link></li>
-                        <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
-                        <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>
-                        <li><g:link controller="welcome" action="avancetesis">Avance de Tesis</g:link></li>
-                        <li><g:link controller="welcome" action="mensajes">Mensajes</g:link></li>
-                        <li><g:link controller="welcome" action="cuenta">Cuenta</g:link></li>
-                    </ul>
-                </div>
+                <sec:access url='/welcome/resumenperfil'>
+                    <div id='cssmenu'>
+                        <ul>
+                            <li><g:link controller="welcome" action="resumenperfil">Resumen de Perfil</g:link></li>
+                            <li><g:link controller="welcome" action="personal">Personal</g:link></li>
+                            <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
+                            <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
+                            <li><g:link controller="welcome" action="experimentos">Experimentos</g:link></li>
+                            <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
+                            <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
+                            <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>
+                            <li><g:link controller="welcome" action="avancetesis">Avance de Tesis</g:link></li>
+                            <li><g:link controller="welcome" action="mensajes">Mensajes</g:link></li>
+                            <li><g:link controller="welcome" action="cuenta">Cuenta</g:link></li>
+                        </ul>
+                    </div>
+                </sec:access>
+                <sec:noAccess url='/welcome/resumenperfil'>
+                    <div id='cssmenu'>
+                        <ul>
+
+                        </ul>
+                    </div>
+                </sec:noAccess>
+
             </div>  
         </div>    
     </div>  
@@ -417,7 +515,7 @@
     </div>
 
 
-    
+
     <g:external dir="assets" file="jquery-1.10.2.min.js" />
     <g:external dir="assets" file="bootstrap.min.js" />
     <g:external dir="assets" file="wow.min.js" />

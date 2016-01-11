@@ -68,31 +68,44 @@
                         <g:link controller="welcome" action="contact">Contacto</g:link>
                     </li>
                     <sec:ifLoggedIn>
-                    <li><a href='<c:url value='j_spring_security_logout'/>'> Logout</a></li>
+                        <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
-                    <li><div id="wrap">
-                      <div id="regbar">
-                        <div id="navthing">
-                          <a href="#" id="loginform">Ingresar</a> | <a href="#">Registrarse</a>
-                        <div class="login">
-                          <div class="arrow-up"></div>
-                          <div class="formholder">
-                            <div class="randompad">
-                               <fieldset>
-                                 <p>Usuario</p>
-                                 <input type="email" value="example@example.com" />
-                                 <p>Contraseña</p>
-                                 <input type="password" />
-                                 <input type="submit" value="Ingresar" />
-                               </fieldset>
-                            </div>
-                          </div>
-                        </div>
+                        <li><div id="wrap">
+                            <div id="regbar">
+                                <div id="navthing">
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <div class="login">
+                                        <div class="arrow-up"></div>
+                                        <div class="formholder">
+                                            <div class="randompad">
+                                                <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                                    <p>
+                                                        <label for="username">Nombre de usuario:</label>
+                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                    </p>
 
-                        </div>
-                      </div>
-                    </div></li>
+                                                    <p>
+                                                        <label for="password">Contraseña:</label>
+                                                        <input type="password" class="text_" name="j_password" id="password">
+                                                    </p>
+
+                                                    <p id="remember_me_holder">
+                                                        <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                                        <label for="remember_me">Recuérdame</label>
+                                                    </p>
+
+                                                    <p>
+                                                        <input type="submit" id="submit" value="Identifícate">
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div></li>
                     </sec:ifNotLoggedIn>
 
                 </ul>         
@@ -113,54 +126,7 @@
     <div class="container">   
         <div class="row">
             <div class="side-left col-sm-4 col-md-4">
-
-               <h3 class="lead">  Sobre nuestro laboratorio: </h3><hr>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En 1997 se crea el primer laboratorio del área biológica de la Universidad Técnica Federico Santa María: El laboratorio de Microbiología Molecular y Biotecnología Ambiental (MMBA). En Octubre de ese año, este laboratorio cuenta con dos investigadores (Michael Seeger y Myriam Gonzalez), dos proyectos interinstitucionales y un espacio físico de 36 [m2].</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se comenzó con una línea de investigación muy relevante para la región y el país en el campo de la Biotecnología Ambiental: La degradación Bacteriana (biorremediación) de contaminantes orgánicos persistentes (COPs), una temática de escaso desarrollo en el país. La importancia de esta investigación está dada por el impacto ambiental que generan estos contaminantes a lo largo del territorio nacional.</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El Laboratorio MMBA participó activamente en la formación del Centro de Biotecnología de la UTFSM, creado oficialmente en enero del 2000 (aunque las gestiones se iniciaron en 1997), y en la creación del Programa de Doctorado de Biotecnología (UTFSM – PUCV) cuyas gestiones iniciaron en 1998 y tuvo inicio en Marzo del 2002.</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Para Octubre del año 2001, el grupo de trabajo incluía 4 investigadores, 1 estudiante de Doctorado, 4 estudiantes de pregrado y una persona de apoyo técnico. Se ejecutaban 6 proyectos de investigación propios, disponiendo de dos laboratorios con una superficie de 80 [m2] y un moderno equipamiento.</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El año 2009 el laboratorio está conformado por dos investigadores senior, dos investigadores post-doctorales,  dos investigadores asociados, un técnico de química analítica, cinco estudiantes de Doctorado, dos estudiantes de Magister, dos estudiantes de pre-grado y estudiantes en pasantía.</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dispone de dos laboratorios de investigación de 80 [m2] ubicados en el Departamento de Química de la Casa Central. Además se dispone de un laboratorio de preparación de muestras y 3 cámaras termorreguladas de 25°C, 5°C y -20 °C ubicados en la edificación de calle General Bari.</p>
-                    <p><b>El laboratorio tiene las siguientes áreas de investigación:</b></p>
-                    <p style="text-indent: 5em;">&#9658;           Biodegradación y biorremediación de COPs</p>
-                    <p style="text-indent: 5em;">&#9658;           Proteómica y Genómica funcional de bacterias</p>
-                    <p style="text-indent: 5em;">&#9658;           Química Ambiental de COPs</p>
-                    <p style="text-indent: 5em;">&#9658;           Biotransformaciones y Síntesis Orgánica</p>
-                    <p style="text-indent: 5em;">&#9658;           Ecología Microbiana</p>
-                    <p style="text-indent: 5em;">&#9658;           Resistencia de bacterias a metales pesados</p>
-                    <p style="text-indent: 5em;">&#9658;           Biorremediación de Suelos Contaminados con Metales Pesados</p>
-                     
-                    <p><b>El laboratorio MMBA ha colaborado con diversas instituciones como son:</b></p>
-
-                    <p>Instituciones Nacionales</p>
-                     <br>
-                    <p style="text-indent: 5em;">&#9658;          Pontificia Universidad Católica de Valparaíso</p>
-                    <p style="text-indent: 5em;">&#9658;          Universidad Austral</p>
-                    <p style="text-indent: 5em;">&#9658;          Universidad de Chile</p>
-                    <p style="text-indent: 5em;">&#9658;          Universidad de Santiago</p>
-                    <p style="text-indent: 5em;">&#9658;          Universidad de Valparaíso</p>
-                    <p style="text-indent: 5em;">&#9658;          Pontificia Universidad Católica de Chile</p>
-                    <p style="text-indent: 5em;">&#9658;          Universidad de Magallanes</p>
-                    <p style="text-indent: 5em;">&#9658;          Universidad de la Frontera</p>
-                     <br>
-                    <p>Instituciones Internacionales</p>
-                     <br> 
-                    <p style="text-indent: 5em;">&#9658;            Helmholzt Centre for Infection Research (Braunschweig, Alemania)</p>
-                    <p style="text-indent: 5em;">&#9658;            Max Planck Institute for Terrestrial Microbiology (Marburg, Alemania)</p>
-                    <p style="text-indent: 5em;">&#9658;            Julius Kühn-Institute, Federal Research Center for Cultivated plants (Braunschweig, Alemania)</p>
-                    <p style="text-indent: 5em;">&#9658;            Helmholtz Centre for Environmental Research – UFZ (Leipzig, Alemania)</p>
-                    <p style="text-indent: 5em;">&#9658;            Universidad de Buenos Aires (Argentina)</p>
-                    <p style="text-indent: 5em;">&#9658;            Universidad Campinas (Sao Paolo, Brasil)</p>
-                    <p style="text-indent: 5em;">&#9658;            Centro Nacional de Biotecnología (Madrid, España)</p>
-                    <p style="text-indent: 5em;">&#9658;            Centro de Investigaciones Biológicas (Madrid, España)</p>
-                    <p style="text-indent: 5em;">&#9658;            Universidad Pablo de Olavide (Sevilla, España)</p>
-                    <p style="text-indent: 5em;">&#9658;            The Macaulay Land use Research Institute (Aberdine, Escocia)</p>
-                    <p style="text-indent: 5em;">&#9658;            Texas A&M University (College Station, Estados Unidos)</p>
-                    <p style="text-indent: 5em;">&#9658;            University Southern California (Los Angeles, Estados Unidos)</p>
-                    <p style="text-indent: 5em;">&#9658;            Center for Microbial Ecology (East Lansing, Estados Unidos)</p>
-                    <p style="text-indent: 5em;">&#9658;            CCUG, University of Göteborg (Göteborg,  Suecia)</p>
-                     <br>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Las investigaciones del laboratorio han sido financiadas con el apoyo de diversas instituciones tales como Fondecyt, Fundación Andes, Conicyt – BMBF, European Union (INCO), Mineduc, Núcleo Milenio EMBA, PBCT, UTFSM, Texas A&M University, U. Austral, Instituto Milenio (CBB) y Perkin Elmer Chile.</p>
+                <g:message code="labbma.about" default="${g.message(code:'labbma.about', locale:new Locale("es"))}"/>
             </div>
             <div class="col-sm-8 col-md-8">
                 <g:img dir="assets" file="adn.jpg" alt="" height="100%"/>
