@@ -165,15 +165,20 @@
                              </p></tr>
                         </g:if>
                         <tr><p>
-                            <td align="left">Areas:     </td>
-                            <g:each in="${user.fields.sort({it.id})}">
-                                <table>
-                                    <tr><p>
+                            <table>
+                                <td align="left">Areas:     </td>
+                                <g:each in="${user.fields.sort({it.id})}">
+                                    <tr>
                                         <td align="left"></td>
                                         <td align="left">${it.field_name}  </td>
-                                    </p></tr>
-                                </table>
-                            </g:each>
+                                        <td align="left" class="edit" style="visibility:hidden" >
+                                            <g:form controller="user" action="eliminar_area" params="[area_id: it.id]" method="DELETE">
+                                                <g:submitButton name="Eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
+                                            </g:form>
+                                        </td>
+                                    </tr>
+                                </g:each>
+                           </table>
                         </p></tr>
                         <!--Estudios,universidades y thesis -->
                         <tr><p>
@@ -185,7 +190,7 @@
                                         <td align="left">${it.study_name}  </td>
                                         <td align="left" class="edit" style="visibility:hidden" >
                                             <g:form controller="study" action="delete" resource="${it}"  method="delete">
-                                                <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
+                                                <g:submitButton name="Eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
                                             </g:form>
                                         </td>
                                     </p></tr>
@@ -444,7 +449,6 @@
                             <li><g:link controller="welcome" action="personal">Personal</g:link></li>
                             <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
                             <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
-                            <li><g:link controller="welcome" action="experimentos">Experimentos</g:link></li>
                             <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
                             <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
                             <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>

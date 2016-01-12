@@ -47,12 +47,7 @@ class WelcomeController {
 
         render(view: 'proyectos.gsp')
 
-         } 
-    def experimentos() {
-
-        render(view: 'experimentos.gsp')
-
-         } 
+         }
     def mensajes() {
 
         render(view: 'mensajes.gsp')
@@ -70,7 +65,10 @@ class WelcomeController {
     }
     def avancetesis() {
 
-        render(view: 'avancetesis.gsp')
+        def users = User.findAllByUsernameNotEqual(springSecurityService.currentUser.getUsername())
+        def tesisPupilos = Thesi.findAllByCuentaTutor(springSecurityService.currentUser)
+        def currentUser = springSecurityService.currentUser
+        render(view: 'avancetesis.gsp', model: [users: users, tesisPupilos: tesisPupilos, currentUser: currentUser])
 
          } 	 
     def publicaciones() {

@@ -123,19 +123,49 @@
             <div class="side-left col-sm-4 col-md-4">
 
                 <h3 class="lead"> Avance de Tesis</h3><hr>
+                <g:if test="${flash.message}">
+                    <div class="message" role="status">${flash.message}</div>
+                </g:if>
                 <ul class="input-list style-2 clearfix">
+                    <g:uploadForm controller="thesi" action="create_current_thesi" >
+                        <table>
+                            <tr><p>
+                                <td align="left">*Tesis:     </td>
+                                <td align="left"><g:textField name="thesis_name" class="others" size="40" required="true"/></td>
+                            </p></tr>
+                            <tr><p>
+                                <td align="left">*Profesor Tutor:     </td>
+                                <td align="left" class="others"><g:select name="tutor_id" from="${users}" optionKey="id"/> </td>
+                            </p></tr>
+                            <tr><p>
+                                <td align="left">Profesor Cotutor:     </td>
+                                <td align="left"><g:textField name="thesis_cotutor" class="others" size="40"/></td>
+                            </p></tr>
+                            <tr><p>
+                                <td align="left">Adjuntar archivo desde tu computador: </td>
+
+                                <td align="left"><input type="file" name="thesis" size="40"></td>
+                            </p></tr>
+                        </table>
+                        <p><g:actionSubmitImage value="create_current_thesi" action="create_current_thesi" src="/assets/agregar.png"/></p>
+                    </g:uploadForm>
+                    <g:link controller="thesi" action="download_current" params="[user_id: currentUser.id]">Thesis</g:link>
                     <p>Para poder visualizar y compartir tu avance de tesis, debes ingresar el link del archivo almacenado en tu cuenta de Google Drive. Haz click <g:link controller="welcome" action="#">aquí</g:link> para saber cómo hacerlo. Si no deseas utilizar Google Docs, puedes adjuntar el archivo .docx.</p>
-                    <table>
-                        <tr><p>
-                            <td align="left">Adjuntar archivo desde tu computador: </td>
-                            <td align="left"><input type="file" name="thesis_ad" size="40"></td>
-                        </p></tr>
-                    </table>
-                    <p>URL Archivo compartido en Google Docs:    <input type="text" id="myText" class="others"> </p>
+                    <g:form action="enviar_tesis" controller="thesi" >
+                        <p>URL Archivo compartido en Google Docs:    <input type="text" id="myText" class="others"> </p>
+                        <g:actionSubmitImage value="enviar_tesis" action="enviar_tesis" src="/assets/enviar.png"/>
+                    </g:form>
                     <p><input type="image" src="/assets/ingresar.png" alt="Submit" onclick="myFunction()"></p>
                     <p id="demo"></p>
-
                 </ul>
+                <h3 class="lead"> Tesis pupilos</h3><hr>
+                <g:each in="${tesisPupilos}" var="tesis" >
+
+                    <p><g:link controller="thesi" action="download_current" params="[user_id: tesis.cuentaAutor.id]">${tesis.cuentaAutor.firstname}</g:link></p>
+
+                </g:each>
+
+
             </div>
 
             <div class="col-sm-8 col-md-8">
@@ -145,7 +175,6 @@
                         <li><g:link controller="welcome" action="personal">Personal</g:link></li>
                         <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
                         <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
-                        <li><g:link controller="welcome" action="experimentos">Experimentos</g:link></li>
                         <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
                         <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
                         <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>

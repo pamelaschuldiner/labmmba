@@ -200,7 +200,6 @@
                         <li><g:link controller="welcome" action="personal">Personal</g:link></li>
                         <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
                         <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
-                        <li><g:link controller="welcome" action="experimentos">Experimentos</g:link></li>
                         <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
                         <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
                         <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>

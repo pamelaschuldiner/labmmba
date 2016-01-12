@@ -84,10 +84,9 @@ class StudyController {
         }
     }
 
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
     @Transactional
     def delete(Study study) {
-
-        print "Entro"
         if (study == null) {
             transactionStatus.setRollbackOnly()
             notFound()

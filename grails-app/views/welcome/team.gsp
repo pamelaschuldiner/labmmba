@@ -125,6 +125,29 @@
    <div id="banners"></div>
     <div class="container">
         <div class="row">
+            <g:each in="${labmmba.User.listOrderById()}" status="i" var="user">
+                <div class="col-md-6">
+                    <g:if test="${i%2}" >
+                        <div class="blockquote-box blockquote-info animated wow fadeInRight clearfix">
+                    </g:if>
+                    <g:else>
+                        <div class="blockquote-box blockquote-info animated wow fadeInLeft clearfix">
+                    </g:else>
+                        <div class="square pull-left">
+                            <g:link controller="welcome" action="resumenperfil" id="${user.id}"><img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.id)}"  width="108"/></g:link>
+                        </div>
+                        <h4>
+                            ${user.firstname} ${user.lastname}
+                        </h4>
+                        <g:if test="${user.labrol != null}" >
+                            <p>
+                                ${user.labrol.labrol_name}
+                            </p>
+                        </g:if>
+                    </div>
+                </div>
+            </g:each>
+
             <div class="col-md-6">
                 <div class="blockquote-box blockquote-info animated wow fadeInLeft clearfix">
                     <div class="square pull-left">
@@ -189,7 +212,7 @@
                 </div>
 
             </div>
-                        <div class="col-md-6">
+            <div class="col-md-6">
                 <div class="blockquote-box blockquote-info animated wow fadeInLeft clearfix">
                     <div class="square pull-left">
                         <img src="/assets/team/mariajosevargas.jpg" alt="Feature-img" height="100" width="100">

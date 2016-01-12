@@ -9,7 +9,8 @@ import grails.plugin.springsecurity.annotation.Secured
 @Transactional(readOnly = true)
 class ThesiController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def springSecurityService
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE",create_current_thesi: "POST"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -53,6 +54,42 @@ class ThesiController {
         respond thesi
     }
 
+    @Secured(['ROLE_USER','ROLE_ADMIN'])
+    @Transactional
+    def create_current_thesi(){
+
+        def f = request.getFile("thesis")
+        def size = f.bytes.size()
+        def webrootDir = servletContext.getRealPath("/")
+        def thesisDir = new File(webrootDir + "thesis_activa")
+        def user = springSecurityService.currentUser
+        def thesis = new Thesi(thesis_name: params.thesis_name, thesis_tutor: User.get(params.tutor_id.toInteger()).username, thesis_cotutor: params.thesis_cotutor, cuentaAutor: user , cuentaTutor: User.get(params.tutor_id.toInteger()), active: true)
+        if (size> 2097152) {
+            flash.message = "File must be less than 2097152 bytes"
+            redirect action:"avancetesis", controller:"welcome"
+            return
+        }
+
+        if(Thesi.findByActive(true)){Thesi.findByActive(true).deleteAll()}
+        thesis.save(flush: true)
+
+
+        if (!thesisDir.exists()) {
+            thesisDir.mkdirs()
+        }
+
+        File fileDest = new File(webrootDir, "thesis_activa/" + user.id.toString() + '.docx')
+        f.transferTo(fileDest)
+
+        redirect(controller: "welcome",action: "avancetesis")
+    }
+
+    @Secured(['ROLE_USER','ROLE_ADMIN'])
+    @Transactional
+    def enviar_tesis(){
+        render("Tuturuuuu")
+    }
+
     @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])
     def download(Thesi thesi) {
         def webrootDir = servletContext.getRealPath("/")
@@ -64,6 +101,26 @@ class ThesiController {
         else{
             flash.message = "El usuario no a subido el pdf"
             redirect(controller: "welcome",action: "resumenperfil")
+        }
+    }
+
+    @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])
+    def download_current() {
+        def user = User.get(params.user_id)
+        def webrootDir = servletContext.getRealPath("/")
+        def path = webrootDir + "thesis_activa/" + user.id.toString() + ".docx"
+        def thesisFile = new File(path)
+        if(springSecurityService.currentUser!=user && springSecurityService.currentUser!=Thesi.findByCuentaAutor(user).cuentaTutor){
+            flash.message = "No tienes permitido ver esta tesis"
+            redirect(controller: "welcome",action: "avancetesis")
+            return
+        }
+        if(thesisFile.exists()){
+            render(contentType: "multipart/form-data", file: thesisFile, fileName: ("thesis_"+ user.username +".docx") )
+        }
+        else{
+            flash.message = "El usuario no a subido el pdf"
+            redirect(controller: "welcome",action: "avancetesis")
         }
     }
 

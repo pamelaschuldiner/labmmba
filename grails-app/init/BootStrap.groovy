@@ -16,6 +16,8 @@ class BootStrap {
 
 		def testUser = new User(username:'test',password:'test',email:'test@test.cl',firstname:"test",lastname:"test",enabled:true).save()
 		UserRole.create testUser, userRole, true
+		testUser = new User(username:'test2',password:'test2',email:'test2@test.cl',firstname:"test2",lastname:"test2",enabled:true).save()
+		UserRole.create testUser, userRole, true
 		
     }
     def destroy = {

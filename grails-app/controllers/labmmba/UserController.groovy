@@ -10,7 +10,7 @@ class UserController {
 
     def springSecurityService
     def mailService
-    static allowedMethods = [update_personal_data: "POST", save: "POST", update: "PUT", delete: "DELETE", upload_imagen: "POST", upload_video: "POST", delete_imagen: "DELETE", delete_video: "DELETE"]
+    static allowedMethods = [update_personal_data: "POST", save: "POST", update: "PUT", delete: "DELETE", upload_imagen: "POST", upload_video: "POST", delete_imagen: "DELETE", delete_video: "DELETE", eliminar_area: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -178,7 +178,7 @@ class UserController {
             }
         }
 
-        if(params.campo[0]!='Seleccione cargo en laboratorio...') {
+        if(params.campo[0]!="Seleccione área de investigación...") {
             if (params.campo[0] == "Otro") {
                 if (Field.findByField_name(params.campo[1])) {
                     campo = Field.findByField_name(params.campo[1])
@@ -218,7 +218,6 @@ class UserController {
 
     @Transactional
     def delete(User user) {
-
         if (user == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -234,6 +233,17 @@ class UserController {
             }
             '*'{ render status: NO_CONTENT }
         }
+    }
+
+    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
+    @Transactional
+    def eliminar_area() {
+        def user = springSecurityService.currentUser
+        def field = user.fields.find{it.id == params.area_id.toInteger()}
+        field.removeFromUsers(user)
+
+        user.save()
+        redirect(controller: "welcome", action: "resumenperfil")
     }
 
     @Secured(['ROLE_PENDING_USER','ROLE_USER'])

@@ -184,14 +184,12 @@
             </div>
 
             <div class="col-sm-8 col-md-8">
-                Área Personal
                <div id='cssmenu'>
                     <ul>
                         <li><g:link controller="welcome" action="resumenperfil">Resumen de Perfil</g:link></li>
                         <li><g:link controller="welcome" action="personal">Personal</g:link></li>
                         <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
                         <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
-                        <li><g:link controller="welcome" action="experimentos">Experimentos</g:link></li>
                         <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
                         <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
                         <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>

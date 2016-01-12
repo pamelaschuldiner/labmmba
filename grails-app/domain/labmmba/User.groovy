@@ -16,7 +16,7 @@ class User implements Serializable {
 	boolean accountLocked
 	boolean passwordExpired
 
-	static hasMany = [books: Book, events: Event, experiments: Experiment, fields: Field, proyects: Proyect, magazines: Magazine, studys: Study]
+	static hasMany = [books: Book, events: Event, fields: Field, proyects: Proyect, magazines: Magazine, studys: Study]
 	static hasOne = [labrol: Labrol]
 
 	User(String username, String password) {
