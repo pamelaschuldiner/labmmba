@@ -22,9 +22,12 @@ class WelcomeController {
     	render(view: 'about.gsp')
 
     	 }
-    def team() {
 
-    	render(view: 'team.gsp')
+
+
+    def team() {
+        def users= labmmba.User.listOrderById()
+    	render(view: 'team.gsp', model: [users: users])
 
     	 }
     def contact() {

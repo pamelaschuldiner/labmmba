@@ -10,6 +10,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class ThesiController {
 
     def springSecurityService
+    def mailService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE",create_current_thesi: "POST"]
 
     def index(Integer max) {
@@ -81,13 +82,29 @@ class ThesiController {
         File fileDest = new File(webrootDir, "thesis_activa/" + user.id.toString() + '.docx')
         f.transferTo(fileDest)
 
+        mailService.sendMail {
+            multipart true
+            to thesis.cuentaTutor.email
+            from thesis.cuentaAutor.email
+            subject ("Avanze Tesis" + thesis.cuentaAutor.firstname + thesis.cuentaAutor.lastname)
+            body g.createLink(controller:"thesi", action:"download_current", params:[user_id: thesis.cuentaAutor.id], absolute: true)
+            attachBytes "Tesis.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", f.getBytes("UTF-8")
+
+        }
         redirect(controller: "welcome",action: "avancetesis")
     }
 
     @Secured(['ROLE_USER','ROLE_ADMIN'])
     @Transactional
     def enviar_tesis(){
-        render("Tuturuuuu")
+        print params.doc_url
+        mailService.sendMail {
+            to Thesi.findByCuentaAutor(springSecurityService.currentUser).cuentaTutor.email
+            from springSecurityService.currentUser.email
+            subject "Avanze tesis"
+            body params.doc_url
+        }
+        redirect(controller: "welcome",action: "avancetesis")
     }
 
     @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])

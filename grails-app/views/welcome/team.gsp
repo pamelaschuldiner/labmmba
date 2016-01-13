@@ -125,7 +125,7 @@
    <div id="banners"></div>
     <div class="container">
         <div class="row">
-            <g:each in="${labmmba.User.listOrderById()}" status="i" var="user">
+            <g:each in="${users}" status="i" var="user">
                 <div class="col-md-6">
                     <g:if test="${i%2}" >
                         <div class="blockquote-box blockquote-info animated wow fadeInRight clearfix">
