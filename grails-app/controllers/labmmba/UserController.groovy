@@ -31,6 +31,37 @@ class UserController {
         respond new User(params)
     }
 
+
+    @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN'])
+    @Transactional
+    def confirmarMail(User user){
+        if(params.confirmationNumber.toInteger() == user.confirmationNumber && !user.emailConfirmed){
+            user.emailConfirmed = true
+            user.save(flush: true)
+            mailService.sendMail {
+                to Administrator.list().email + UserRole.findAllByRole(Role.findByAuthority("ROLE_ADMIN")).user.email
+                subject ("Confirmacion cuenta: " + user.firstname + " " + user.lastname)
+                html "<a href='" + g.createLink(controller: "user", action: "show", resource: user, absoulute: true) + "'> Aprobar Usuario </a>"
+            }
+            mailService.sendMail {
+                to user.email
+                subject "Confirmacion correo Labmmba"
+                body "Confirmacion exitosa, espere aprobacion por administrador."
+            }
+        }
+        if(params.confirmationNumber.toInteger() != user.confirmationNumber){
+            mailService.sendMail {
+                to user.email
+                subject "Confirmacion correo Labmmba"
+                body "Cuenta borrada por fallo de confirmacion, intente crear su cuenta de nuevo."
+            }
+
+            UserRole.findByUser(user).delete flush: true
+            user.delete flush:true
+        }
+        redirect(controller: "welcome", action: "index")
+    }
+
     @Transactional
     @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN'])
     def save(User user) {
@@ -48,6 +79,11 @@ class UserController {
 
         user.save flush:true
         UserRole.create user, Role.findByAuthority('ROLE_USER'), true
+        mailService.sendMail {
+            to user.email
+            subject "Confirmacion correo Labmmba"
+            html "<a href='" + g.createLink(controller: "user", action: "confirmarMail", resource: user, params:[confirmationNumber: user.confirmationNumber], absoulute: true) + "'> Confirmar Correo </a>"
+        }
 
         request.withFormat {
             form multipartForm {
@@ -73,6 +109,11 @@ class UserController {
     def approve(User user){
         user.enabled = true
         user.save()
+        mailService.sendMail {
+            to user.email
+            subject "Aprovacion cuenta Labmmba"
+            body "Su cuenta a sido aprovada por un administrador"
+        }
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: '{0} {1} aprobado', args: [message(code: 'user.label', default: 'User'), user.username])
@@ -224,6 +265,7 @@ class UserController {
             return
         }
 
+        UserRole.findByUser(user).delete flush: true
         user.delete flush:true
 
         request.withFormat {

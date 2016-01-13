@@ -11,6 +11,8 @@ class User implements Serializable {
 	String lastname
 	String password
     String email
+	boolean emailConfirmed = false
+	Integer confirmationNumber = new Random(System.currentTimeMillis()).nextInt(1000000000)
 	boolean enabled = false
 	boolean accountExpired
 	boolean accountLocked
@@ -61,6 +63,7 @@ class User implements Serializable {
 	static transients = ['springSecurityService']
 
 	static constraints = {
+		confirmationNumber nullable: true
 		labrol nullable: true
 		username blank: false, unique: true
 		password blank: false

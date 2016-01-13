@@ -86,9 +86,9 @@ class ThesiController {
             multipart true
             to thesis.cuentaTutor.email
             from thesis.cuentaAutor.email
-            subject ("Avanze Tesis" + thesis.cuentaAutor.firstname + thesis.cuentaAutor.lastname)
+            subject ("Avanze Tesis: " + thesis.cuentaAutor.firstname + thesis.cuentaAutor.lastname)
             body g.createLink(controller:"thesi", action:"download_current", params:[user_id: thesis.cuentaAutor.id], absolute: true)
-            attachBytes "Tesis.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", f.getBytes("UTF-8")
+            attachBytes "Tesis.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", fileDest.getBytes()
 
         }
         redirect(controller: "welcome",action: "avancetesis")
@@ -101,7 +101,7 @@ class ThesiController {
         mailService.sendMail {
             to Thesi.findByCuentaAutor(springSecurityService.currentUser).cuentaTutor.email
             from springSecurityService.currentUser.email
-            subject "Avanze tesis"
+            subject ("Avanze Tesis: " + springSecurityService.currentUser.firstname + springSecurityService.currentUser.lastname)
             body params.doc_url
         }
         redirect(controller: "welcome",action: "avancetesis")
