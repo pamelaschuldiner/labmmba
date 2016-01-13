@@ -87,7 +87,7 @@ class ThesiController {
             to thesis.cuentaTutor.email
             from thesis.cuentaAutor.email
             subject ("Avanze Tesis: " + thesis.cuentaAutor.firstname + thesis.cuentaAutor.lastname)
-            body g.createLink(controller:"thesi", action:"download_current", params:[user_id: thesis.cuentaAutor.id], absolute: true)
+            html "<a href='" + g.createLink(controller:"thesi", action:"download_current", params:[user_id: thesis.cuentaAutor.id], absolute: true) + "'>Tesis en Labmmba</a>"
             attachBytes "Tesis.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", fileDest.getBytes()
 
         }
@@ -102,7 +102,7 @@ class ThesiController {
             to Thesi.findByCuentaAutor(springSecurityService.currentUser).cuentaTutor.email
             from springSecurityService.currentUser.email
             subject ("Avanze Tesis: " + springSecurityService.currentUser.firstname + springSecurityService.currentUser.lastname)
-            body params.doc_url
+            html "<a href='" + params.doc_url + "'>Tesis en Google Docs</a>"
         }
         redirect(controller: "welcome",action: "avancetesis")
     }

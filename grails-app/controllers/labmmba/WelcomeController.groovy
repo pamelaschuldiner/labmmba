@@ -6,6 +6,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class WelcomeController {
 
     def springSecurityService
+    Random random = new Random(System.currentTimeMillis())
 
     def index() {
         if( springSecurityService.isLoggedIn()&&getPrincipal().username!="admin"){
@@ -57,10 +58,15 @@ class WelcomeController {
 
          } 
     def cuenta() {
-
-        render(view: 'cuenta.gsp')
-
-         }
+        if(springSecurityService.currentUser==null&&getPrincipal().username!="admin"){
+            redirect(controller: "welcome", action: "index")
+            return
+        }
+        else{
+            def user = User.findById(springSecurityService.currentUser.id)
+            render(view: "cuenta.gsp", model: [user: user])
+        }
+    }
     def news() {
 
         render(view: 'news.gsp')
@@ -105,8 +111,20 @@ class WelcomeController {
         if (!videosDir.exists()) {
             videosDir.mkdirs()
         }
-
-        render(view: 'resumenperfil.gsp', model: [user: user, images: imagesDir.listFiles(), videos:videosDir.listFiles() ])
+        File privateImagesDir = new File(webrootDir, "galeria/imagenes/privadas/" + user.id.toString())
+        if (!imagesDir.exists()) {
+            imagesDir.mkdirs()
+        }
+        File privateVideosDir = new File(webrootDir, "galeria/videos/privados/" + user.id.toString())
+        if (!videosDir.exists()) {
+            videosDir.mkdirs()
+        }
+        if(springSecurityService.isLoggedIn()){
+            render(view: 'resumenperfil.gsp', model: [user: user, images: imagesDir.listFiles(), videos: videosDir.listFiles(), private_images: privateImagesDir.listFiles(), private_videos: privateVideosDir.listFiles() ])
+        }
+        else{
+            render(view: 'resumenperfil.gsp', model: [user: user, images: imagesDir.listFiles(), videos:videosDir.listFiles() ])
+        }
          }
 
     def congresos() {
@@ -115,6 +133,7 @@ class WelcomeController {
 
          }
 
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def editarGaleria() {
         def user = springSecurityService.currentUser
         def webrootDir = servletContext.getRealPath("/")
@@ -127,8 +146,16 @@ class WelcomeController {
         if (!videosDir.exists()) {
             videosDir.mkdirs()
         }
+        File privateImagesDir = new File(webrootDir, "galeria/imagenes/privadas/" + user.id.toString())
+        if (!imagesDir.exists()) {
+            imagesDir.mkdirs()
+        }
+        File privateVideosDir = new File(webrootDir, "galeria/videos/privados/" + user.id.toString())
+        if (!videosDir.exists()) {
+            videosDir.mkdirs()
+        }
 
-        render(view: 'editarGaleria.gsp', model: [images: imagesDir.listFiles(), videos:videosDir.listFiles() ])
+        render(view: 'editarGaleria.gsp', model: [images: imagesDir.listFiles(), videos: videosDir.listFiles(), private_images: privateImagesDir.listFiles(), private_videos: privateVideosDir.listFiles() ])
 
     }
 }

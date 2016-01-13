@@ -382,8 +382,27 @@
                                                             <li data-target="#carousel-1" data-slide-to="${i}"></li>
                                                         </g:else>
                                                     </g:each>
+
                                                     <g:each in="${videos}" status="i" var="video">
                                                         <g:if test="${images.length==0}">
+                                                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <li data-target="#carousel-1" data-slide-to="${i+images.length}"></li>
+                                                        </g:else>
+                                                    </g:each>
+
+                                                    <g:each in="${private_images}" status="i" var="imagen">
+                                                        <g:if test="${images.length+videos.length==0}">
+                                                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <li data-target="#carousel-1" data-slide-to="${i+images.length}"></li>
+                                                        </g:else>
+                                                    </g:each>
+
+                                                    <g:each in="${private_videos}" status="i" var="video">
+                                                        <g:if test="${images.length+videos.length+private_videos.length==0}">
                                                             <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
                                                         </g:if>
                                                         <g:else>
@@ -397,24 +416,51 @@
                                                     <g:each in="${images}" status="i" var="image">
                                                         <g:if test="${i==0}">
                                                             <div class="item active">
-                                                                <img class="slide" src="${createLink(controller:'user', action:'imagen', params:[name: image.name])}"  height="400" width="100%"/>
+                                                                <img class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "imagen", name: image.name])}"  height="400" width="100%"/>
                                                             </div>
                                                         </g:if>
                                                         <g:else>
                                                             <div class="item">
-                                                                <img class="slide" src="${createLink(controller:'user', action:'imagen', params:[name: image.name])}" height="400" width="100%"/>
+                                                                <img class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "imagen",name: image.name])}" height="400" width="100%"/>
                                                             </div>
                                                         </g:else>
                                                     </g:each>
+
                                                     <g:each in="${videos}" status="i" var="video">
                                                         <g:if test="${images.length==0&&i==0}">
                                                             <div class="item active">
-                                                                <video class="slide" src="${createLink(controller:'user', action:'video', params:[name: video.name])}" height="400" width="100%" controls/>
+                                                                <video class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "video",name: video.name])}" height="400" width="100%" controls/>
                                                             </div>
                                                         </g:if>
                                                         <g:else>
                                                             <div class="item">
-                                                                <video class="slide" src="${createLink(controller:'user', action:'video', params:[name: video.name])}" height="400" width="100%" controls/>
+                                                                <video class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "video",name: video.name])}" height="400" width="100%" controls/>
+                                                            </div>
+                                                        </g:else>
+                                                    </g:each>
+
+                                                    <g:each in="${private_images}" status="i" var="image">
+                                                        <g:if test="${images.length+videos.length==0}">
+                                                            <div class="item active">
+                                                                <img class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "imagen_privada", name: image.name])}"  height="400" width="100%"/>
+                                                            </div>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <div class="item">
+                                                                <img class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "imagen_privada",name: image.name])}" height="400" width="100%"/>
+                                                            </div>
+                                                        </g:else>
+                                                    </g:each>
+
+                                                    <g:each in="${private_videos}" status="i" var="video">
+                                                        <g:if test="${images.length+videos.length+private_videos.length==0}">
+                                                            <div class="item active">
+                                                                <video class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "video_privado",name: video.name])}" height="400" width="100%" controls/>
+                                                            </div>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <div class="item">
+                                                                <video class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "video_privado",name: video.name])}" height="400" width="100%" controls/>
                                                             </div>
                                                         </g:else>
                                                     </g:each>

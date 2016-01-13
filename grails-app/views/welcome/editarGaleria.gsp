@@ -129,32 +129,79 @@
                 <p>Imagenes</p>
                 <g:each in="${images}" var="img">
                     <li>
-                        <g:link controller="user" action="imagen" params='[name: "${img.name}"]'>${img.name}</g:link>
-                        <g:form controller="user" action="delete_imagen"  params='[name: "${img.name}"]'  method="delete">
-                            <g:submitButton name="eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
-                        </g:form>
+                        <table>
+                            <td><g:link controller="user" action="media" params='[tipo: "imagen", name: "${img.name}"]'>${img.name}</g:link></td>
+                            <td>
+                                <g:form controller="user" action="delete_media"  params='[tipo: "imagen", name: "${img.name}"]'  method="delete">
+                                    <g:submitButton name="eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
+                                </g:form>
+                            </td>
+                        </table>
                     </li>
                 </g:each>
 
-                <g:form controller="user" action="upload_imagen" enctype="multipart/form-data">
-                    <input type="file" name="imagen" size="40" accept="image/*">
+                <g:form controller="user" action="upload_imagen" params="[privado:'false']" enctype="multipart/form-data">
+                    <td><input type="file" name="imagen" size="40" accept="image/*">
                     <g:actionSubmitImage value="upload_imagen" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
 
                 <p>Videos</p>
                 <g:each in="${videos}" var="video">
                     <li>
-                        <g:link controller="user" action="video" params='[name: "${video.name}"]'>${video.name}</g:link>
-                        <g:form controller="user" action="delete_video"  params='[name: "${video.name}"]'  method="delete">
-                            <g:submitButton name="eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
-                        </g:form>
+                        <table>
+                            <td><g:link controller="user" action="media" params='[tipo: "video", name: "${video.name}"]'>${video.name}</g:link></td>
+                            <td>
+                                <g:form controller="user" action="delete_media"  params='[tipo: "video", name: "${video.name}"]'  method="delete">
+                                    <g:submitButton name="eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
+                                </g:form>
+                            </td>
+                        </table>
                     </li>
                 </g:each>
 
-                <g:form controller="user" action="upload_video" enctype="multipart/form-data">
-                    <input type="file" name="video" size="40" accept="video/mp4">
+                <g:form controller="user" action="upload_video" params="[privado:'false']" enctype="multipart/form-data">
+                    <td><input type="file" name="video" size="40" accept="video/mp4">
                     <g:actionSubmitImage value="upload_video" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
+
+                <p>Imagenes Privadas</p>
+                <g:each in="${private_images}" var="img">
+                    <li>
+                        <table>
+                            <td><g:link controller="user" action="media" params='[tipo: "imagen_privada", name: "${img.name}"]'>${img.name}</g:link></td>
+                            <td>
+                                <g:form controller="user" action="delete_media"  params='[tipo: "imagen_privada", name: "${img.name}"]'  method="delete">
+                                    <g:submitButton name="eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
+                                </g:form>
+                            </td>
+                        </table>
+                        </li>
+                </g:each>
+
+                <g:form controller="user" action="upload_imagen" params="[privado:'true']" enctype="multipart/form-data">
+                    <td><input type="file" name="imagen" size="40" accept="image/*">
+                    <g:actionSubmitImage value="upload_imagen" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
+                </g:form>
+
+                <p>Videos Privados</p>
+                <g:each in="${private_videos}" var="video">
+                    <li>
+                        <table>
+                            <td><g:link controller="user" action="media" params='[tipo: "video_privado", name: "${video.name}"]'>${video.name}</g:link></td>
+                            <td>
+                                <g:form controller="user" action="delete_media"  params='[tipo: "video_privado", name: "${video.name}"]'  method="delete">
+                                    <g:submitButton name="eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
+                                </g:form>
+                            </td>
+                        </table>
+                    </li>
+                </g:each>
+
+                <g:form controller="user" action="upload_video" params="[privado:'true']" enctype="multipart/form-data">
+                    <td><input type="file" name="video" size="40" accept="video/mp4">
+                    <g:actionSubmitImage value="upload_video" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
+                </g:form>
+
 
 
             </ul>

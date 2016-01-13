@@ -123,16 +123,28 @@
         <div class="row">
             <div class="side-left col-sm-4 col-md-4">
 
-                <h3 class="lead"> Publicaciones </h3><hr>
+                <h3 class="lead"> Cambiar Contraseña </h3><hr>
                 <ul class="input-list style-2 clearfix">
-                 <form>
-                    <p>
-                        <div id="dynamicInputbook"></div>
-                        <div id="dynamicInputmag"></div>
-                        <input type="image" src="assets/botonagregarlibro.jpg" alt="Submit" width="160" height="40" onClick="addInputBook('dynamicInputbook');">
-                        <input type="image" src="assets/botonagregarrev.jpg" alt="Submit" width="160" height="40" onClick="addInputMag('dynamicInputmag');">
-                    </p>
-                </form> 
+                    <g:if test="${flash.message}">
+                        <div class="message" role="status">${flash.message}</div>
+                    </g:if>
+                    <g:form action="changePassword" controller="user" method="PUT">
+                        <table>
+                            <tr>
+                                <td>Clave actual:</td>
+                                <td class="others"><g:passwordField name="claveActual" value="" required="true"/></td>
+                            </tr>
+                            <tr>
+                                <td>Clave nueva:</td>
+                                <td class="others"><g:passwordField name="claveNueva" value="" required="true"/></td>
+                            </tr>
+                            <tr>
+                                <td>Confirmar clave:</td>
+                                <td class="others"><g:passwordField name="claveNuevaConfirmacion" value="" required="true"/></td>
+                            </tr>
+                        </table>
+                        <g:actionSubmitImage value="cambiarContraseña" action="changePassword" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
+                    </g:form>
                 </ul>
             </div>
 

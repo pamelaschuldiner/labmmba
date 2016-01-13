@@ -10,7 +10,7 @@ class UserController {
 
     def springSecurityService
     def mailService
-    static allowedMethods = [update_personal_data: "POST", save: "POST", update: "PUT", delete: "DELETE", upload_imagen: "POST", upload_video: "POST", delete_imagen: "DELETE", delete_video: "DELETE", eliminar_area: "DELETE"]
+    static allowedMethods = [update_personal_data: "POST", save: "POST", update: "PUT", delete: "DELETE", upload_media: "POST", delete_media: "DELETE", eliminar_area: "DELETE", changePassword: "PUT"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -41,7 +41,7 @@ class UserController {
             mailService.sendMail {
                 to Administrator.list().email + UserRole.findAllByRole(Role.findByAuthority("ROLE_ADMIN")).user.email
                 subject ("Confirmacion cuenta: " + user.firstname + " " + user.lastname)
-                html "<a href='" + g.createLink(controller: "user", action: "show", resource: user, absoulute: true) + "'> Aprobar Usuario </a>"
+                html "<a href='" + g.createLink(controller: "user", action: "show", resource: user, absoulute: true) + "'>Aprobar Usuario</a>"
             }
             mailService.sendMail {
                 to user.email
@@ -60,6 +60,31 @@ class UserController {
             user.delete flush:true
         }
         redirect(controller: "welcome", action: "index")
+    }
+
+    @Transactional
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
+    def changePassword(){
+        def user = springSecurityService.currentUser
+        if(!springSecurityService.passwordEncoder.isPasswordValid(user.password, params.claveActual, null)){
+            flash.message = "Clave actual incorrecta"
+            redirect(controller: "welcome", action: "cuenta")
+            return
+        }
+        if(!params.claveNueva.equals(params.claveNuevaConfirmacion)){
+            flash.message = "Claves no coinciden"
+            redirect(controller: "welcome", action: "cuenta")
+            return
+        }
+        if( springSecurityService.passwordEncoder.isPasswordValid(user.password, params.claveNueva, null)){
+            flash.message = "Clave es igual a clave actual"
+            redirect(controller: "welcome", action: "cuenta")
+            return
+        }
+        user.password = params.claveNueva
+        user.save()
+        flash.message = "Clave cambiada"
+        redirect(controller: "welcome", action: "cuenta")
     }
 
     @Transactional
@@ -82,7 +107,7 @@ class UserController {
         mailService.sendMail {
             to user.email
             subject "Confirmacion correo Labmmba"
-            html "<a href='" + g.createLink(controller: "user", action: "confirmarMail", resource: user, params:[confirmationNumber: user.confirmationNumber], absoulute: true) + "'> Confirmar Correo </a>"
+            html "<a href='" + g.createLink(controller: "user", action: "confirmarMail", resource: user, params:[confirmationNumber: user.confirmationNumber], absoulute: true) + "'>Confirmar Correo</a>"
         }
 
         request.withFormat {
@@ -288,19 +313,38 @@ class UserController {
         redirect(controller: "welcome", action: "resumenperfil")
     }
 
-    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
-    def imagen() {
+    @Secured(['permitAll'])
+    def media(User user) {
+        if(user==null){
+            if(springSecurityService.currentUser==null&&getPrincipal().username!="admin"){
+                redirect(controller: "welcome", action: "index")
+                return
+            }
+            else{
+                user = User.findById(springSecurityService.currentUser.id)
+            }
+        }
 
         def webrootDir = servletContext.getRealPath("/")
-        def user = springSecurityService.currentUser
-        File media = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + params.name )
-
-        if(!media.exists()) {
+        File media
+        if(params.tipo=="imagen"){
+            media = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + params.name )
+        }
+        if(params.tipo=="video"){
+            media = new File(webrootDir, "galeria/videos/" + user.id + "/" + params.name )
+        }
+        if(params.tipo=="imagen_privada"){
+            media = new File(webrootDir, "galeria/imagenes/privadas/" + user.id + "/" + params.name )
+        }
+        if(params.tipo=="video_privado"){
+            media = new File(webrootDir, "galeria/videos/privados/" + user.id + "/" + params.name )
+        }
+        if(media == null || !media.exists()) {
             response.status = 404
         }
         else {
             OutputStream out = response.getOutputStream();
-            if(media.getPath().endsWith(".mp4")){
+            if(params.tipo=="video" || params.tipo=="video_privado"){
                 response.contentType = 'video/mp4'
             }
             out.write(media.bytes);
@@ -309,41 +353,27 @@ class UserController {
     }
 
     @Secured(['ROLE_PENDING_USER','ROLE_USER'])
-    def video() {
+    def delete_media() {
 
         def webrootDir = servletContext.getRealPath("/")
         def user = springSecurityService.currentUser
-        File media = new File(webrootDir, "galeria/videos/" + user.id + "/" + params.name )
-
-        if(!media.exists()) {
-            response.status = 404
+        File media
+        if(params.tipo=="imagen"){
+            media = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + params.name )
         }
-        else {
-            OutputStream out = response.getOutputStream();
-            response.contentType = 'video/mp4'
-            out.write(media.bytes);
-            out.close()
+        if(params.tipo=="video"){
+            media = new File(webrootDir, "galeria/videos/" + user.id + "/" + params.name )
         }
-    }
-    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
-    def delete_imagen() {
-
-        def webrootDir = servletContext.getRealPath("/")
-        def user = springSecurityService.currentUser
-        File media = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + params.name )
+        if(params.tipo=="imagen_privada"){
+            media = new File(webrootDir, "galeria/imagenes/privadas/" + user.id + "/" + params.name )
+        }
+        if(params.tipo=="video_privado"){
+            media = new File(webrootDir, "galeria/videos/privados/" + user.id + "/" + params.name )
+        }
         media.delete()
         redirect action:"editarGaleria", controller:"welcome"
     }
 
-    @Secured(['ROLE_PENDING_USER','ROLE_USER'])
-    def delete_video() {
-
-        def webrootDir = servletContext.getRealPath("/")
-        def user = springSecurityService.currentUser
-        File media = new File(webrootDir, "galeria/videos/" + user.id + "/" + params.name )
-        media.delete()
-        redirect action:"editarGaleria", controller:"welcome"
-    }
     @Secured(['ROLE_PENDING_USER','ROLE_USER'])
     def upload_imagen() {
         def okcontents = ['image/png', 'image/jpeg', 'image/gif']
@@ -351,7 +381,15 @@ class UserController {
         def size = f.bytes.size()
         def webrootDir = servletContext.getRealPath("/")
         def user = springSecurityService.currentUser
-        File mediaDir = new File(webrootDir, "galeria/imagenes/" + user.id + "/")
+        File mediaDir
+        File fileDest
+        if(params.privado){
+            print params.privado
+            mediaDir = new File(webrootDir, "galeria/imagenes/privadas/" + user.id + "/")
+        }
+        else{
+            mediaDir = new File(webrootDir, "galeria/imagenes/" + user.id + "/")
+        }
         if (!okcontents.contains(f.getContentType())) {
             flash.message = "Document must be one of: ${okcontents}"
             redirect action:"editarGaleria", controller:"welcome"
@@ -367,8 +405,12 @@ class UserController {
         if (!mediaDir.exists()) {
             mediaDir.mkdirs()
         }
-
-        File fileDest = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + f.getOriginalFilename())
+        if(params.privado.toBoolean()){
+            fileDest = new File(webrootDir, "galeria/imagenes/privadas/" + user.id + "/" + f.getOriginalFilename())
+        }
+        else{
+            fileDest = new File(webrootDir, "galeria/imagenes/" + user.id + "/" + f.getOriginalFilename())
+        }
         f.transferTo(fileDest)
         redirect action:"editarGaleria", controller:"welcome"
     }
@@ -382,7 +424,17 @@ class UserController {
         def size = f.bytes.size()
         def webrootDir = servletContext.getRealPath("/")
         def user = springSecurityService.currentUser
-        File mediaDir = new File(webrootDir, "galeria/videos/" + user.id + "/")
+        File mediaDir
+        File fileDest
+
+        if(params.privado){
+            print params.privado
+            mediaDir = new File(webrootDir, "galeria/videos/privados/" + user.id + "/")
+        }
+        else{
+            mediaDir = new File(webrootDir, "galeria/videos/" + user.id + "/")
+        }
+
         if (!okcontents.contains(f.getContentType())) {
             flash.message = "Document must be one of: ${okcontents}"
             redirect action:"editarGaleria", controller:"welcome"
@@ -399,7 +451,12 @@ class UserController {
             mediaDir.mkdirs()
         }
 
-        File fileDest = new File(webrootDir, "galeria/videos/" + user.id + "/" + f.getOriginalFilename())
+        if(params.privado.toBoolean()){
+            fileDest = new File(webrootDir, "galeria/videos/privados/" + user.id + "/" + f.getOriginalFilename())
+        }
+        else{
+            fileDest = new File(webrootDir, "galeria/videos/" + user.id + "/" + f.getOriginalFilename())
+        }
         f.transferTo(fileDest)
         redirect action:"editarGaleria", controller:"welcome"
 
