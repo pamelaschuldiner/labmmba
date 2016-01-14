@@ -129,7 +129,7 @@
         <div class="row">
             <div class="side-left col-sm-4 col-md-4">
 
-                <h3 class="lead"> Estudios </h3><hr>
+                <h3 class="lead"> Resumen de perfil </h3><hr>
                 <ul class="input-list style-2 clearfix">
                     <g:if test="${flash.message}">
                         <div class="message" role="status">${flash.message}</div>
@@ -345,7 +345,7 @@
                                         <td align="left">${it.event_city}  </td>
                                     </p></tr>
                                     <tr><p>
-                                        <td align="left">Ciudad: </td>
+                                        <td align="left">Pais: </td>
                                         <td align="left"><g:country code="${it.event_count}"/></td>
                                     </p></tr>
                                     <tr><p>
@@ -358,14 +358,22 @@
                                     </p></tr>
                                     <tr><p>
                                         <td align="left">Nombre Presentacion: </td>
-                                        <td align="left">${it.event_pname}  </td>
+                                        <sec:ifLoggedIn>
+                                            <td align="left"><g:link controller="event" action="download" resource="${it}">${it.event_pname}</g:link> </td>
+                                        </sec:ifLoggedIn>
+                                        <sec:ifNotLoggedIn>
+                                            <td align="left">${it.event_pname}  </td>
+                                        </sec:ifNotLoggedIn>
                                     </p></tr>
                                 </table>
                             </g:each>
                         </p></tr>
+                </ul>
 
+                <ul class="input-list style-2 clearfix">
                         <!-- Begin #carousel-section -->
-                        <g:if test="${images.length>0||videos.length>0}" >
+                        <g:if test="${images.length>0||videos.length>0||private_images.length>0||private_videos.length>0}" >
+                            <h3 class="lead"> Galeria </h3><hr>
                             <tr><p>
                                 <section id="carousel-section" class="section-global-wrapper">
                                     <div class="container-fluid-kamn">
@@ -402,7 +410,7 @@
                                                     </g:each>
 
                                                     <g:each in="${private_videos}" status="i" var="video">
-                                                        <g:if test="${images.length+videos.length+private_videos.length==0}">
+                                                        <g:if test="${images.length+videos.length+private_images.length==0}">
                                                             <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
                                                         </g:if>
                                                         <g:else>
@@ -453,7 +461,7 @@
                                                     </g:each>
 
                                                     <g:each in="${private_videos}" status="i" var="video">
-                                                        <g:if test="${images.length+videos.length+private_videos.length==0}">
+                                                        <g:if test="${images.length+videos.length+private_images.length==0}">
                                                             <div class="item active">
                                                                 <video class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "video_privado",name: video.name])}" height="400" width="100%" controls/>
                                                             </div>

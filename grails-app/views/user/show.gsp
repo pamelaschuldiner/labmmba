@@ -11,6 +11,7 @@
             <ul>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="list" action="pending"><g:message message="User Pendiente Lista" /></g:link></li>
+                <li><g:link controller="welcome" action="editarGaleriaPrincipal">Galeria Principal</g:link></li>
                 <li><g:link url="j_spring_security_logout">Logout</g:link></li>
             </ul>
         </div>

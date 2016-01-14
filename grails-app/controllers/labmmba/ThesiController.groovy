@@ -127,7 +127,7 @@ class ThesiController {
         def webrootDir = servletContext.getRealPath("/")
         def path = webrootDir + "thesis_activa/" + user.id.toString() + ".docx"
         def thesisFile = new File(path)
-        if(springSecurityService.currentUser!=user && springSecurityService.currentUser!=Thesi.findByCuentaAutor(user).cuentaTutor){
+        if(springSecurityService.currentUser!=user && springSecurityService.currentUser!=Thesi.findByCuentaAutor(user).cuentaTutor && !springSecurityService.currentUser.isUserInRole("ROLE_ADMIN")){
             flash.message = "No tienes permitido ver esta tesis"
             redirect(controller: "welcome",action: "avancetesis")
             return

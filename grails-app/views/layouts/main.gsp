@@ -17,4 +17,5 @@
         <div class="footer" role="contentinfo" style="background-color: #1F634F"></div>
         <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
     </body>
+
 </html>

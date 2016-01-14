@@ -124,13 +124,20 @@ class StudyController {
         def thesis = new Thesi(thesis_name: params.thesis_name, thesis_tutor: params.thesis_tutor, thesis_cotutor: params.thesis_cotutor)
         def universidad = new University()
         def f = request.getFile("thesis")
+        print(f.isEmpty())
 
-        if (!okcontents.contains(f.getContentType())) {
+
+        if (!okcontents.contains(f.getContentType()) && !f.isEmpty()) {
             flash.message = "Document must be one of: ${okcontents}"
             redirect action:"estudios", controller:"welcome"
             return
         }
 
+        if(params.uni_name[0] == "Agregar Nueva" && params.uni_name[1] == "") {
+            flash.message = "Debes ingresar una Universidad"
+            redirect action:"estudios", controller:"welcome"
+            return
+        }
         if(params.uni_name[0] == "Agregar Nueva") {
             universidad = new University(uni_name: params.uni_name[1], uni_count: params.uni_count, uni_city: params.uni_city)
         }
@@ -152,14 +159,16 @@ class StudyController {
         thesis.save(flush: true)
 
 
-        def webrootDir = servletContext.getRealPath("/")
-        def thesiDir = new File(webrootDir + "thesis")
+        if(!f.isEmpty()){
+            def webrootDir = servletContext.getRealPath("/")
+            def thesiDir = new File(webrootDir + "thesis")
 
-        if (!thesiDir.exists()) {
-            thesiDir.mkdirs()
+            if (!thesiDir.exists()) {
+                thesiDir.mkdirs()
+            }
+            File fileDest = new File(webrootDir, "thesis/" + thesis.id.toString() + ".pdf")
+            f.transferTo(fileDest)
         }
-        File fileDest = new File(webrootDir, "thesis/" + thesis.id.toString() + ".pdf")
-        f.transferTo(fileDest)
 
         flash.message = "Exito al crear items"
 

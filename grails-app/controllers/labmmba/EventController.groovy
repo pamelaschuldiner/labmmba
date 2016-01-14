@@ -56,24 +56,27 @@ class EventController {
     def create_and_upload(){
 
         def f = request.getFile("presentacion")
-        if (!okcontents.contains(f.getContentType())) {
+        if (!okcontents.contains(f.getContentType()) && !f.isEmpty()) {
             flash.message = "Document must be one of: ${okcontents}"
             redirect action:"congresos", controller:"welcome"
             return
         }
 
         def webrootDir = servletContext.getRealPath("/")
-        def thesiDir = new File(webrootDir + "thesis")
-
-        if (!thesiDir.exists()) {
-            thesiDir.mkdirs()
-        }
-        File fileDest = new File(webrootDir, "thesis/" + params.id.toString() + ".pdf")
-        f.transferTo(fileDest)
+        def eventDIr = new File(webrootDir + "event")
 
         def evento = new Event(params)
         springSecurityService.currentUser.addToEvents(evento).save()
         evento.save()
+
+        if(!f.isEmpty()){
+            if (!eventDIr.exists()) {
+                eventDIr.mkdirs()
+            }
+            File fileDest = new File(webrootDir, "event/" + evento.id.toString() + ".pdf")
+            f.transferTo(fileDest)
+        }
+
 
         flash.message = "Congreso Creado"
         redirect action:"congresos", controller:"welcome"
@@ -82,6 +85,20 @@ class EventController {
 
     def edit(Event event) {
         respond event
+    }
+
+    @Secured(['ROLE_USER','ROLE_ADMIN','ROLE_PENDING_USER'])
+    def download(Event event) {
+        def webrootDir = servletContext.getRealPath("/")
+        def path = webrootDir + "event/" + event.id.toString() + ".pdf"
+        def thesisFile = new File(path)
+        if(thesisFile.exists()){
+            render(contentType: "multipart/form-data", file: thesisFile, fileName: event.event_pname + ".pdf" )
+        }
+        else{
+            flash.message = "El usuario no a subido el pdf"
+            redirect(controller: "welcome",action: "resumenperfil")
+        }
     }
 
     @Transactional

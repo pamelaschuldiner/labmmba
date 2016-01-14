@@ -59,7 +59,7 @@ class UserController {
             UserRole.findByUser(user).delete flush: true
             user.delete flush:true
         }
-        redirect(controller: "welcome", action: "index")
+        render("Correo confirmado")
     }
 
     @Transactional
@@ -384,7 +384,6 @@ class UserController {
         File mediaDir
         File fileDest
         if(params.privado){
-            print params.privado
             mediaDir = new File(webrootDir, "galeria/imagenes/privadas/" + user.id + "/")
         }
         else{
@@ -428,7 +427,6 @@ class UserController {
         File fileDest
 
         if(params.privado){
-            print params.privado
             mediaDir = new File(webrootDir, "galeria/videos/privados/" + user.id + "/")
         }
         else{

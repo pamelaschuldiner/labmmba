@@ -124,8 +124,13 @@
                     <!-- Indicators -->
                     <ol class="carousel-indicators visible-lg">
                         <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-1" data-slide-to="1"></li>
-                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                        <g:each in="${images}" status="i" var="image">
+                            <li data-target="#carousel-1" data-slide-to="${i+1}"></li>
+                        </g:each>
+                        <g:each in="${videos}" status="i" var="video">
+                            <li data-target="#carousel-1" data-slide-to="${images.length+i+1}"></li>
+                        </g:each>
+
                     </ol>
         
                     <!-- Wrapper for slides -->
@@ -139,25 +144,16 @@
                             </div>
                         </div>
                         <!-- End Slide 1 -->
-                        <!-- Begin Slide 2 -->
-                        <div class="item">
-                            <g:img dir="assets/slider" file="slide4.jpg" alt="" height="400"/>
-                            <div class="carousel-caption">
-                                <h3 class="carousel-title hidden-xs">EASY TO CUSTOMIZE</h3>
-                                <p class="carousel-body">BEAUTIFUL \ CLEAN \ MINIMAL</p>
+                        <g:each in="${images}" status="i" var="image">
+                            <div class="item">
+                                <img class="slide" src="${createLink(controller:'welcome', action:'media', params:[tipo: "imagen",name: image.name])}" height="400" width="100%"/>
                             </div>
-                        </div>
-                        <!-- End Slide 2 -->
-
-                        <!-- Begin Slide 3 -->
-                        <div class="item">
-                            <g:img dir="assets/slider" file="slide2.jpg" alt="" height="400"/>
-                            <div class="carousel-caption">
-                                <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
-                                <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>
+                        </g:each>
+                        <g:each in="${videos}" status="i" var="video">
+                            <div class="item">
+                                <video class="slide" src="${createLink(controller:'welcome', action:'media', params:[tipo: "video",name: video.name])}" height="400" width="100%" controls/>
                             </div>
-                        </div>
-                        <!-- End Slide 3 -->
+                        </g:each>
                     </div>
         
                     <!-- Controls -->

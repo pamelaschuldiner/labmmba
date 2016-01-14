@@ -141,7 +141,7 @@
                 </g:each>
 
                 <g:form controller="user" action="upload_imagen" params="[privado:'false']" enctype="multipart/form-data">
-                    <td><input type="file" name="imagen" size="40" accept="image/*">
+                    <td><input type="file" name="imagen" size="40" required="true" accept="image/*">
                     <g:actionSubmitImage value="upload_imagen" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
 
@@ -160,7 +160,7 @@
                 </g:each>
 
                 <g:form controller="user" action="upload_video" params="[privado:'false']" enctype="multipart/form-data">
-                    <td><input type="file" name="video" size="40" accept="video/mp4">
+                    <td><input type="file" name="video" size="40" required="true" accept="video/mp4">
                     <g:actionSubmitImage value="upload_video" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
 
@@ -179,7 +179,7 @@
                 </g:each>
 
                 <g:form controller="user" action="upload_imagen" params="[privado:'true']" enctype="multipart/form-data">
-                    <td><input type="file" name="imagen" size="40" accept="image/*">
+                    <td><input type="file" name="imagen" size="40" required="true" accept="image/*">
                     <g:actionSubmitImage value="upload_imagen" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
 
@@ -198,7 +198,7 @@
                 </g:each>
 
                 <g:form controller="user" action="upload_video" params="[privado:'true']" enctype="multipart/form-data">
-                    <td><input type="file" name="video" size="40" accept="video/mp4">
+                    <td><input type="file" name="video" size="40" required="true" accept="video/mp4">
                     <g:actionSubmitImage value="upload_video" src="${resource(dir: 'assets/images', file: 'agregar.png')}"/>
                 </g:form>
 
