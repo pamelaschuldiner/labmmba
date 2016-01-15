@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand wow fadeInDownBig" href="index.html"><img src="assets/img/slider/Office.png" width="100" alt="Office"></a>      
+                <a class="navbar-brand wow fadeInDownBig" href="index.html"><img src="assets/img/slider/office.png" width="100" alt="Office"></a>
             </div>
         
             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">

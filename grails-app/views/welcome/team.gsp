@@ -74,7 +74,7 @@
                         <li><div id="wrap">
                             <div id="regbar">
                                 <div id="navthing">
-                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="welcome" action="loginreg">Registrarse</g:link>
                                     <div class="login">
                                         <div class="arrow-up"></div>
                                         <div class="formholder">
