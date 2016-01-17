@@ -47,6 +47,7 @@
             <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a>
         </div>
 
+<<<<<<< HEAD
     <nav id="navbar-section" class="navbar navbar-default navbar-static-top navbar-sticky" role="navigation">
         <div class="container">
         
@@ -111,6 +112,57 @@
                                                     </p>
                                                 </form>
                                             </div>
+=======
+        <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="active">
+                    <g:link controller="welcome" action="index">Home</g:link>
+                </li>
+                <li>
+                    <g:link controller="welcome" action="about">About</g:link>
+                </li>
+                <li>
+                    <g:link controller="welcome" action="blog">Blog</g:link>
+                </li>
+                <li>
+                    <g:link controller="welcome" action="team">Team</g:link>
+                </li>
+                <li>
+                    <g:link controller="welcome" action="contact">Contact</g:link>
+                </li>
+                <sec:ifLoggedIn>
+                    <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
+                </sec:ifLoggedIn>
+                <sec:ifNotLoggedIn>
+                    <li><div id="wrap">
+                        <div id="regbar">
+                            <div id="navthing">
+                                <a href="#" id="loginform">Ingresar</a> | <g:link controller="welcome" action="loginreg">Registrarse</g:link>
+                                <div class="login">
+                                    <div class="arrow-up"></div>
+                                    <div class="formholder">
+                                        <div class="randompad">
+                                            <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                                <p>
+                                                    <label for="username">Nombre de usuario:</label>
+                                                    <input type="text" class="text_" name="j_username" id="username">
+                                                </p>
+
+                                                <p>
+                                                    <label for="password">Contraseña:</label>
+                                                    <input type="password" class="text_" name="j_password" id="password">
+                                                </p>
+
+                                                <p id="remember_me_holder">
+                                                    <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                                    <label for="remember_me">Recuérdame</label>
+                                                </p>
+
+                                                <p>
+                                                    <input type="submit" id="submit" value="Identifícate">
+                                                </p>
+                                            </form>
+>>>>>>> origin/master
                                         </div>
                                     </div>
 

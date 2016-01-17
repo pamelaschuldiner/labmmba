@@ -88,8 +88,8 @@ class UserController {
     }
 
     @Transactional
-    @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN'])
-    def save(User user) {
+    @Secured(['ROLE_ADMIN'])
+    def admin_save(User user) {
         if (user == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -99,6 +99,35 @@ class UserController {
         if (user.hasErrors()) {
             transactionStatus.setRollbackOnly()
             respond user.errors, view:'create'
+            return
+        }
+
+        user.enabled = true
+        user.emailConfirmed = true
+        user.save flush:true
+
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
+                redirect(controller: "user", action: "create")
+            }
+            '*' { respond user, [status: CREATED] }
+        }
+    }
+
+    @Transactional
+    @Secured(['ROLE_ANONYMOUS'])
+    def user_save(User user) {
+        if (user == null) {
+            transactionStatus.setRollbackOnly()
+            notFound()
+            return
+        }
+
+        if (user.hasErrors()) {
+            transactionStatus.setRollbackOnly()
+            respond user.errors, view:'loginreg', controller: "welcome"
             return
         }
 
@@ -112,8 +141,8 @@ class UserController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect(controller: "user", action: "create")
+                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.username])
+                redirect(controller: "welcome", action: "loginreg")
             }
             '*' { respond user, [status: CREATED] }
         }

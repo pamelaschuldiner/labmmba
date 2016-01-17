@@ -44,7 +44,7 @@ class WelcomeController {
 
 
     def team() {
-        def users= labmmba.User.listOrderById()
+        def users= labmmba.User.findAllByEnabled(true).asList()
     	render(view: 'team.gsp', model: [users: users])
 
     	 }
@@ -303,6 +303,7 @@ class WelcomeController {
         render(view: 'editarGaleria.gsp', model: [images: imagesDir.listFiles(), videos: videosDir.listFiles(), private_images: privateImagesDir.listFiles(), private_videos: privateVideosDir.listFiles() ])
 
     }
+<<<<<<< HEAD
         def areainvesti() {
 
         render(view: 'areainvesti.gsp')
@@ -329,4 +330,11 @@ class WelcomeController {
 
          } 
  
+=======
+
+    def loginreg(){
+        respond new User(params)
+    }
+>>>>>>> origin/master
 }
+

@@ -12,7 +12,7 @@
         <g:layoutHead/>
     </head>
     <body>
-        <div id="labmmba" role="banner" style="background-color: #1F634F"><g:link action="index" controller="welcome"> <g:img dir="assets/slider" file="Office.jpg" width="341" alt="Labmmba"/></g:link></div>
+        <div id="labmmba" role="banner" style="background-color: #1F634F"><g:link action="index" controller="welcome"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></g:link></div>
         <g:layoutBody/>
         <div class="footer" role="contentinfo" style="background-color: #1F634F"></div>
         <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

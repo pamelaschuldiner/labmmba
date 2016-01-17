@@ -440,6 +440,26 @@ address {
   border: solid 5px #969696;
 }
 
+.style-2 input[type="password"],textarea {
+    padding: 10px;
+    border: solid 5px #c9c9c9;
+    transition: border 0.3s;
+}
+.style-2 input[type="password"],textarea:focus,
+.style-2 input[type="password"],textarea.focus {
+    border: solid 5px #969696;
+}
+
+.style-2 input[type="email"],textarea {
+    padding: 10px;
+    border: solid 5px #c9c9c9;
+    transition: border 0.3s;
+}
+.style-2 input[type="email"],textarea:focus,
+.style-2 input[type="email"],textarea.focus {
+    border: solid 5px #969696;
+}
+
 /*
 * ==========================================================================
 * Navbar Nav Links
