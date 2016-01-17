@@ -27,7 +27,7 @@
     <g:external dir="assets" file="apple-touch-icon-114-precomposed.png" />
     <g:external dir="assets" file="apple-touch-icon-72-precomposed.png" />
     <g:external dir="assets" file="apple-touch-icon-57-precomposed.png" />
-    <g:external dir="assets" file="favicon.ico" />
+    <g:external dir="assets" file="icon.ico" />
 
 </head>
 <body>
