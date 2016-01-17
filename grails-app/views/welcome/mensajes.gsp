@@ -126,17 +126,43 @@
         <div class="row">
             <div class="side-left col-sm-4 col-md-4">
 
-                <h3 class="lead"> Publicaciones </h3><hr>
+                <h3 class="lead"> Mensajes </h3><hr>
                 <ul class="input-list style-2 clearfix">
-                 <form>
-                    <p>
-                        <div id="dynamicInputbook"></div>
-                        <div id="dynamicInputmag"></div>
-                        <input type="image" src="assets/botonagregarlibro.jpg" alt="Submit" width="160" height="40" onClick="addInputBook('dynamicInputbook');">
-                        <input type="image" src="assets/botonagregarrev.jpg" alt="Submit" width="160" height="40" onClick="addInputMag('dynamicInputmag');">
-                    </p>
-                </form> 
+                    <g:form action="sendMessage" controller="welcome">
+                        <p><g:select from="${users}" name="senderId" optionKey="id" class="others"/></p>
+                        <p><g:textArea name="message" class="others"/></p>
+                        <p><g:actionSubmitImage value="send" action="sendMessage" src="${resource(dir: 'assets/images', file: 'enviar.png')}"/> </p>
+                    </g:form>
                 </ul>
+
+                <h3 class="lead"> Mensajes Recibidos </h3><hr>
+                <ul class="input-list style-2 clearfix">
+                    <table>
+                        <g:each in="${messagesRecived}" var="message" >
+                            <tr>
+                                <td>De: ${message.sender.username}</td>
+                            </tr>
+                            <tr>
+                                <td>${message.message}</td>
+                            </tr>
+                        </g:each>
+                    </table>
+                </ul>
+
+                <h3 class="lead"> Mensajes Enviados </h3><hr>
+                <ul class="input-list style-2 clearfix">
+                    <table>
+                        <g:each in="${messagesSent}" var="message" >
+                            <tr>
+                                <td>A: ${message.recipient.username}</td>
+                            </tr>
+                            <tr>
+                                <td>${message.message}</td>
+                            </tr>
+                        </g:each>
+                    </table>
+                </ul>
+
             </div>
 
             <div class="col-sm-8 col-md-8">

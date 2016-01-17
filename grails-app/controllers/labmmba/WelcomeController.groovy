@@ -8,6 +8,7 @@ class WelcomeController {
 
     static allowedMethods = [media: "GET", delete_media: "DELETE", upload_video: "POST",upload_imagen: "POST"]
     def springSecurityService
+    def directMessageService
     Random random = new Random(System.currentTimeMillis())
 
     def index() {
@@ -31,10 +32,8 @@ class WelcomeController {
         else{
             render(view: "index", model: [images: imagesDir.listFiles(), videos: videosDir.listFiles()])
         }
-
     }
-
- 
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def about() {
 
     	render(view: 'about.gsp')
@@ -62,21 +61,43 @@ class WelcomeController {
 
     	 }
 
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def estudios() {
 
         render(view: 'estudios.gsp')
 
-         }    
+         }
+
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def proyectos() {
 
         render(view: 'proyectos.gsp')
 
          }
+
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def mensajes() {
+        def sent = Message.findAllBySender(springSecurityService.currentUser)
+        def recived = springSecurityService.currentUser.getMessages()
+        def users =  User.findAllByUsernameNotEqual(springSecurityService.currentUser.username)
+        render(view: 'mensajes.gsp', model: [messagesSent: sent, messagesRecived: recived, users: users])
 
-        render(view: 'mensajes.gsp')
+         }
 
-         } 
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
+    def sendMessage(){
+        render(params)
+        if(springSecurityService.currentUser.sendMessage(params.senderId.toInteger(),params.message)){
+            flash.message = "Mensaje enviado"
+            redirect(controller: "welcome", action: "mensajes")
+        }
+        else{
+            flash.message = "Error al enviar mensaje"
+        }
+
+    }
+
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def cuenta() {
         if(springSecurityService.currentUser==null&&getPrincipal().username!="admin"){
             redirect(controller: "welcome", action: "index")
@@ -92,6 +113,8 @@ class WelcomeController {
         render(view: 'news.gsp')
 
     }
+
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def avancetesis() {
         def users = User.findAllByUsernameNotEqual(springSecurityService.currentUser.getUsername())
         def currentUser = springSecurityService.currentUser
@@ -104,16 +127,21 @@ class WelcomeController {
             render(view: 'avancetesis.gsp', model: [users: users, tesisPupilos: tesisPupilos, currentUser: currentUser])
         }
     }
+
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def publicaciones() {
 
         render(view: 'publicaciones.gsp')
 
-         } 
+         }
+
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def personal(){
 
         render(view: 'personal.gsp')
 
          }
+
     def resumenperfil(User user) {
         if(user==null){
             if(springSecurityService.currentUser==null&&getPrincipal().username!="admin"){
@@ -156,6 +184,7 @@ class WelcomeController {
         }
     }
 
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def congresos() {
 
         render(view: 'congresos.gsp')
@@ -306,30 +335,35 @@ class WelcomeController {
         render(view: 'editarGaleria.gsp', model: [images: imagesDir.listFiles(), videos: videosDir.listFiles(), private_images: privateImagesDir.listFiles(), private_videos: privateVideosDir.listFiles() ])
 
     }
-        def areainvesti() {
 
-        render(view: 'areainvesti.gsp')
+    def areainvesti() {
 
-         } 
-             def links() {
+    render(view: 'areainvesti.gsp')
 
-        render(view: 'links.gsp')
+     }
 
-         } 
-             def publicacion() {
+         def links() {
 
-        render(view: 'publicacion.gsp')
+    render(view: 'links.gsp')
 
-         } 
-             def patentes() {
+     }
 
-        render(view: 'patentes.gsp')
+         def publicacion() {
 
-         } 
-             def proy() {
+    render(view: 'publicacion.gsp')
 
-        render(view: 'proy.gsp')
+     }
 
-         } 
+         def patentes() {
+
+    render(view: 'patentes.gsp')
+
+     }
+
+         def proy() {
+
+    render(view: 'proy.gsp')
+
+     }
  
 }

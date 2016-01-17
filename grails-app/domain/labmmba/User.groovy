@@ -27,6 +27,19 @@ class User implements Serializable {
 		this.password = password
 	}
 
+	boolean sendMessage(int recipientId, String message){
+		if(User.exists(id)){
+			new Message(sender: this, recipient: User.get(recipientId), message: message).save()
+			return true
+		}
+		else return false
+	}
+
+	Message[] getMessages(){
+		Message[] messages = Message.findAllByRecipient(this)
+		return messages
+	}
+
 	@Override
 	int hashCode() {
 		username?.hashCode() ?: 0

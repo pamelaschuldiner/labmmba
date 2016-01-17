@@ -147,7 +147,7 @@
                             <tr><p>
                                 <td align="left">Adjuntar archivo desde tu computador: </td>
 
-                                <td align="left"><input type="file" name="thesis" size="40" required="true"></td>
+                                <td align="left"><input type="file" name="thesis" size="40" required="true" accept="application/pdf"></td>
                             </p></tr>
                         </table>
                         <p><g:actionSubmitImage value="create_current_thesi" action="create_current_thesi" src="/assets/agregar.png"/></p>
@@ -164,7 +164,15 @@
                 <h3 class="lead"> Tesis pupilos</h3><hr>
                 <g:each in="${tesisPupilos}" var="tesis" >
 
+
                     <p><g:link controller="thesi" action="download_current" params="[user_id: tesis.cuentaAutor.id]">${tesis.cuentaAutor.firstname}</g:link></p>
+                    <g:form action="sendMessage" controller="welcome">
+                        <p><g:hiddenField name="senderId" value="${tesis.cuentaAutor.id}" /></p>
+                        <table>
+                            <td><g:textArea name="message" class="others"/></td>
+                            <td><g:actionSubmitImage value="send" action="sendMessage" src="${resource(dir: 'assets/images', file: 'enviar.png')}"/> </td>
+                        </table>
+                    </g:form>
 
                 </g:each>
 

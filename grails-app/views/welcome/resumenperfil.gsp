@@ -177,7 +177,7 @@
                                         <td align="left" class="edit" style="visibility:hidden" >
                                             <g:if test="${sec.username() == user.username}">
                                                 <g:form controller="user" action="eliminar_area" params="[area_id: it.id]" method="DELETE">
-                                                    <g:actionSubmitImage name="delete" value="delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                    <g:actionSubmitImage name="delete" value="delete" action="eliminar_area" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
                                                 </g:form>
                                             </g:if>
 
@@ -197,7 +197,7 @@
                                         <td align="left" class="edit" style="visibility:hidden" >
                                             <g:if test="${sec.username() == user.username}">
                                                 <g:form controller="study" action="delete" resource="${it}"  method="delete">
-                                                    <g:actionSubmitImage name="Eliminar" value="Eliminar" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                    <g:actionSubmitImage name="Eliminar" value="Eliminar" action="delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
                                                 </g:form>
                                             </g:if>
                                         </td>
@@ -252,7 +252,7 @@
                                             <td align="left" class="edit" style="visibility:hidden" >
                                                 <g:if test="${sec.username() == user.username}">
                                                     <g:form controller="magazine" action="delete" resource="${it}"  method="delete">
-                                                        <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                        <g:actionSubmitImage value="Eliminar" action="delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
                                                     </g:form>
                                                 </g:if>
                                             </td>
@@ -277,7 +277,7 @@
                                             <td align="left" class="edit" style="visibility:hidden" >
                                                 <g:if test="${sec.username() == user.username}">
                                                     <g:form controller="book" action="delete" resource="${it}"  method="delete">
-                                                        <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                        <g:actionSubmitImage value="Eliminar" action="delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
                                                     </g:form>
                                                 </g:if>
                                             </td>
@@ -316,7 +316,7 @@
                                         <td align="left" class="edit" style="visibility:hidden" >
                                             <g:if test="${sec.username() == user.username}">
                                                 <g:form controller="proyect" action="delete" resource="${it}"  method="delete">
-                                                    <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                    <g:actionSubmitImage value="Eliminar" action="delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
                                                 </g:form>
                                             </g:if>
                                         </td>
@@ -351,7 +351,7 @@
                                         <td align="left" class="edit" style="visibility:hidden" >
                                             <g:if test="${sec.username() == user.username}">
                                                 <g:form controller="event" action="delete" resource="${it}"  method="delete">
-                                                    <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                    <g:actionSubmitImage value="Eliminar" action="delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
                                                 </g:form>
                                             </g:if>
                                         </td>

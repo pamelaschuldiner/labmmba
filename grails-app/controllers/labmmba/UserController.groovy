@@ -337,7 +337,6 @@ class UserController {
         def user = springSecurityService.currentUser
         def field = user.fields.find{it.id == params.area_id.toInteger()}
         field.removeFromUsers(user)
-
         user.save()
         redirect(controller: "welcome", action: "resumenperfil")
     }
