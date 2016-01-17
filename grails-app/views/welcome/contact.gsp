@@ -124,25 +124,28 @@
                     <br />
                 </div>
                 <div class="col-lg-4 col-lg-offset-1">
-                    <h4>Find us at:</h4>
-                    <p class="block-author"> Johns, Smith & Associates</p>
-                    <p>Via Ludovisi 39-45, Rome, 54267, Italy</p>
-                    <p>Phone: 1.800.245.356</p>
-                    <p>Fax: 1.800.245.357</p>
-                    <em class="block-author">Email: hello@LawOffice.org </em> <br>
+                    <h4>Encuéntranos en:</h4>
+                    <p class="block-author"> Laboratorio de Microbiología Molecular y Biotecnología Ambiental (LABMMBA)</p>
+                    <p>Universidad Técnica Federico Santa María</p>
+                    <p>Av. España 1680, Edificio B, 3° piso, Valparaíso, Chile</p>
+                    <p>Phone: +56 32 7777777</p>
+                    <em class="block-author">Email: labmmba@usm.cl </em> <br>
                     <br>
-                    <p class="lead">Social Link</p><hr>
+                    <p>
+                        <g:img dir="assets" file="ubicacion.jpg" alt=""/>
+                    </p>
+                    <p class="lead">Redes Sociales</p><hr>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <a href="#"><img src="assets/img/social-icons/btn_skype.png" alt="Skype"></a>
-                        Call us
+                        <g:img dir="assets/social-icons" file="btn_skype.png" alt=""/>
+                        Llámanos
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <a href="#"><img src="assets/img/social-icons/btn_facebook.png" alt="Facebook"></a>
-                        Like us
+                        <g:img dir="assets/social-icons" file="btn_facebook.png" alt=""/>
+                        Apóyanos
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
-                        <a href="#"><img src="assets/img/social-icons/btn_twitter.png" alt="Twitter"></a>
-                        Follow us
+                        <g:img dir="assets/social-icons" file="btn_twitter.png" alt=""/>
+                        Síguenos
                     </div>
                     <br>
                 </div>
@@ -176,17 +179,20 @@
     <!--End Main Container -->
 
 
-    <!-- Footer -->
+     <!-- Footer -->
     <footer> 
         <div class="container">
             <div class="row">
                 <div class="col-md-0">
-                    <h3><i class="fa fa-map-marker"></i> Contact:</h3>
+                    <h3><i class="fa fa-map-marker"></i> Contacto:</h3>
                     <p class="footer-contact">
-                        Via Ludovisi 39-45, Rome, 54267, Italy<br>
-                        Phone: 1.800.245.356 Fax: 1.800.245.357<br>
-                        Email: hello@LawOffice.org<br>
+                        Universidad Técnica Federico Santa María<br>
+
+                        Av. España 1680, Edificio B, 3° piso, Valparaíso, Chile<br>
+                        Phone: +56 32 7777777<br>
+                        Email: labmmba@usm.cl<br>
                     </p>
+
                 </div>
                 <div class="col-md-0">
                     <h3><i class="fa fa-external-link"></i> Links</h3>
@@ -194,11 +200,9 @@
                     <p> <g:link controller="welcome" action="team"> Nuestro Equipo ( Conócenos )</g:link></p>
                     <p> <g:link controller="welcome" action="news"> Noticias ( Infórmate )</g:link></p>
                     <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
-
-
                 </div>
               <div class="col-md-0">
-                <h3><i class="fa fa-heart"></i> Socialize</h3>
+                <h3><i class="fa fa-heart"></i> Redes Sociales</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
                         <i class="fa fa-google-plus"></i>
@@ -220,7 +224,7 @@
 
     
     <div class="copyright text center">
-        <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+        <p>&copy; Copyright 2016, <a href="Http://www.labmmba.utfsm.cl/">LABMMBA</a>. Creado por Grupo 13 FISW</p>
     </div>
 
 

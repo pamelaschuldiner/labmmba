@@ -17,6 +17,51 @@ License URI:http://www.gnu.org/licenses/gpl-2.0.html
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
+#header{
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+
+#content{
+  background-color: transparent;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+
+#hide{
+  display: none;
+}
+
+.caption {
+padding: 0;
+width: 400px;
+position: absolute;
+
+}
+.caption img {
+width: 400px;
+height: auto;
+display: block;
+padding: 0;
+border: 0;
+}
+.caption::before {
+content: attr(title);
+position: absolute;
+background: #22634F; /* Color de fondo */
+background: #22634F; /* Color de fondo en RGBA */
+color: #FFFFFF; /* Color del texto */
+font-size: 12px; /* Tamaño del texto */
+padding: 5px;
+right: 0;
+bottom: 0;
+left: 0;
+text-align: center;
+z-index: 1;
+}
+
 select {
   margin-bottom:7px;
 }
@@ -61,6 +106,7 @@ input {
 .container-kamn {
   margin-right: auto;
   margin-left: auto;
+  max-height:200px;
 }
 
 @media (min-width: 1068px) and (max-width: 1400px) { 

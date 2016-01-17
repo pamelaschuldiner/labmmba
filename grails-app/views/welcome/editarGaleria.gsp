@@ -47,67 +47,83 @@
             <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a>
         </div>
 
-        <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav pull-right">
-                <li class="active">
-                    <g:link controller="welcome" action="index">Home</g:link>
-                </li>
-                <li>
-                    <g:link controller="welcome" action="about">About</g:link>
-                </li>
-                <li>
-                    <g:link controller="welcome" action="blog">Blog</g:link>
-                </li>
-                <li>
-                    <g:link controller="welcome" action="team">Team</g:link>
-                </li>
-                <li>
-                    <g:link controller="welcome" action="contact">Contact</g:link>
-                </li>
-                <sec:ifLoggedIn>
-                    <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
-                </sec:ifLoggedIn>
-                <sec:ifNotLoggedIn>
-                    <li><div id="wrap">
-                        <div id="regbar">
-                            <div id="navthing">
-                                <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
-                                <div class="login">
-                                    <div class="arrow-up"></div>
-                                    <div class="formholder">
-                                        <div class="randompad">
-                                            <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
-                                                <p>
-                                                    <label for="username">Nombre de usuario:</label>
-                                                    <input type="text" class="text_" name="j_username" id="username">
-                                                </p>
+    <nav id="navbar-section" class="navbar navbar-default navbar-static-top navbar-sticky" role="navigation">
+        <div class="container">
+        
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-                                                <p>
-                                                    <label for="password">Contraseña:</label>
-                                                    <input type="password" class="text_" name="j_password" id="password">
-                                                </p>
+                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a> 
+            </div>
+        
+             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active">
+                        <g:link controller="welcome" action="index">Home</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="welcome" action="about">Sobre Nosotros</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="welcome" action="news">Noticias</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="welcome" action="team">Nuestro Equipo</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="welcome" action="contact">Contacto</g:link>
+                    </li>
+                    <sec:ifLoggedIn>
+                        <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                        <li><div id="wrap">
+                            <div id="regbar">
+                                <div id="navthing">
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <div class="login">
+                                        <div class="arrow-up"></div>
+                                        <div class="formholder">
+                                            <div class="randompad">
+                                                <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
+                                                    <p>
+                                                        <label for="username">Nombre de usuario:</label>
+                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                    </p>
 
-                                                <p id="remember_me_holder">
-                                                    <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
-                                                    <label for="remember_me">Recuérdame</label>
-                                                </p>
+                                                    <p>
+                                                        <label for="password">Contraseña:</label>
+                                                        <input type="password" class="text_" name="j_password" id="password">
+                                                    </p>
 
-                                                <p>
-                                                    <input type="submit" id="submit" value="Identifícate">
-                                                </p>
-                                            </form>
+                                                    <p id="remember_me_holder">
+                                                        <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
+                                                        <label for="remember_me">Recuérdame</label>
+                                                    </p>
+
+                                                    <p>
+                                                        <input type="submit" id="submit" value="Identifícate">
+                                                    </p>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
-                        </div>
-                    </div></li>
-                </sec:ifNotLoggedIn>
-            </ul>
+                        </div></li>
+                    </sec:ifNotLoggedIn>
+
+                </ul>         
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
 
 
 <!--End Header -->
@@ -229,50 +245,51 @@
 <!--End Main Container -->
 
 <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-0">
-                <h3><i class="fa fa-map-marker"></i> Contact:</h3>
-                <p class="footer-contact">
-                    Via Ludovisi 39-45, Rome, 54267, Italy<br>
-                    Phone: 1.800.245.356 Fax: 1.800.245.357<br>
-                    Email: hello@LawOffice.org<br>
-                </p>
-            </div>
-            <div class="col-md-0">
-                <h3><i class="fa fa-external-link"></i> Links</h3>
-                <p> <a href="#"> About ( Who we are )</a></p>
-                <p> <a href="#"> Services ( What we do )</a></p>
-                <p> <a href="#"> Contact ( Feel free to contact )</a></p>
-                <p> <a href="#"> Blog ( Write to us )</a></p>
-                <p> <a href="#"> Team ( Meet the Team )</a></p>
-            </div>
-            <div class="col-md-0">
-                <h3><i class="fa fa-heart"></i> Socialize</h3>
+    <footer> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-0">
+                    <h3><i class="fa fa-map-marker"></i> Contacto:</h3>
+                    <p class="footer-contact">
+                        Universidad Técnica Federico Santa María<br>
+
+                        Av. España 1680, Edificio B, 3° piso, Valparaíso, Chile<br>
+                        Phone: +56 32 7777777<br>
+                        Email: labmmba@usm.cl<br>
+                    </p>
+                </div>
+                <div class="col-md-0">
+                    <h3><i class="fa fa-external-link"></i> Links</h3>
+                    <p> <g:link controller="welcome" action="about"> Sobre Nosotros ( Quiénes somos )</g:link></p>
+                    <p> <g:link controller="welcome" action="team"> Nuestro Equipo ( Conócenos )</g:link></p>
+                    <p> <g:link controller="welcome" action="news"> Noticias ( Infórmate )</g:link></p>
+                    <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
+                </div>
+              <div class="col-md-0">
+                <h3><i class="fa fa-heart"></i> Redes Sociales</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
                         <i class="fa fa-google-plus"></i>
                     </a>
-                    <a href="#" class="btn-group linkedin">
+                      <a href="#" class="btn-group linkedin">
                         <i class="fa fa-linkedin-square"></i>
                     </a>
-                    <a href="#" class="btn-group twitter">
+                      <a href="#" class="btn-group twitter">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="#" class="btn-group facebook">
+                      <a href="#" class="btn-group facebook">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </div>
-            </div>
+              </div>    
         </div>
+      </div>
+    </footer>
+
+    
+    <div class="copyright text center">
+        <p>&copy; Copyright 2016, <a href="Http://www.labmmba.utfsm.cl/">LABMMBA</a>. Creado por Grupo 13 FISW</p>
     </div>
-</footer>
-
-
-<div class="copyright text center">
-    <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
-</div>
 
 
 <g:external dir="assets" file="jquery-1.10.2.min.js" />

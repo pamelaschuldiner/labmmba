@@ -303,4 +303,30 @@ class WelcomeController {
         render(view: 'editarGaleria.gsp', model: [images: imagesDir.listFiles(), videos: videosDir.listFiles(), private_images: privateImagesDir.listFiles(), private_videos: privateVideosDir.listFiles() ])
 
     }
+        def areainvesti() {
+
+        render(view: 'areainvesti.gsp')
+
+         } 
+             def links() {
+
+        render(view: 'links.gsp')
+
+         } 
+             def publicacion() {
+
+        render(view: 'publicacion.gsp')
+
+         } 
+             def patentes() {
+
+        render(view: 'patentes.gsp')
+
+         } 
+             def proy() {
+
+        render(view: 'proy.gsp')
+
+         } 
+ 
 }

@@ -108,7 +108,7 @@ samp {
   font-size: 1em;
 }
 button,
-input,
+input {font:small-caption;font-size:16px;}
 optgroup,
 select,
 textarea {

@@ -44,25 +44,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a>      
+
+                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a> 
             </div>
         
-            <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
+             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav pull-right">
                     <li class="active">
                         <g:link controller="welcome" action="index">Home</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="about">About</g:link>
+                        <g:link controller="welcome" action="about">Sobre Nosotros</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="blog">Blog</g:link>
+                        <g:link controller="welcome" action="news">Noticias</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="team">Team</g:link>
+                        <g:link controller="welcome" action="team">Nuestro Equipo</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="contact">Contact</g:link>
+                        <g:link controller="welcome" action="contact">Contacto</g:link>
                     </li>
                     <sec:ifLoggedIn>
                         <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
@@ -104,10 +105,12 @@
                             </div>
                         </div></li>
                     </sec:ifNotLoggedIn>
+
                 </ul>         
             </div>
         </div>
     </nav>
+
 
 
     <!--End Header -->
@@ -180,23 +183,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-0">
-                    <h3><i class="fa fa-map-marker"></i> Contact:</h3>
+                    <h3><i class="fa fa-map-marker"></i> Contacto:</h3>
                     <p class="footer-contact">
-                        Via Ludovisi 39-45, Rome, 54267, Italy<br>
-                        Phone: 1.800.245.356 Fax: 1.800.245.357<br>
-                        Email: hello@LawOffice.org<br>
+                        Universidad Técnica Federico Santa María<br>
+
+                        Av. España 1680, Edificio B, 3° piso, Valparaíso, Chile<br>
+                        Phone: +56 32 7777777<br>
+                        Email: labmmba@usm.cl<br>
                     </p>
                 </div>
                 <div class="col-md-0">
                     <h3><i class="fa fa-external-link"></i> Links</h3>
-                    <p> <a href="#"> About ( Who we are )</a></p>
-                    <p> <a href="#"> Services ( What we do )</a></p>
-                    <p> <a href="#"> Contact ( Feel free to contact )</a></p>
-                    <p> <a href="#"> Blog ( Write to us )</a></p>
-                    <p> <a href="#"> Team ( Meet the Team )</a></p> 
+                    <p> <g:link controller="welcome" action="about"> Sobre Nosotros ( Quiénes somos )</g:link></p>
+                    <p> <g:link controller="welcome" action="team"> Nuestro Equipo ( Conócenos )</g:link></p>
+                    <p> <g:link controller="welcome" action="news"> Noticias ( Infórmate )</g:link></p>
+                    <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
                 </div>
               <div class="col-md-0">
-                <h3><i class="fa fa-heart"></i> Socialize</h3>
+                <h3><i class="fa fa-heart"></i> Redes Sociales</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
                         <i class="fa fa-google-plus"></i>
@@ -218,7 +222,7 @@
 
     
     <div class="copyright text center">
-        <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+        <p>&copy; Copyright 2016, <a href="Http://www.labmmba.utfsm.cl/">LABMMBA</a>. Creado por Grupo 13 FISW</p>
     </div>
 
 

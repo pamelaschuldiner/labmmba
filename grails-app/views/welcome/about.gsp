@@ -126,10 +126,22 @@
     <div class="container">   
         <div class="row">
             <div class="side-left col-sm-4 col-md-4">
-                <g:message code="labbma.about" default="${g.message(code:'labbma.about', locale:new Locale("es"))}"/>
+                <g:message code="labmmba.about" default="${g.message(code:'labmmba.about', locale:new Locale("es"))}"/>
             </div>
             <div class="col-sm-8 col-md-8">
-                <g:img dir="assets" file="adn.jpg" alt="" height="100%"/>
+
+                    <div id='cssmenu'>
+                        <ul>
+                            <li><g:link controller="welcome" action="areainvesti">Áreas de Investigación</g:link></li>
+                            <li><g:link controller="welcome" action="links">Links</g:link></li>
+                            <li><g:link controller="welcome" action="patentes">Patentes</g:link></li>
+                            <li><g:link controller="welcome" action="publicacion">Publicaciones</g:link></li>
+                            <li><g:link controller="welcome" action="proy">Proyectos</g:link></li>
+                        </ul>
+                    </div>
+                    <div id='cssmenu'>
+                    </div>
+
             </div>  
         </div>    
     </div>  
@@ -143,11 +155,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-0">
-                    <h3><i class="fa fa-map-marker"></i> Contact:</h3>
+                    <h3><i class="fa fa-map-marker"></i> Contacto:</h3>
                     <p class="footer-contact">
-                        Via Ludovisi 39-45, Rome, 54267, Italy<br>
-                        Phone: 1.800.245.356 Fax: 1.800.245.357<br>
-                        Email: hello@LawOffice.org<br>
+                        Universidad Técnica Federico Santa María<br>
+
+                        Av. España 1680, Edificio B, 3° piso, Valparaíso, Chile<br>
+                        Phone: +56 32 7777777<br>
+                        Email: labmmba@usm.cl<br>
                     </p>
                 </div>
                 <div class="col-md-0">
@@ -158,7 +172,7 @@
                     <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
                 </div>
               <div class="col-md-0">
-                <h3><i class="fa fa-heart"></i> Socialize</h3>
+                <h3><i class="fa fa-heart"></i> Redes Sociales</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
                         <i class="fa fa-google-plus"></i>
@@ -179,31 +193,17 @@
     </footer>
 
     
+    
     <div class="copyright text center">
-        <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+        <p>&copy; Copyright 2016, <a href="Http://www.labmmba.utfsm.cl/">LABMMBA</a>. Creado por Grupo 13 FISW</p>
     </div>
 
     
-    <g:external dir="assets" file="jquery-1.10.2.min.js" />
-    <g:external dir="assets" file="bootstrap.min.js" />
-    <g:external dir="assets" file="wow.min.js" />
-    <script>
+
+    <script type="text/javascript">
       new WOW().init();
     </script>
-     <script type="text/javascript">$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});</script>
+
 <script type="text/javascript">
 $('input[type="submit"]').mousedown(function(){
   $(this).css('background', '#2ecc71');
@@ -232,4 +232,3 @@ $(document).mouseup(function (e)
 });
 </script>
   </body>
-</html>

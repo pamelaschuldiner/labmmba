@@ -357,11 +357,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-0">
-                    <h3><i class="fa fa-map-marker"></i> Contact:</h3>
+                    <h3><i class="fa fa-map-marker"></i> Contacto:</h3>
                     <p class="footer-contact">
-                        Via Ludovisi 39-45, Rome, 54267, Italy<br>
-                        Phone: 1.800.245.356 Fax: 1.800.245.357<br>
-                        Email: hello@LawOffice.org<br>
+                        Universidad Técnica Federico Santa María<br>
+
+                        Av. España 1680, Edificio B, 3° piso, Valparaíso, Chile<br>
+                        Phone: +56 32 7777777<br>
+                        Email: labmmba@usm.cl<br>
                     </p>
                 </div>
                 <div class="col-md-0">
@@ -372,7 +374,7 @@
                     <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
                 </div>
               <div class="col-md-0">
-                <h3><i class="fa fa-heart"></i> Socialize</h3>
+                <h3><i class="fa fa-heart"></i> Redes Sociales</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
                         <i class="fa fa-google-plus"></i>
@@ -394,7 +396,7 @@
 
     
     <div class="copyright text center">
-        <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+        <p>&copy; Copyright 2016, <a href="Http://www.labmmba.utfsm.cl/">LABMMBA</a>. Creado por Grupo 13 FISW</p>
     </div>
 
     
