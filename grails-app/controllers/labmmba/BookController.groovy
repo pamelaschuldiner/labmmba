@@ -137,6 +137,11 @@ class BookController {
             return
         }
 
+        if (book.user != springSecurityService.currentUser) {
+            transactionStatus.setRollbackOnly()
+            return
+        }
+
         book.delete flush:true
 
         request.withFormat {

@@ -86,7 +86,7 @@
                                                 <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
                                                     <p>
                                                         <label for="username">Nombre de usuario:</label>
-                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                        <input type="username" class="text_" name="j_username" id="username">
                                                     </p>
 
                                                     <p>
@@ -176,7 +176,7 @@
                             <i class="fa fa-file"></i>
                             Así son los gérmenes en el espacio
                         </h1>
-                        <img src="assets/img/slider/blog2.jpg" alt="Feature-img" align="right" width="100%" class="blog-image"> 
+                        <img src="assets/img/slider/blog2.jpg" alt="Feature-img" align="right" width="100%" class="blog-image">
                         <br>
                         <p>                            
                             Cuando la tripulación del Ares III se ve obligada a evacuar Marte ante una peligrosa tormenta de arena, el astronauta Mark Watney queda atrapado y sus compañeros le dan por muerto. Pero, sorprendentemente, este ingeniero mecánico de la NASA sobrevive y debe ingeniárselas con astucia para subsistir en el planeta rojo hasta que consiguen rescatarle. Es el argumento de la última producción norteamericana de ciencia ficción espacial, Marte. Lo que probablemente desconoce su director, Ridley Scott, es que si la historia fuese real el protagonista también se habría tenido que enfrentar a peligros inusuales a bordo de la nave en que viajaba. Concretamente, a inusuales infecciones. "La salud de las tripulaciones de los vuelos espaciales presentes y futuros es de máxima importancia, y sobre todo en lo que se refiere a la infección por microbios", explica a Materia Kasthuri Venkaterswaran, investigador del Laboratorio de Propulsión a Chorro de la NASA.</p>

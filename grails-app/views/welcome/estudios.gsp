@@ -83,7 +83,7 @@
                                                 <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
                                                     <p>
                                                         <label for="username">Nombre de usuario:</label>
-                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                        <input type="username" class="text_" name="j_username" id="username">
                                                     </p>
 
                                                     <p>

@@ -83,7 +83,7 @@
                                                 <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
                                                     <p>
                                                         <label for="username">Nombre de usuario:</label>
-                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                        <input type="username" class="text_" name="j_username" id="username">
                                                     </p>
 
                                                     <p>
@@ -128,6 +128,24 @@
                         <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-1" data-slide-to="1"></li>
                         <li data-target="#carousel-1" data-slide-to="2"></li>
+
+                        <g:each in="${images}" status="i" var="image">
+                            <g:if test="${i==0}">
+                                <li data-target="#carousel-1" data-slide-to="${i}" class="active"></li>
+                            </g:if>
+                            <g:else>
+                                <li data-target="#carousel-1" data-slide-to="${i}"></li>
+                            </g:else>
+                        </g:each>
+
+                        <g:each in="${videos}" status="i" var="video">
+                            <g:if test="${images.length==0}">
+                                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                            </g:if>
+                            <g:else>
+                                <li data-target="#carousel-1" data-slide-to="${i+images.length}"></li>
+                            </g:else>
+                        </g:each>
                     </ol>
         
                     <!-- Wrapper for slides -->
@@ -135,31 +153,46 @@
                         <!-- Begin Slide 1 -->
                         <div class="item active">
                             <g:img dir="assets/slider" file="slide2.jpg" alt="" height="400" widgth="100%"/>
-                            <div class="carousel-caption">
-                                <h3 class="carousel-title hidden-xs">Office BOOTSTRAP TEMPLATE</h3>
-                                <p class="carousel-body">RESPONSIVE \ MULTI PAGE</p>
-                            </div>
                         </div>
                         <!-- End Slide 1 -->
                         <!-- Begin Slide 2 -->
                         <div class="item">
                             <g:img dir="assets/slider" file="slide4.jpg" alt="" height="400" widgth="100%"/>
-                            <div class="carousel-caption">
-                                <h3 class="carousel-title hidden-xs">EASY TO CUSTOMIZE</h3>
-                                <p class="carousel-body">BEAUTIFUL \ CLEAN \ MINIMAL</p>
-                            </div>
                         </div>
                         <!-- End Slide 2 -->
 
                         <!-- Begin Slide 3 -->
                         <div class="item">
                             <g:img dir="assets/slider" file="slide21.jpg" alt="" height="400" widgth="100%"/>
-                            <div class="carousel-caption">
-                                <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
-                                <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>
-                            </div>
                         </div>
                         <!-- End Slide 3 -->
+                        <!-- Begin Dinamic Slide -->
+                        <g:each in="${images}" status="i" var="image">
+                            <g:if test="${i==0}">
+                                <div class="item active">
+                                    <img class="slide" src="${createLink(controller:'welcome', action:'media', params:[tipo: "imagen", name: image.name])}"  height="400" width="100%"/>
+                                </div>
+                            </g:if>
+                            <g:else>
+                                <div class="item">
+                                    <img class="slide" src="${createLink(controller:'welcome', action:'media', params:[tipo: "imagen",name: image.name])}" height="400" width="100%"/>
+                                </div>
+                            </g:else>
+                        </g:each>
+
+                        <g:each in="${videos}" status="i" var="video">
+                            <g:if test="${images.length==0&&i==0}">
+                                <div class="item active">
+                                    <video class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "video",name: video.name])}" height="400" width="100%" controls/>
+                                </div>
+                            </g:if>
+                            <g:else>
+                                <div class="item">
+                                    <video class="slide" src="${createLink(controller:'user', action:'media', resource: user, params:[tipo: "video",name: video.name])}" height="400" width="100%" controls/>
+                                </div>
+                            </g:else>
+                        </g:each>
+                        <!-- End Dinamic Slide-->
                     </div>
         
                     <!-- Controls -->

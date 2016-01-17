@@ -93,6 +93,11 @@ class StudyController {
             return
         }
 
+        if (study.user != springSecurityService.currentUser) {
+            transactionStatus.setRollbackOnly()
+            return
+        }
+
         study.delete flush:true
 
         request.withFormat {

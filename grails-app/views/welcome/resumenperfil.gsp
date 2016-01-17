@@ -82,7 +82,7 @@
                                                 <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
                                                     <p>
                                                         <label for="username">Nombre de usuario:</label>
-                                                        <input type="text" class="text_" name="j_username" id="username">
+                                                        <input type="username" class="text_" name="j_username" id="username">
                                                     </p>
 
                                                     <p>
@@ -125,23 +125,28 @@
     <div id="banners"></div>
     <div class="container">   
         <div class="row">
-            <div class="side-left col-sm-4 col-md-4">
+            <g:if test="${sec.username() == user.username}">
+                <div class="side-left col-sm-4 col-md-4">
+            </g:if>
+            <g:else>
+                <div class="side-left col-sm-12 col-md-12">
+            </g:else>
 
                 <h3 class="lead"> Resumen de perfil </h3><hr>
                 <ul class="input-list style-2 clearfix">
                     <g:if test="${flash.message}">
                         <div class="message" role="status">${flash.message}</div>
                     </g:if>
+
                     <table>
                         <!--Username y nombre -->
                         <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:user.ident())}"  width="108"/>
 
-                        <sec:access url='/welcome/resumenperfil'>
 
+                        <g:if test="${sec.username() == user.username}">
                             <p><g:submitButton name="show_edit" value="Editar" onclick="for (var i = 0; i < document.getElementsByClassName('edit').length; i++){document.getElementsByClassName('edit')[i].style.visibility = 'visible'}" ></g:submitButton></p>
+                        </g:if>
 
-
-                        </sec:access>
                         <tr><p>
                             <td align="left">Username:     </td>
                             <td align="left"><f:display bean="user" property="username"/> </td>
@@ -492,31 +497,24 @@
                 </ul>
             </div>
 
-            <div class="col-sm-8 col-md-8">
-
-                <sec:access url='/welcome/resumenperfil'>
-                    <div id='cssmenu'>
-                        <ul>
-                            <li><g:link controller="welcome" action="resumenperfil">Resumen de Perfil</g:link></li>
-                            <li><g:link controller="welcome" action="personal">Personal</g:link></li>
-                            <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
-                            <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
-                            <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
-                            <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
-                            <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>
-                            <li><g:link controller="welcome" action="avancetesis">Avance de Tesis</g:link></li>
-                            <li><g:link controller="welcome" action="mensajes">Mensajes</g:link></li>
-                            <li><g:link controller="welcome" action="cuenta">Cuenta</g:link></li>
-                        </ul>
+                <g:if test="${sec.username() == user.username}">
+                    <div class="col-sm-8 col-md-8">
+                        <div id='cssmenu'>
+                            <ul>
+                                <li><g:link controller="welcome" action="resumenperfil">Resumen de Perfil</g:link></li>
+                                <li><g:link controller="welcome" action="personal">Personal</g:link></li>
+                                <li><g:link controller="welcome" action="estudios">Estudios</g:link></li>
+                                <li><g:link controller="welcome" action="publicaciones">Publicaciones</g:link></li>
+                                <li><g:link controller="welcome" action="editarGaleria">Galeria</g:link></li>
+                                <li><g:link controller="welcome" action="proyectos">Proyectos</g:link></li>
+                                <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>
+                                <li><g:link controller="welcome" action="avancetesis">Avance de Tesis</g:link></li>
+                                <li><g:link controller="welcome" action="mensajes">Mensajes</g:link></li>
+                                <li><g:link controller="welcome" action="cuenta">Cuenta</g:link></li>
+                            </ul>
+                        </div>
                     </div>
-                </sec:access>
-                <sec:noAccess url='/welcome/resumenperfil'>
-                    <div id='cssmenu'>
-                        <ul>
-
-                        </ul>
-                    </div>
-                </sec:noAccess>
+                </g:if>
 
             </div>  
         </div>    

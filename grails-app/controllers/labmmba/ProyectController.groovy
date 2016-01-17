@@ -113,6 +113,11 @@ class ProyectController {
             return
         }
 
+        if (proyect.user != springSecurityService.currentUser) {
+            transactionStatus.setRollbackOnly()
+            return
+        }
+
         proyect.delete flush:true
 
         request.withFormat {

@@ -136,6 +136,11 @@ class EventController {
             return
         }
 
+        if (event.user != springSecurityService.currentUser) {
+            transactionStatus.setRollbackOnly()
+            return
+        }
+
         event.delete flush:true
 
         request.withFormat {

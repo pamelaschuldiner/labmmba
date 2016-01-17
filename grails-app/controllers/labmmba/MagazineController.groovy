@@ -155,6 +155,11 @@ class MagazineController {
             return
         }
 
+        if (magazine.user != springSecurityService.currentUser) {
+            transactionStatus.setRollbackOnly()
+            return
+        }
+
         magazine.delete flush:true
 
         request.withFormat {
