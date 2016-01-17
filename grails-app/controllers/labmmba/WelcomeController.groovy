@@ -41,10 +41,13 @@ class WelcomeController {
 
     	 }
 
+    def loginreg(){
+        respond new User(params)
+    }
 
 
     def team() {
-        def users= labmmba.User.listOrderById()
+        def users= labmmba.User.findAllByEnabled(true).asList()
     	render(view: 'team.gsp', model: [users: users])
 
     	 }

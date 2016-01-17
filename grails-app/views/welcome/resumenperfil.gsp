@@ -74,7 +74,7 @@
                         <li><div id="wrap">
                             <div id="regbar">
                                 <div id="navthing">
-                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="welcome" action="loginreg">Registrarse</g:link>
                                     <div class="login">
                                         <div class="arrow-up"></div>
                                         <div class="formholder">
@@ -144,7 +144,7 @@
 
 
                         <g:if test="${sec.username() == user.username}">
-                            <p><g:submitButton name="show_edit" value="Editar" onclick="for (var i = 0; i < document.getElementsByClassName('edit').length; i++){document.getElementsByClassName('edit')[i].style.visibility = 'visible'}" ></g:submitButton></p>
+                            <p><g:actionSubmitImage name="show_edit" value="Editar" src="${resource(dir: 'assets/images', file: 'editar.png')}" onclick="for (var i = 0; i < document.getElementsByClassName('edit').length; i++){document.getElementsByClassName('edit')[i].style.visibility = 'visible'}" ></g:actionSubmitImage></p>
                         </g:if>
 
                         <tr><p>
@@ -175,9 +175,12 @@
                                         <td align="left"></td>
                                         <td align="left">${it.field_name}  </td>
                                         <td align="left" class="edit" style="visibility:hidden" >
-                                            <g:form controller="user" action="eliminar_area" params="[area_id: it.id]" method="DELETE">
-                                                <g:submitButton name="Eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
-                                            </g:form>
+                                            <g:if test="${sec.username() == user.username}">
+                                                <g:form controller="user" action="eliminar_area" params="[area_id: it.id]" method="DELETE">
+                                                    <g:actionSubmitImage name="delete" value="delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                </g:form>
+                                            </g:if>
+
                                         </td>
                                     </tr>
                                 </g:each>
@@ -192,9 +195,11 @@
                                         <td align="left">${it.study_type}: </td>
                                         <td align="left">${it.study_name}  </td>
                                         <td align="left" class="edit" style="visibility:hidden" >
-                                            <g:form controller="study" action="delete" resource="${it}"  method="delete">
-                                                <g:submitButton name="Eliminar" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:submitButton>
-                                            </g:form>
+                                            <g:if test="${sec.username() == user.username}">
+                                                <g:form controller="study" action="delete" resource="${it}"  method="delete">
+                                                    <g:actionSubmitImage name="Eliminar" value="Eliminar" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                </g:form>
+                                            </g:if>
                                         </td>
                                     </p></tr>
                                     <tr><p>
@@ -245,9 +250,11 @@
                                         <sec:ifLoggedIn>
                                             <td align="left"><g:link controller="magazine" action="download" resource="${it}">${it.mag_name}</g:link></td>
                                             <td align="left" class="edit" style="visibility:hidden" >
-                                                <g:form controller="magazine" action="delete" resource="${it}"  method="delete">
-                                                    <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
-                                                </g:form>
+                                                <g:if test="${sec.username() == user.username}">
+                                                    <g:form controller="magazine" action="delete" resource="${it}"  method="delete">
+                                                        <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                    </g:form>
+                                                </g:if>
                                             </td>
                                         </sec:ifLoggedIn>
                                         <sec:ifNotLoggedIn>
@@ -268,9 +275,11 @@
                                         <sec:ifLoggedIn>
                                             <td align="left"><g:link controller="books" action="download" resource="${it}">${it.book_name}</g:link></td>
                                             <td align="left" class="edit" style="visibility:hidden" >
-                                                <g:form controller="book" action="delete" resource="${it}"  method="delete">
-                                                    <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
-                                                </g:form>
+                                                <g:if test="${sec.username() == user.username}">
+                                                    <g:form controller="book" action="delete" resource="${it}"  method="delete">
+                                                        <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                    </g:form>
+                                                </g:if>
                                             </td>
                                         </sec:ifLoggedIn>
                                         <sec:ifNotLoggedIn>
@@ -305,9 +314,11 @@
                                         <td align="left">Proyecto: </td>
                                         <td align="left">${it.proy_name}  </td>
                                         <td align="left" class="edit" style="visibility:hidden" >
-                                            <g:form controller="proyect" action="delete" resource="${it}"  method="delete">
-                                                <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
-                                            </g:form>
+                                            <g:if test="${sec.username() == user.username}">
+                                                <g:form controller="proyect" action="delete" resource="${it}"  method="delete">
+                                                    <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                </g:form>
+                                            </g:if>
                                         </td>
                                     </p></tr>
                                     <tr><p>
@@ -338,9 +349,11 @@
                                         <td align="left">Congreso: </td>
                                         <td align="left">${it.event_name}  </td>
                                         <td align="left" class="edit" style="visibility:hidden" >
-                                            <g:form controller="proyect" action="delete" resource="${it}"  method="delete">
-                                                <g:actionSubmit value="Eliminar" action="Delete" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmit>
-                                            </g:form>
+                                            <g:if test="${sec.username() == user.username}">
+                                                <g:form controller="event" action="delete" resource="${it}"  method="delete">
+                                                    <g:actionSubmitImage value="Eliminar" action="Delete" src="${resource(dir: 'assets/images', file: 'eliminar.png')}" onclick="return confirm('¿Está usted seguro?');">Eliminar</g:actionSubmitImage>
+                                                </g:form>
+                                            </g:if>
                                         </td>
                                     </p></tr>
                                     <tr><p>

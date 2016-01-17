@@ -29,7 +29,7 @@
         <g:external dir="assets" file="apple-touch-icon-114-precomposed.png" />
         <g:external dir="assets" file="apple-touch-icon-72-precomposed.png" />
         <g:external dir="assets" file="apple-touch-icon-57-precomposed.png" />
-        <g:external dir="assets" file="icon.ico" />
+        <g:external dir="assets" file="favicon.ico" />
 
 </head>
     <body>
@@ -46,11 +46,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a> 
+                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a>
             </div>
         
-             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
+            <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav pull-right">
                     <li class="active">
                         <g:link controller="welcome" action="index">Home</g:link>
@@ -59,13 +58,13 @@
                         <g:link controller="welcome" action="about">Sobre Nosotros</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="news">Noticias</g:link>
+                        <g:link controller="welcome" action="blog">Blog</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="team">Nuestro Equipo</g:link>
+                        <g:link controller="welcome" action="team">Team</g:link>
                     </li>
                     <li>
-                        <g:link controller="welcome" action="contact">Contacto</g:link>
+                        <g:link controller="welcome" action="contact">Contact</g:link>
                     </li>
                     <sec:ifLoggedIn>
                         <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
@@ -74,7 +73,7 @@
                         <li><div id="wrap">
                             <div id="regbar">
                                 <div id="navthing">
-                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="welcome" action="loginreg">Registrarse</g:link>
                                     <div class="login">
                                         <div class="arrow-up"></div>
                                         <div class="formholder">
@@ -82,7 +81,7 @@
                                                 <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
                                                     <p>
                                                         <label for="username">Nombre de usuario:</label>
-                                                        <input type="username" class="text_" name="j_username" id="username">
+                                                        <input type="text" class="text_" name="j_username" id="username">
                                                     </p>
 
                                                     <p>
@@ -107,12 +106,10 @@
                             </div>
                         </div></li>
                     </sec:ifNotLoggedIn>
-
                 </ul>         
             </div>
         </div>
     </nav>
-
 
 
     <!--End Header -->
@@ -129,34 +126,50 @@
 
                 <h3 class="lead"> Registro en Labmmba</h3><hr>
                 <ul class="input-list style-2 clearfix">
-                <g:form controller="study" action="save2">
-                    <p><div id="dynamicInput">
-                            <form>
-                                  <table>
-                                    <tr><p>
-                                      <td align="left">Nombres:     </td>
-                                      <td align="left"><g:textField name="study_name" class="others" size="40"/></td>
-                                    </tr></p>
-                                    <tr><p>
-                                      <td align="left">Apellidos:     </td>
-                                      <td align="left"><g:textField name="uni_name" class="others" size="40"/></td>
-                                    </p></tr>
-                                    <tr><p>
-                                      <td align="left">Contraseña:     </td>
-                                      <td align="left"><g:passwordField name="myPasswordField" value="${myPassword}" class="others" size="40"/></td>
-                                    </p></tr>
-                                    <tr><p>
-                                      <td align="left">Confirmar Contraseña:     </td>
-                                      <td align="left"><g:passwordField name="myPasswordField" value="${myPassword}" class="others" size="40"/></td>
-                                    </p></tr>
-                                  </table>
-                                </form>
-                        </div>
-                            <br>
-                                <br>
-                        <g:actionSubmitImage value="Save" src="${resource(dir: 'assets/images', file: 'enviar.png')}"/>
-                    </p>
-                </g:form>
+                    <g:if test="${flash.message}">
+                        <div class="message" role="status">${flash.message}</div>
+                    </g:if>
+                    <g:hasErrors bean="${this.user}">
+                        <ul class="errors" role="alert">
+                            <g:eachError bean="${this.user}" var="error">
+                                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+                            </g:eachError>
+                        </ul>
+                    </g:hasErrors>
+                    <g:form action="user_save" controller="user" id="${user.id}">
+                        <fieldset class="form">
+                            <table>
+                                <tr><p>
+                                    <td align="left">Nombre de usuario:     </td>
+                                    <td align="left"><g:textField name="username" class="others" size="40" required="true"/></td>
+                                </tr></p>
+                                <tr><p>
+                                    <td align="left">Nombres:     </td>
+                                    <td align="left"><g:textField name="firstname" class="others" size="40" required="true"/></td>
+                                </tr></p>
+                                <tr><p>
+                                    <td align="left">Apellidos:     </td>
+                                    <td align="left"><g:textField name="lastname" class="others" size="40" required="true"/></td>
+                                </p></tr>
+                                <tr><p>
+                                    <td align="left">Email:     </td>
+                                    <td align="left"><g:field type="email" name="email" class="others" size="40" required="true"/></td>
+                                </p></tr>
+                                <tr><p>
+                                    <td align="left">Contraseña:     </td>
+                                    <td align="left"><g:passwordField name="password" class="others" size="40" id="newPassword" required="true"/></td>
+                                </p></tr>
+                               <tr><p>
+                                    <td align="left">Confirmar Contraseña:     </td>
+                                    <td align="left"><g:passwordField name="confirmPassword" class="others" size="40" id="confirmPassword" required="true"/></td>
+                                    <td id="passwordMatch"></td>
+                                </p></tr>
+                            </table>
+                        </fieldset>
+                        <fieldset class="buttons">
+                            <g:actionSubmitImage name="create" class="save"  action="user_save" src="${resource(dir: 'assets/images', file: 'enviar.png')}" disabled="true" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                        </fieldset>
+                    </g:form>
                 </ul>
             </div>
 
@@ -174,24 +187,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-0">
-                    <h3><i class="fa fa-map-marker"></i> Contacto:</h3>
+                    <h3><i class="fa fa-map-marker"></i> Contact:</h3>
                     <p class="footer-contact">
-                        Universidad Técnica Federico Santa María<br>
-
-                        Av. España 1680, Edificio B, 3° piso, Valparaíso, Chile<br>
-                        Phone: +56 32 7777777<br>
-                        Email: labmmba@usm.cl<br>
+                        Via Ludovisi 39-45, Rome, 54267, Italy<br>
+                        Phone: 1.800.245.356 Fax: 1.800.245.357<br>
+                        Email: hello@LawOffice.org<br>
                     </p>
                 </div>
                 <div class="col-md-0">
                     <h3><i class="fa fa-external-link"></i> Links</h3>
-                    <p> <g:link controller="welcome" action="about"> Sobre Nosotros ( Quiénes somos )</g:link></p>
-                    <p> <g:link controller="welcome" action="team"> Nuestro Equipo ( Conócenos )</g:link></p>
-                    <p> <g:link controller="welcome" action="news"> Noticias ( Infórmate )</g:link></p>
-                    <p> <g:link controller="welcome" action="contact"> Contacto ( Escríbenos )</g:link></p>
+                    <p> <a href="#"> About ( Who we are )</a></p>
+                    <p> <a href="#"> Services ( What we do )</a></p>
+                    <p> <a href="#"> Contact ( Feel free to contact )</a></p>
+                    <p> <a href="#"> Blog ( Write to us )</a></p>
+                    <p> <a href="#"> Team ( Meet the Team )</a></p> 
                 </div>
               <div class="col-md-0">
-                <h3><i class="fa fa-heart"></i> Redes Sociales</h3>
+                <h3><i class="fa fa-heart"></i> Socialize</h3>
                 <div id="social-icons">
                     <a href="#" class="btn-group google-plus">
                         <i class="fa fa-google-plus"></i>
@@ -213,7 +225,7 @@
 
     
     <div class="copyright text center">
-        <p>&copy; Copyright 2016, <a href="Http://www.labmmba.utfsm.cl/">LABMMBA</a>. Creado por Grupo 13 FISW</p>
+        <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
     </div>
 
 
@@ -239,31 +251,50 @@
   });
 });</script>
 <script type="text/javascript">
-$('input[type="submit"]').mousedown(function(){
-  $(this).css('background', '#2ecc71');
-});
-$('input[type="submit"]').mouseup(function(){
-  $(this).css('background', '#1abc9c');
-});
 
-$('#loginform').click(function(){
-  $('.login').fadeToggle('slow');
-  $(this).toggleClass('green');
-});
+    $(document).ready(function () {
+        $("#confirmPassword").keyup(checkPasswordMatch);
+    });
 
+    function checkPasswordMatch() {
+        var password = $("#newPassword").val();
+        var confirmPassword = $("#confirmPassword").val();
 
-
-$(document).mouseup(function (e)
-{
-    var container = $(".login");
-
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        container.hide();
-        $('#loginform').removeClass('green');
+        if (password == confirmPassword) {
+            $("#passwordMatch").html("Passwords match.");
+            $('input[type="image"]').prop('disabled', false);
+        }
+        else {
+            $("#passwordMatch").html("Passwords do not match!");
+            $('input[type="image"]').prop('disabled', true);
+        }
     }
-});
+
+    $('input[type="submit"]').mousedown(function(){
+      $(this).css('background', '#2ecc71');
+    });
+    $('input[type="submit"]').mouseup(function(){
+      $(this).css('background', '#1abc9c');
+    });
+
+    $('#loginform').click(function(){
+      $('.login').fadeToggle('slow');
+      $(this).toggleClass('green');
+    });
+
+
+
+    $(document).mouseup(function (e)
+    {
+        var container = $(".login");
+
+        if (!container.is(e.target) // if the target of the click isn't the container...
+            && container.has(e.target).length === 0) // ... nor a descendant of the container
+        {
+            container.hide();
+            $('#loginform').removeClass('green');
+        }
+    });
 </script>
   </body>
   <script>
