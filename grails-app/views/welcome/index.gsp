@@ -72,7 +72,6 @@
                         <li> <g:link url="j_spring_security_logout">Logout</g:link> </li>
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
-<<<<<<< HEAD
                         <li><div id="wrap">
                             <div id="regbar">
                                 <div id="navthing">
@@ -86,21 +85,6 @@
                                                         <label for="username">Nombre de usuario:</label>
                                                         <input type="text" class="text_" name="j_username" id="username">
                                                     </p>
-=======
-                    <li><div id="wrap">
-                      <div id="regbar">
-                        <div id="navthing">
-                          <a href="#" id="loginform">Ingresar</a> | <g:link controller="welcome" action="loginreg">Registrarse</g:link>
-                        <div class="login">
-                          <div class="arrow-up"></div>
-                          <div class="formholder">
-                            <div class="randompad">
-                               <form action="/j_spring_security_check" method="POST" id="loginForm" class="cssform" autocomplete="off">
-                                    <p>
-                                        <label for="username">Nombre de usuario:</label>
-                                        <input type="text" class="text_" name="j_username" id="username">
-                                    </p>
->>>>>>> origin/master
 
                                                     <p>
                                                         <label for="password">Contraseña:</label>

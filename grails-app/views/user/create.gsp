@@ -10,12 +10,14 @@
     <body>
         <div id="create-user" class="content scaffold-create" role="main">
             <div class="nav" role="navigation">
-                <ul>
-                    <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                    <li><g:link class="list" action="pending"><g:message message="User Pendiente Lista" /></g:link></li>
-                    <li><g:link controller="welcome" action="editarGaleriaPrincipal">Galeria Principal</g:link></li>
-                    <li><g:link url="j_spring_security_logout">Logout</g:link></li>
-                </ul>
+                <sec:ifAllGranted roles="ROLE_ADMIN">
+                    <ul>
+                        <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                        <li><g:link class="list" action="pending"><g:message message="User Pendiente Lista" /></g:link></li>
+                        <li><g:link controller="welcome" action="editarGaleriaPrincipal">Galeria Principal</g:link></li>
+                        <li><g:link url="j_spring_security_logout">Logout</g:link></li>
+                    </ul>
+                </sec:ifAllGranted>
             </div>
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
@@ -28,7 +30,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form action="admin_save">
+            <g:form action="save">
                 <fieldset class="form">
                     <f:field bean="user" property="username"/>
 					<f:field bean="user" property="firstname"/>

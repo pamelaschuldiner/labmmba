@@ -47,12 +47,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-<<<<<<< HEAD
 
                 <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a> 
-=======
-                <a class="navbar-brand wow fadeInDownBig" href="${createLink(action: 'index')}"> <g:img dir="assets/slider" file="office.jpg" width="341" alt="Labmmba"/></a>
->>>>>>> origin/master
             </div>
         
              <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
@@ -79,7 +75,7 @@
                         <li><div id="wrap">
                             <div id="regbar">
                                 <div id="navthing">
-                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="welcome" action="loginreg">Registrarse</g:link>
+                                    <a href="#" id="loginform">Ingresar</a> | <g:link controller="user" action="create">Registrarse</g:link>
                                     <div class="login">
                                         <div class="arrow-up"></div>
                                         <div class="formholder">
