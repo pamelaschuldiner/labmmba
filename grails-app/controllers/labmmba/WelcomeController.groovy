@@ -44,17 +44,46 @@ class WelcomeController {
         respond new User(params)
     }
 
+    @Secured(['ROLE_USER','ROLE_PENDING_USER'])
+    def busqueda(Integer max){
+        params.max = Math.min(max ?: 10, 100)
+        if(request.forwardURI.endsWith("revistas")){
+            respond Magazine.list(params), model:[count: Magazine.count()], view:"busqueda/revistas"
+            return
+        }
+        if(request.forwardURI.endsWith("usuarios")){
+            respond User.list(params), model:[count: User.count()], view:"busqueda/usuarios"
+            return
+        }
+        if(request.forwardURI.endsWith("tesis")){
+            respond Thesi.list(params), model:[count: Thesi.count()], view:"busqueda/tesis"
+            return
+        }
+        if(request.forwardURI.endsWith("libros")){
+            respond Book.list(params), model:[count: Book.count()], view:"busqueda/libros"
+            return
+        }
+        if(request.forwardURI.endsWith("eventos")){
+            respond Event.list(params), model:[count: Event.count()], view:"busqueda/eventos"
+            return
+        }
+        if(request.forwardURI.endsWith("proyectos")){
+            respond Magazine.list(params), model:[count: Magazine.count()], view:"busqueda/proyectos"
+            return
+        }
+        render view:"busqueda"
+    }
 
     def team() {
         def users= labmmba.User.findAllByEnabled(true).asList()
     	render(view: 'team.gsp', model: [users: users])
-
     	 }
+
     def contact() {
 
     	render(view: 'contact.gsp')
-
     	 }
+
     def blog() {
 
     	render(view: 'blog.gsp')
@@ -77,10 +106,10 @@ class WelcomeController {
 
     @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def mensajes() {
-        def sent = Message.findAllBySender(springSecurityService.currentUser)
-        def recived = springSecurityService.currentUser.getMessages()
+        def sent = springSecurityService.currentUser.getSentMessages()
+        def recived = springSecurityService.currentUser.getReceivedMessages()
         def users =  User.findAllByUsernameNotEqual(springSecurityService.currentUser.username)
-        render(view: 'mensajes.gsp', model: [messagesSent: sent, messagesRecived: recived, users: users])
+        render(view: 'mensajes.gsp', model: [messagesSent: sent, messagesReceived: recived, users: users])
 
          }
 
@@ -94,8 +123,9 @@ class WelcomeController {
         else{
             flash.message = "Error al enviar mensaje"
         }
-
     }
+
+
 
     @Secured(['ROLE_USER','ROLE_PENDING_USER'])
     def cuenta() {

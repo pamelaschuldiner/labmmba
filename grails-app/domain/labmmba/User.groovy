@@ -35,7 +35,12 @@ class User implements Serializable {
 		else return false
 	}
 
-	Message[] getMessages(){
+	Message[] getSentMessages(){
+		Message[] messages = Message.findAllBySender(this)
+		return messages
+	}
+
+	Message[] getReceivedMessages(){
 		Message[] messages = Message.findAllByRecipient(this)
 		return messages
 	}

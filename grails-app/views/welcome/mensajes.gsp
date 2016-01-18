@@ -138,7 +138,7 @@
                 <h3 class="lead"> Mensajes Recibidos </h3><hr>
                 <ul class="input-list style-2 clearfix">
                     <table>
-                        <g:each in="${messagesRecived}" var="message" >
+                        <g:each in="${messagesReceived}" var="message" >
                             <tr>
                                 <td>De: ${message.sender.username}</td>
                             </tr>
@@ -177,6 +177,7 @@
                         <li><g:link controller="welcome" action="congresos">Congresos</g:link></li>
                         <li><g:link controller="welcome" action="avancetesis">Avance de Tesis</g:link></li>
                         <li><g:link controller="welcome" action="mensajes">Mensajes</g:link></li>
+                        <li><g:link controller="welcome" action="busqueda">Buscador</g:link></li>
                         <li><g:link controller="welcome" action="cuenta">Cuenta</g:link></li>
                     </ul>
                 </div>
